@@ -15,8 +15,8 @@
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap-material-design.min.js"></script>
   <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!-- Plugin for the momentJs  -->
-  <script src="./assets/js/plugins/moment.min.js"></script>
+   <!-- Plugin for the momentJs  -->
+ <script src="./assets/js/plugins/moment.min.js"></script>
   <!--  Plugin for Sweet Alert -->
   <script src="./assets/js/plugins/sweetalert2.js"></script>
   <!-- Forms Validations Plugin -->
@@ -44,7 +44,7 @@
   <!-- Library for adding dinamically elements -->
   <script src="./assets/js/plugins/arrive.min.js"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
   <!-- Chartist JS -->
   <script src="./assets/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -53,6 +53,7 @@
   <script src="./assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="./assets/demo/demo.js"></script>
+ 
   <script>
     $(document).ready(function($) {
       $().ready(function() {

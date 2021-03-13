@@ -1,0 +1,21 @@
+.custom-bg-danger, .card-header-primary{
+    background: #EE4540 !important;
+}
+
+button.btn.btn-primary {
+  background: #EE4540  !important;
+}
+
+.sidebar[data-color="purple"] li.active > a{
+    background: #EE4540;
+}
+
+.logo {
+  text-align: center;
+}
+
+img.eguide-logo {
+  width: 100%;
+  max-width: 90px;
+  flex: 1;
+}

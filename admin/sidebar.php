@@ -10,6 +10,7 @@ function navigationList($active) {
       Tip 2: you can also add an image using data-image tag
   -->
     <div class="logo">
+        <img src='./assets/img/logo.png' class="eguide-logo"/>
         <a href='./index.php' class="simple-text logo-mini">
             E-GUIDE
         </a>
@@ -24,7 +25,7 @@ function navigationList($active) {
             </li>
             <li class="nav-item <?php echo $active == "student" ? 'active': null?> ">
                 <a class="nav-link" href="./student.php">
-                    <i class="material-icons">dashboard</i>
+                <i class="material-icons">person</i>
                     <p>Student</p>
                 </a>
             </li>

@@ -13,9 +13,13 @@
 
  */
 
+
+
  @import "material-dashboard/variables";
  @import "material-dashboard/mixins";
  @import "material-dashboard/core-bootstrap";
+ // custom
+@import 'material-dashboard/custom';
 
  // Core Components
  @import "material-dashboard/buttons";
@@ -52,3 +56,4 @@
  @import "material-dashboard/plugins/perfect-scrollbar";
 
  @import "material-dashboard/responsive";
+
