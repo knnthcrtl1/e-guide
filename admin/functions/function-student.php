@@ -31,9 +31,9 @@
             $studentType = mysqli_real_escape_string($conn,(strip_tags($_POST['student-type'])));
             $studentLivingCondition = mysqli_real_escape_string($conn,(strip_tags($_POST['student-living-condition'])));
 
-            $studentTableFields = "student_firstname,student_middlname,student_lastname,student_address,student_gender,student_birthday,student_contact,student_email,student_permanent_address,student_ue_email_address,student_citizenship,student_religion,student_civil_status,student_sex,student_living_with,student_present_living_condition,student_type";
+            $studentTableFields = "student_firstname,student_middlname,student_lastname,student_address,student_gender,student_birthday,student_contact,student_email,student_permanent_address,student_ue_email_address,student_citizenship,student_religion,student_civil_status,student_sex,student_living_with,student_present_living_condition,student_type,student_stud_id";
             $sql = "INSERT INTO tbl_students ( {$studentTableFields} ) VALUES 
-                ('{$studentFirstname}','{$studentMiddlename}','{$studentLastname}','{$studentPresentAddress}','{$studentGender}','{$studentBirthday}','{$studentContactNumber}','{$studentEmailAddress}','{$studentPermanentAddress}','{$studentUeEmailAddress}','{$studentCitizen}','{$studentReligion}','{$studentCivilStatus}','{$studentSex}','{$studentLivingWith}','{$studentLivingCondition}','{$studentType}')";
+                ('{$studentFirstname}','{$studentMiddlename}','{$studentLastname}','{$studentPresentAddress}','{$studentGender}','{$studentBirthday}','{$studentContactNumber}','{$studentEmailAddress}','{$studentPermanentAddress}','{$studentUeEmailAddress}','{$studentCitizen}','{$studentReligion}','{$studentCivilStatus}','{$studentSex}','{$studentLivingWith}','{$studentLivingCondition}','{$studentType}','{$studentStudId}')";
             
             mysqli_query($conn, $sql);
 

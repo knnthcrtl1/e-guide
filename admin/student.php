@@ -59,19 +59,19 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Firstname *</label>
-                                                            <input type="text" name="student-firstname" class="form-control" >
+                                                            <input type="text" name="student-firstname" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Lastname *</label>
-                                                            <input name="student-lastname" class="form-control" >
+                                                            <input name="student-lastname" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Middlename *</label>
-                                                            <input name="student-middlename" class="form-control" >
+                                                            <input name="student-middlename" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -79,19 +79,19 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Nickname</label>
-                                                            <input name="student-nickname" class="form-control"> 
+                                                            <input name="student-nickname" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Student No. *</label>
-                                                            <input name="student-studid" class="form-control" >
+                                                            <input name="student-studid" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Strand and Section *</label>
-                                                            <input name="student-strand-section" class="form-control" >
+                                                            <input name="student-strand-section" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -99,7 +99,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Present Address *</label>
-                                                            <input name="student-present-address" class="form-control" >
+                                                            <input name="student-present-address" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -107,7 +107,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Permanent Address *</label>
-                                                            <input name="student-permanent-address" class="form-control" >
+                                                            <input name="student-permanent-address" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -115,7 +115,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Contact Number *</label>
-                                                            <input type="number" name="student-contact-number" class="form-control" >
+                                                            <input type="number" name="student-contact-number" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -127,7 +127,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Email Address *</label>
-                                                            <input type="email" name="student-email-address" class="form-control" >
+                                                            <input type="email" name="student-email-address" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -135,19 +135,19 @@
                                                     <div class="col-md-3">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Age *</label>
-                                                            <input type="number" name="student-age" class="form-control"  >
+                                                            <input type="number" name="student-age" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Date of Birth *</label>
-                                                            <input type="date" name="student-birthday" class="form-control" >
+                                                            <input type="date" name="student-birthday" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Place of birth *</label>
-                                                            <input type="text" name="student-placeofbirth" class="form-control" >
+                                                            <input type="text" name="student-placeofbirth" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -155,13 +155,13 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Citizenship *</label>
-                                                            <input type="text" name="student-citizenship" class="form-control" >
+                                                            <input type="text" name="student-citizenship" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Religion</label>
-                                                            <input type="text" name="student-religion" class="form-control" >
+                                                            <input type="text" name="student-religion" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -175,7 +175,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select id="inputState" class="form-control " name="student-sex">
+                                                                <select  class="form-control " name="student-sex">
                                                                     <option value="">Gender</option>
                                                                     <option value="1">Male</option>
                                                                     <option value="2">Female</option>
@@ -187,7 +187,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select id="inputState" class="form-control " name="student-gender">
+                                                                <select  class="form-control " name="student-gender">
                                                                     <option value="">Gender Identity</option>
                                                                     <option value="0">Straight/Heterosexual</option>
                                                                     <option value="1">Transgender </option>
@@ -205,7 +205,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select id="inputState" class="form-control " name="student-living-with">
+                                                                <select  class="form-control " name="student-living-with">
                                                                     <option value="">Living With</option>
                                                                     <option value="1">Parents</option>
                                                                     <option value="2">Siblings only</option>
@@ -220,7 +220,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select id="inputState" class="form-control " name="student-type" >
+                                                                <select  class="form-control " name="student-type">
                                                                     <option value="">Student Type *</option>
                                                                     <option value="0">Grade School</option>
                                                                     <option value="1">High School </option>
@@ -232,7 +232,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select id="inputState" class="form-control " name="student-living-condition">
+                                                                <select  class="form-control " name="student-living-condition">
                                                                     <option value="">Present Living Condition</option>
                                                                     <option value="0">Lower Class</option>
                                                                     <option value="1">Middle Class </option>
@@ -260,9 +260,61 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title ">Simple Table</h4>
+                                    <p class="card-category"> Here is a subtitle for this table</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive"  id="studentTable">
+                                        <table class="table" id="studentDataTable">
+                                            <thead class=" text-primary">
+                                                <tr>
+                                                    <th>
+                                                        ID
+                                                    </th>
+                                                    <th>
+                                                        Firstname
+                                                    </th>
+                                                    <th>
+                                                        Middlename
+                                                    </th>
+                                                    <th>
+                                                        Lastname
+                                                    </th>
+                                                    <th>
+                                                        Email
+                                                    </th>
+                                                    <th>
+                                                        Contact Number
+                                                    </th>
+                                                    <th>
+                                                        Student Type
+                                                    </th>
+                                                    <th>
+                                                        Student School ID
+                                                    </th>
+                                                    <th>
+                                                       Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                    <!-- end row -->
                     <!-- your content here -->
                 </div>
             </div>
             <?php include('footer.php'); ?>
             <script src="./custom-js/student-script.js"></script>
+            <script src="./assets/js/plugins/jquery.dataTables.min"></script>
