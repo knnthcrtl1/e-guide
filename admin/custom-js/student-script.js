@@ -25,7 +25,7 @@ $(document).ready(function() {
                 data: `id=${deleteId}`,
                 success:function(data){
                     // if(data == 1){
-                    //     alert('Client has existing project, delete the data first on the connected project');
+                    //     alert('student has existing project, delete the data first on the connected project');
                     //     return false;
                     // }
                     // alert(data);
@@ -42,14 +42,11 @@ $(document).ready(function() {
 
         var studentFormData = $("#add-student-form").serialize();
 
-        // // if (!validateEmail(clientRequired3)){
+        // // if (!validateEmail(studentRequired3)){
         // //     alert('Please provide correct email address');
 
         // //     return false;
         // // }
-
-        console.log(studentFormData);
-
 
         jQuery.ajax({
             method: "POST",
@@ -62,6 +59,27 @@ $(document).ready(function() {
                 // }
                 alert("Added Successfully!");
                 fetchStudentTable();
+            }
+        });
+
+    });
+
+    $(document).on("click","#submit-edit-student-form", function(e) {
+        e.preventDefault();
+       
+        var studentFormData = $("#edit-student-form").serialize();
+
+        jQuery.ajax({
+            method: "POST",
+            url: "./functions/function-student.php",
+            data: studentFormData + "&ajax=true",
+            success:function(data){
+                // if(data == 1){
+                //     alert('email already exists, please use other email');
+                //     return false;
+                // }
+                // alert("Edited Successfully!");
+                alert(data);
             }
         });
 

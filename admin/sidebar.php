@@ -18,13 +18,13 @@ function navigationList($active) {
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item <?php echo $active == "dashboard" ? 'active': null?> ">
-                <a class="nav-link" href="./index.php">
+                <a class="nav-link" href="./view_dashboard.php">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li class="nav-item <?php echo $active == "student" ? 'active': null?> ">
-                <a class="nav-link" href="./student.php">
+                <a class="nav-link" href="./view_student.php">
                 <i class="material-icons">person</i>
                     <p>Student</p>
                 </a>
