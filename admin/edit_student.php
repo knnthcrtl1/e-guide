@@ -35,17 +35,44 @@
                     }
 
                     ?>
+
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card">
-                                <div class="card-header card-header-primary">
-                                    <h4 class="card-title">Edit Student</h4>
-                                    <p class="card-category">Edit student profile</p>
+                                <div class="card-header card-header-tabs card-header-primary">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <span class="nav-tabs-title">Edit Student:</span>
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active show" href="#profile" data-toggle="tab">
+                                                        <!-- <i class="material-icons">bug_report</i>  -->
+                                                        Student Info
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#messages" data-toggle="tab">
+                                                        <!-- <i class="material-icons">code</i> Website -->
+                                                        Family
+                                                        <!-- <div class="ripple-container"></div> -->
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#settings" data-toggle="tab">
+                                                        <i class="material-icons">cloud</i> Server
+                                                        <div class="ripple-container"></div>
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-
                                 <div class="card-body">
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="pi">
+                                        <div class="tab-pane  active show" id="profile">
                                             <form id="edit-student-form" method="post">
                                                 <input type="hidden" name="function-type" value="edit-student" />
                                                 <input type="hidden" name="student-id" value="<?php echo $_GET['id'] ?>">
@@ -241,20 +268,103 @@
                                                         Submit
                                                     </button>
                                                 </div>
+                                            </form>
                                         </div>
-                                        </form>
-
-                                        <!-- <div class="tab-pane" id="cd">
-                                            2
+                                        <div class="tab-pane" id="messages">
+                                            <?php
+                                            $sql = "SELECT * FROM tbl_students_family_guardian WHERE students_family_guardian_student_id = '{$_GET['id']}'";
+                                            $result = mysqli_query($conn, $sql);
+                                            $row = mysqli_fetch_array($result);
+                                            ?>
+                                            <form id="edit-student-family-form" method="post">
+                                                <input type="hidden" name="function-type" value="edit-student-family" />
+                                                <input type="hidden" name="student-id" value="<?php echo $_GET['id'] ?>">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Father Firstname </label>
+                                                            <input type="text" name="student-father-name" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Father Contact # </label>
+                                                            <input type="text" name="student-father-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_contact'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Father Email Address</label>
+                                                            <input type="text" name="student-father-email" class="form-control" value="<?php echo $row['students_family_guardian_father_email'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Father Occupation </label>
+                                                            <input type="text" name="student-father-occupation" class="form-control" value="<?php echo $row['students_family_guardian_father_occupation'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Father Work Address</label>
+                                                            <input type="text" name="student-father-work-address" class="form-control" value="<?php echo $row['students_family_guardian_father_work_address'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Father Work Contact #</label>
+                                                            <input type="text" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <div class="form-group">
+                                                            <select class="form-control " name="student-father-is-ofw">
+                                                                    <option value="">Is your father an ofw?</option>
+                                                                    <option value="0" <?php echo ($row['students_family_guardian_father_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
+                                                                    <option value="1" <?php echo ($row['students_family_guardian_father_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Mother Firstname </label>
+                                                            <input type="text" name="student-mother-name" class="form-control" value="<?php echo $row['students_family_guardian_mother_name'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Mother Contact # </label>
+                                                            <input type="text" name="student-mother-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_contact'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Mother Email Address</label>
+                                                            <input type="text" name="student-mother-email" class="form-control" value="<?php echo $row['students_family_guardian_mother_email'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Mother Occupation </label>
+                                                            <input type="text" name="student-mother-occupation" class="form-control" value="<?php echo $row['students_family_guardian_mother_occupation'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Mother Work Address</label>
+                                                            <input type="text" name="student-mother-work-address" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_address'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Mother Work Contact #</label>
+                                                            <input type="text" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
+                                                            <div class="form-group">
+                                                                <select class="form-control " name="student-mother-is-ofw">
+                                                                    <option value="">Is your mother an ofw?</option>
+                                                                    <option value="0" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
+                                                                    <option value="1" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <button id="submit-edit-student-family-form" class="btn btn-primary ">
+                                                        Submit
+                                                    </button>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="tab-pane" id="ref">
-                                            3
-                                        </div> -->
+                                        <div class="tab-pane" id="settings">
+                                            aw
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- end row -->
                     <!-- your content here -->

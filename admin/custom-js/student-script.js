@@ -78,11 +78,30 @@ $(document).ready(function() {
                 //     alert('email already exists, please use other email');
                 //     return false;
                 // }
-                // alert("Edited Successfully!");
-                alert(data);
+                alert("Edited Successfully!");
             }
         });
 
     });
+
+    $(document).on("click","#submit-edit-student-family-form", function(e) {
+        e.preventDefault();
+       
+        var editStudentFamilyForm = $("#edit-student-family-form").serialize();
+
+        console.log(editStudentFamilyForm);
+
+        jQuery.ajax({
+            method: "POST",
+            url: "./functions/function-student.php",
+            data: editStudentFamilyForm + "&ajax=true",
+            success:function(data){
+                alert('Success');
+            }
+        });
+
+    });
+
+
 
 });
