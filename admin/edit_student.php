@@ -59,13 +59,13 @@
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
-                                                <li class="nav-item">
+                                                <!-- <li class="nav-item">
                                                     <a class="nav-link" href="#settings" data-toggle="tab">
                                                         <i class="material-icons">cloud</i> Server
                                                         <div class="ripple-container"></div>
                                                         <div class="ripple-container"></div>
                                                     </a>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
                                     </div>
@@ -358,9 +358,9 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="tab-pane" id="settings">
+                                        <!-- <div class="tab-pane" id="settings">
                                             aw
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
