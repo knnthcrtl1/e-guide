@@ -132,19 +132,22 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-2">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Age *</label>
                                                             <input type="number" name="student-age" class="form-control">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group bmd-form-group">
-                                                            <label class="bmd-label-floating">Date of Birth *</label>
-                                                            <input type="date" name="student-birthday" class="form-control">
+                                                    <div class="col-md-6">
+                                                        <div class="date__birth__container">
+                                                            <div class="date__birth__container--title">Date of Birth</div>
+                                                            <div class="form-group bmd-form-group">
+                                                                <!-- <label class="bmd-label-floating">Date of Birth *</label> -->
+                                                                <input type="date" name="student-birthday" class="form-control">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Place of birth *</label>
                                                             <input type="text" name="student-placeofbirth" class="form-control">
@@ -175,7 +178,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select  class="form-control " name="student-sex">
+                                                                <select class="form-control " name="student-sex">
                                                                     <option value="">Gender</option>
                                                                     <option value="1">Male</option>
                                                                     <option value="2">Female</option>
@@ -187,7 +190,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select  class="form-control " name="student-gender">
+                                                                <select class="form-control " name="student-gender">
                                                                     <option value="">Gender Identity</option>
                                                                     <option value="0">Straight/Heterosexual</option>
                                                                     <option value="1">Transgender </option>
@@ -205,7 +208,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select  class="form-control " name="student-living-with">
+                                                                <select class="form-control " name="student-living-with">
                                                                     <option value="">Living With</option>
                                                                     <option value="1">Parents</option>
                                                                     <option value="2">Siblings only</option>
@@ -220,7 +223,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select  class="form-control " name="student-type">
+                                                                <select class="form-control " name="student-type">
                                                                     <option value="">Student Type *</option>
                                                                     <option value="0">Grade School</option>
                                                                     <option value="1">High School </option>
@@ -232,13 +235,36 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select  class="form-control " name="student-living-condition">
+                                                                <select class="form-control " name="student-living-condition">
                                                                     <option value="">Present Living Condition</option>
                                                                     <option value="0">Lower Class</option>
                                                                     <option value="1">Middle Class </option>
                                                                     <option value="2">Upper Class</option>
                                                                 </select>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="eduction__header">
+                                                    <h3>Education</h3>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Elementary School</label>
+                                                            <input type="text" name="student-elementry-school" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Junior High School</label>
+                                                            <input name="student-junior-hs" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Vocational / Special Course/s </label>
+                                                            <input name="student-vocational" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -268,7 +294,7 @@
                                     <p class="card-category"> Here is a subtitle for this table</p>
                                 </div>
                                 <div class="card-body">
-                                    <div class="table-responsive"  id="studentTable">
+                                    <div class="table-responsive" id="studentTable">
                                         <table class="table" id="studentDataTable">
                                             <thead class=" text-primary">
                                                 <tr>
@@ -297,7 +323,7 @@
                                                         Student School ID
                                                     </th>
                                                     <th>
-                                                       Action
+                                                        Action
                                                     </th>
                                                 </tr>
                                             </thead>

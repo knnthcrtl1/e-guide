@@ -159,12 +159,15 @@
                                                             <input type="number" name="student-age" class="form-control" value="<?php echo $row['student_age'] ?>">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group bmd-form-group">
-                                                            <label class="bmd-label-floating">Date of Birth *</label>
-                                                            <input type="date" name="student-birthday" class="form-control" value="<?php echo $row['student_birthday'] ?>">
+                                                    <div class="col-md-6">
+                                                        <div class="date__birth__container">
+                                                            <div class="date__birth__container--title">Date of Birth</div>
+                                                            <div class="form-group bmd-form-group">
+                                                                <input type="date" name="student-birthday" class="form-control" value="<?php echo $row['student_birthday'] ?>">
+                                                            </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="col-md-5">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Place of birth *</label>
@@ -263,6 +266,29 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="eduction__header">
+                                                    <h3>Education</h3>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Elementary School</label>
+                                                            <input type="text" name="student-elementry-school" class="form-control" value="<?php echo $row['student_elementry_school'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Junior High School</label>
+                                                            <input name="student-junior-hs" class="form-control" value="<?php echo $row['student_high_school'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Vocational / Special Course/s </label>
+                                                            <input name="student-vocational" class="form-control" value="<?php echo $row['student_vocational'] ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="d-flex justify-content-end">
                                                     <button id="submit-edit-student-form" class="btn btn-primary ">
                                                         Submit
@@ -287,7 +313,7 @@
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Father Contact # </label>
-                                                            <input type="text" name="student-father-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_contact'] ?>">
+                                                            <input type="number" name="student-father-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_contact'] ?>">
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Father Email Address</label>
@@ -303,11 +329,11 @@
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Father Work Contact #</label>
-                                                            <input type="text" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>">
+                                                            <input type="number" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>">
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                            <select class="form-control " name="student-father-is-ofw">
+                                                                <select class="form-control " name="student-father-is-ofw">
                                                                     <option value="">Is your father an ofw?</option>
                                                                     <option value="0" <?php echo ($row['students_family_guardian_father_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
                                                                     <option value="1" <?php echo ($row['students_family_guardian_father_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
@@ -322,7 +348,7 @@
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Mother Contact # </label>
-                                                            <input type="text" name="student-mother-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_contact'] ?>">
+                                                            <input type="number" name="student-mother-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_contact'] ?>">
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Mother Email Address</label>
@@ -338,7 +364,7 @@
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Mother Work Contact #</label>
-                                                            <input type="text" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>">
+                                                            <input type="number" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>">
                                                         </div>
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
@@ -348,6 +374,68 @@
                                                                     <option value="1" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
                                                                 </select>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <div class="form-group">
+                                                                <select class="form-control " name="student-guardian-marital-status">
+                                                                    <option value="">Marital status of parents</option>
+                                                                    <option value="0" <?php echo ($row['students_family_guardian_marital_status'] == 0) ? 'selected' : null ?> >Married</option>
+                                                                    <option value="1" <?php echo ($row['students_family_guardian_marital_status'] == 1) ? 'selected' : null ?>>Living Together</option>
+                                                                    <option value="2" <?php echo ($row['students_family_guardian_marital_status'] == 2) ? 'selected' : null ?>>Widow/Widower</option>
+                                                                    <option value="3" <?php echo ($row['students_family_guardian_marital_status'] == 3) ? 'selected' : null ?>>Annulled/Separated</option>
+                                                                    <option value="4" <?php echo ($row['students_family_guardian_marital_status'] == 4) ? 'selected' : null ?>>Others</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Guardian name</label>
+                                                            <input type="text" name="student-guardian-name" class="form-control" value="<?php echo $row['students_family_guardian_name'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Guardian landline</label>
+                                                            <input type="number" name="student-guardian-landline" class="form-control" value="<?php echo $row['students_family_guardian_guardian_landline'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Guardian address</label>
+                                                            <input type="text" name="student-guardian-address" class="form-control" value="<?php echo $row['students_family_guardian_guardian_address'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Guardian phone</label>
+                                                            <input type="number" name="student-guardian-phone" class="form-control " value="<?php echo $row['students_family_guardian_guardian_phone'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Guardian email address</label>
+                                                            <input type="number" name="student-guardian-email-address" class="form-control" value="<?php echo $row['students_family_guardian_guardian_email'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Guardian phone at work</label>
+                                                            <input type="number" name="student-guardian-phone-work" class="form-control" value="<?php echo $row['students_family_guardian_guardian_work_number'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Relationship with guardian</label>
+                                                            <input type="text" name="student-guardian-relationship" class="form-control" value="<?php echo $row['students_family_guardian_guardian_relationship'] ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Guardian work address</label>
+                                                            <input type="text" name="student-guardian-work-address" class="form-control" value="<?php echo $row['students_family_guardian_guardian_work_address'] ?>">
                                                         </div>
                                                     </div>
                                                 </div>

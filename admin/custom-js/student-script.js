@@ -89,14 +89,14 @@ $(document).ready(function() {
        
         var editStudentFamilyForm = $("#edit-student-family-form").serialize();
 
-        console.log(editStudentFamilyForm);
+        // console.log(editStudentFamilyForm);
 
         jQuery.ajax({
             method: "POST",
             url: "./functions/function-student.php",
             data: editStudentFamilyForm + "&ajax=true",
             success:function(data){
-                alert('Success');
+                alert("Edited Successfully!");
             }
         });
 
