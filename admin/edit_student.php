@@ -59,13 +59,12 @@
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
-                                                <!-- <li class="nav-item">
+                                                <li class="nav-item">
                                                     <a class="nav-link" href="#settings" data-toggle="tab">
-                                                        <i class="material-icons">cloud</i> Server
-                                                        <div class="ripple-container"></div>
+                                                        Study Habits & Attitudes
                                                         <div class="ripple-container"></div>
                                                     </a>
-                                                </li> -->
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -381,7 +380,7 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-guardian-marital-status">
                                                                     <option value="">Marital status of parents</option>
-                                                                    <option value="0" <?php echo ($row['students_family_guardian_marital_status'] == 0) ? 'selected' : null ?> >Married</option>
+                                                                    <option value="0" <?php echo ($row['students_family_guardian_marital_status'] == 0) ? 'selected' : null ?>>Married</option>
                                                                     <option value="1" <?php echo ($row['students_family_guardian_marital_status'] == 1) ? 'selected' : null ?>>Living Together</option>
                                                                     <option value="2" <?php echo ($row['students_family_guardian_marital_status'] == 2) ? 'selected' : null ?>>Widow/Widower</option>
                                                                     <option value="3" <?php echo ($row['students_family_guardian_marital_status'] == 3) ? 'selected' : null ?>>Annulled/Separated</option>
@@ -446,9 +445,10 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <!-- <div class="tab-pane" id="settings">
-                                            aw
-                                        </div> -->
+                                        <div class="tab-pane" id="settings">
+                                            <?php include('./student-habits.php'); ?>
+                                            <?php studentHabits(); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

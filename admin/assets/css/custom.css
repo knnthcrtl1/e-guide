@@ -69,3 +69,7 @@ select.custom-select.custom-select-sm.form-control.form-control-sm {
 .date__birth__container--title{
   width: 20%;
 }
+
+.survey-title {
+  margin-top: 15px;
+}
