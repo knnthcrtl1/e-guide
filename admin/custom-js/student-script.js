@@ -1,4 +1,40 @@
 $(document).ready(function() {
+
+
+    let exampleRadName = 'input[name="exampleRadios"]';
+    let exampleRadio1 = $(exampleRadName);
+
+    let radioFirstArr = [...exampleRadio1];
+
+    radioFirstArr.map((rad, i) => {
+        $(rad).on('change', () => {
+            let radioFirstValue = $(`${exampleRadName}:checked`).val();
+            if(radioFirstValue !== 6) {
+                let otherRadio =  $('#othersRadioButton1');
+                otherRadio.parent().removeClass('is-focused');
+                otherRadio.parent().removeClass('is-filled');
+                otherRadio.prop('disabled', true);
+                otherRadio.val('');
+            }
+        });
+    })
+
+    let studentHabitOthers = $('.othersRadioButton');
+    
+    let arrOthers = [...studentHabitOthers];
+
+    arrOthers.map((val, i) => {
+
+        $(val).on('change', () => {
+
+            let targetTextInput = $(val).attr('targetId')
+            $(`#${targetTextInput}`).prop('disabled', false);
+
+        });
+
+
+    })
+;
     const fetchStudentTable = () => {
         $.ajax({    
             method: "POST",
@@ -103,5 +139,6 @@ $(document).ready(function() {
     });
 
 
+  
 
 });

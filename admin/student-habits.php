@@ -14,7 +14,7 @@ function studentHabits()
                     <div class="col-md-4">
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                <input class="form-check-input usuallyStudyClass" type="radio" name="exampleRadios" value="1">
                                 Everyday
                                 <span class="circle">
                                     <span class="check"></span>
@@ -23,7 +23,7 @@ function studentHabits()
                         </div>
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <input class="form-check-input usuallyStudyClass" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
                                 Twice a week
                                 <span class="circle">
                                     <span class="check"></span>
@@ -34,7 +34,7 @@ function studentHabits()
                     <div class="col-md-4">
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <input class="form-check-input usuallyStudyClass" type="radio" name="exampleRadios" id="exampleRadios2" value="3">
                                 When there is a quiz
                                 <span class="circle">
                                     <span class="check"></span>
@@ -43,7 +43,7 @@ function studentHabits()
                         </div>
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <input class="form-check-input usuallyStudyClass" type="radio" name="exampleRadios" id="exampleRadios2" value="4">
                                 During examination week
                                 <span class="circle">
                                     <span class="check"></span>
@@ -54,7 +54,7 @@ function studentHabits()
                     <div class="col-md-4">
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <input class="form-check-input usuallyStudyClass" type="radio" name="exampleRadios" id="exampleRadios2" value="5">
                                 When I feel like studying
                                 <span class="circle">
                                     <span class="check"></span>
@@ -63,12 +63,16 @@ function studentHabits()
                         </div>
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <input class="form-check-input othersRadioButton" type="radio" name="exampleRadios" id="othersRadioButton" value="6" targetId="othersRadioButton1">
                                 Others (pls. specify)
                                 <span class="circle">
                                     <span class="check"></span>
                                 </span>
                             </label>
+                        </div>
+                        <div class="form-group bmd-form-group"  id="othersRadioButton1">
+                            <label class="bmd-label-floating">Others </label>
+                            <input type="text" name="student-elementry-school" class="form-control" disabled>
                         </div>
                     </div>
                 </div>
@@ -82,7 +86,7 @@ function studentHabits()
                     <div class="col-md-4">
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="studentSpendStudying" id="exampleRadios1" value="option1">
+                                <input class="form-check-input" type="radio" name="studentSpendStudying"value="option1">
                                 1 hour a day
                                 <span class="circle">
                                     <span class="check"></span>
@@ -153,7 +157,7 @@ function studentHabits()
                     <div class="col-md-4">
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="studentAboutLesson" id="exampleRadios1" value="option1">
+                                <input class="form-check-input" type="radio" name="studentAboutLesson" value="option1">
                                 Teacher
                                 <span class="circle">
                                     <span class="check"></span>
