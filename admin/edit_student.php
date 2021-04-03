@@ -44,7 +44,7 @@
                                         <div class="nav-tabs-wrapper">
                                             <span class="nav-tabs-title">Edit Student:</span>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
-                                                <li class="nav-item">
+                                                <li class="nav-item active">
                                                     <a class="nav-link " href="#profile" data-toggle="tab">
                                                         <!-- <i class="material-icons">bug_report</i>  -->
                                                         Student Info
@@ -59,7 +59,7 @@
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
-                                                <li class="nav-item active">
+                                                <li class="nav-item ">
                                                     <a class="nav-link" href="#settings" data-toggle="tab">
                                                         Study Habits & Attitudes
                                                         <div class="ripple-container"></div>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="tab-content">
-                                        <div class="tab-pane " id="profile">
+                                        <div class="tab-pane   active show" id="profile">
                                             <form id="edit-student-form" method="post">
                                                 <input type="hidden" name="function-type" value="edit-student" />
                                                 <input type="hidden" name="student-id" value="<?php echo $_GET['id'] ?>">
@@ -445,9 +445,9 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="tab-pane  active show" id="settings">
+                                        <div class="tab-pane" id="settings">
                                             <?php include('./student-habits.php'); ?>
-                                            <?php studentHabits(); ?>
+                                            <?php studentHabits($conn); ?>
                                         </div>
                                     </div>
                                 </div>

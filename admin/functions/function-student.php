@@ -4,7 +4,7 @@ include('../connection.php');
 
 if (isset($_POST['ajax'])) {
 
-   
+
 
     if ($_POST["function-type"] === "add-student") {
         $studentFirstname = mysqli_real_escape_string($conn, (strip_tags($_POST['student-firstname'])));
@@ -12,19 +12,19 @@ if (isset($_POST['ajax'])) {
         $studentMiddlename = mysqli_real_escape_string($conn, (strip_tags($_POST['student-middlename'])));
         $studentNickname = mysqli_real_escape_string($conn, (strip_tags($_POST['student-nickname'])));
         $studentStudId = mysqli_real_escape_string($conn, (strip_tags($_POST['student-studid'])));
-    
+
         $studentSection = mysqli_real_escape_string($conn, (strip_tags($_POST['student-strand-section'])));
         $studentPresentAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-present-address'])));
         $studentPermanentAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-permanent-address'])));
         $studentContactNumber = mysqli_real_escape_string($conn, (strip_tags($_POST['student-contact-number'])));
         $studentUeEmailAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-ue-email-address'])));
-    
+
         $studentEmailAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-email-address'])));
         $studentAge = mysqli_real_escape_string($conn, (strip_tags($_POST['student-age'])));
         $studentBirthday = mysqli_real_escape_string($conn, (strip_tags($_POST['student-birthday'])));
         $studentPlaceofBirth = mysqli_real_escape_string($conn, (strip_tags($_POST['student-placeofbirth'])));
         $studentCitizen = mysqli_real_escape_string($conn, (strip_tags($_POST['student-citizenship'])));
-    
+
         $studentReligion = mysqli_real_escape_string($conn, (strip_tags($_POST['student-religion'])));
         $studentCivilStatus = mysqli_real_escape_string($conn, (strip_tags($_POST['student-civil-status'])));
         $studentSex = mysqli_real_escape_string($conn, (strip_tags($_POST['student-sex'])));
@@ -58,6 +58,14 @@ if (isset($_POST['ajax'])) {
             echo 1;
             return false;
         }
+
+        $sql = "INSERT INTO tbl_student_habit (student_habit_student_id) VALUES ('{$studentId}')";
+
+        if (!mysqli_query($conn, $sql)) {
+            // echo("Error description: " . mysqli_error($conn));
+            echo 1;
+            return false;
+        }
     }
 
     if ($_POST["function-type"] === "edit-student") {
@@ -68,19 +76,19 @@ if (isset($_POST['ajax'])) {
         $studentMiddlename = mysqli_real_escape_string($conn, (strip_tags($_POST['student-middlename'])));
         $studentNickname = mysqli_real_escape_string($conn, (strip_tags($_POST['student-nickname'])));
         $studentStudId = mysqli_real_escape_string($conn, (strip_tags($_POST['student-studid'])));
-    
+
         $studentSection = mysqli_real_escape_string($conn, (strip_tags($_POST['student-strand-section'])));
         $studentPresentAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-present-address'])));
         $studentPermanentAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-permanent-address'])));
         $studentContactNumber = mysqli_real_escape_string($conn, (strip_tags($_POST['student-contact-number'])));
         $studentUeEmailAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-ue-email-address'])));
-    
+
         $studentEmailAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-email-address'])));
         $studentAge = mysqli_real_escape_string($conn, (strip_tags($_POST['student-age'])));
         $studentBirthday = mysqli_real_escape_string($conn, (strip_tags($_POST['student-birthday'])));
         $studentPlaceofBirth = mysqli_real_escape_string($conn, (strip_tags($_POST['student-placeofbirth'])));
         $studentCitizen = mysqli_real_escape_string($conn, (strip_tags($_POST['student-citizenship'])));
-    
+
         $studentReligion = mysqli_real_escape_string($conn, (strip_tags($_POST['student-religion'])));
         $studentCivilStatus = mysqli_real_escape_string($conn, (strip_tags($_POST['student-civil-status'])));
         $studentSex = mysqli_real_escape_string($conn, (strip_tags($_POST['student-sex'])));
@@ -93,6 +101,73 @@ if (isset($_POST['ajax'])) {
         $studentVocational = mysqli_real_escape_string($conn, (strip_tags($_POST['student-vocational'])));
 
         $sql = "UPDATE tbl_students SET student_firstname = '{$studentFirstname}' , student_middlname = '{$studentMiddlename}', student_lastname = '{$studentLastname}', student_nickname  = '{$studentNickname}' , student_address = '{$studentPresentAddress}' , student_gender = '{$studentGender}', student_birthday = '{$studentBirthday}', student_contact  = '{$studentContactNumber}', student_email = '{$studentEmailAddress}' , student_permanent_address = '{$studentPermanentAddress}', student_ue_email_address = '{$studentUeEmailAddress}', student_citizenship  = '{$studentCitizen}' , student_religion = '{$studentReligion}' , student_civil_status = '{$studentCivilStatus}', student_sex = '{$studentSex}', student_living_with  = '{$studentLivingWith}', student_present_living_condition = '{$studentLivingCondition}' , student_type = '{$studentType}', student_stud_id = '{$studentStudId}', student_age  = '{$studentAge}', student_place_of_birth  = '{$studentPlaceofBirth}', student_section_id  = '{$studentSection}', student_elementry_school  = '{$studentELemSchool}', student_high_school  = '{$studentJuniorHs}', student_vocational = '{$studentVocational}' WHERE student_id = '{$studentId}' ";
+
+        if (!mysqli_query($conn, $sql)) {
+            echo ("Error description: " . mysqli_error($conn));
+        }
+
+        return false;
+    }
+
+    if ($_POST['function-type'] === "edit-student-habits") {
+
+        $anyExperiences = "";
+        $x = 1;
+
+        if (isset($_POST['experienceAny'])) {
+            $expCount = count($_POST['experienceAny']);
+            foreach ($_POST['experienceAny'] as $exp) {
+                if ($x < $expCount) {
+                    $anyExperiences .= $exp . ",";
+                } else {
+                    $anyExperiences .= $exp;
+                }
+                $x++;
+            }
+        }
+
+        $botherYou = "";
+        $y = 1;
+        if (isset($_POST['botherYou'])) {
+            $botherCount = count($_POST['botherYou']);
+            foreach ($_POST['botherYou'] as $bother) {
+                if ($y < $botherCount) {
+                    $botherYou .= $bother . ",";
+                } else {
+                    $botherYou .= $bother;
+                }
+                $y++;
+            }
+        }
+
+        echo $botherYou;
+
+        $healthExp = "";
+        $z = 1;
+        if (isset($_POST['healthTwelve'])) {
+            $healthCount = count($_POST['healthTwelve']);
+            foreach ($_POST['healthTwelve'] as $health) {
+                if ($z < $healthCount) {
+                    $healthExp .= $health . ",";
+                } else {
+                    $healthExp .= $health;
+                }
+                $z++;
+            }
+        }
+
+        $studentId = mysqli_real_escape_string($conn, (strip_tags($_POST['student-id'])));
+        $studyClass = mysqli_real_escape_string($conn, (strip_tags($_POST['studyClass'])));
+        $studentSpendStudying = mysqli_real_escape_string($conn, (strip_tags($_POST['studentSpendStudying'])));
+        $studentAboutLesson = mysqli_real_escape_string($conn, (strip_tags($_POST['studentAboutLesson'])));
+        $studentStudyCondition = mysqli_real_escape_string($conn, (strip_tags($_POST['studentStudyCondition'])));
+        $studentInternetConnection = mysqli_real_escape_string($conn, (strip_tags($_POST['studentInternetConnection'])));
+        $studentDevice = mysqli_real_escape_string($conn, (strip_tags($_POST['studentDevice'])));
+        $studentPhysicalHealth = mysqli_real_escape_string($conn, (strip_tags($_POST['studentPhysicalHealth'])));
+        $studentIllness = mysqli_real_escape_string($conn, (strip_tags($_POST['studentIllness'])));
+        $healthCondition = mysqli_real_escape_string($conn, (strip_tags($_POST['healthCondition'])));
+
+        $sql = "UPDATE tbl_student_habit SET student_habit_usually_study = '{$studyClass}', student_habit_spend_studying = '{$studentSpendStudying}', student_habit_usually_ask = '{$studentAboutLesson}', student_habit_internet = '{$studentInternetConnection}', student_habit_student_device = '{$studentDevice}', student_habit_general_health = '{$studentPhysicalHealth}', student_habit_area_home = '{$studentStudyCondition}', student_habit_internet = '{$studentInternetConnection}', student_habit_physical_illness = '{$studentIllness}', student_habit_health_condition = '{$healthCondition}' , student_habit_multiple_feelings = '{$anyExperiences}', student_habit_multiple_experience = '{$healthExp}', student_habit_multiple_concern = '{$botherYou}'    WHERE student_habit_student_id = '{$studentId}' ";
 
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));
