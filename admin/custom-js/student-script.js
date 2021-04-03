@@ -156,8 +156,7 @@ $(document).ready(function () {
             url: "./functions/function-student.php",
             data: editStudentFamilyForm + "&ajax=true",
             success: function (data) {
-                // alert("Edited Successfully!");
-                alert(data);
+                alert("Edited Successfully!");
             }
         });
 
