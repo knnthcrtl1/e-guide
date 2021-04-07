@@ -17,7 +17,6 @@ $(document).ready(function () {
                     otherRadio.removeClass('is-filled');
                     $(`${othersRadioButton} > input`).prop('disabled', true);
                     $(`${othersRadioButton} > input`).val('');
-
                 }
             });
         })
@@ -37,7 +36,7 @@ $(document).ready(function () {
 
     }
 
-    studyRadioOthers('input[name="exampleRadios"]', '#othersRadioButton1', '.othersRadioButton');
+    studyRadioOthers('input[name="studyClass"]', '#othersRadioButton', '.othersRadioButton');
     studyRadioOthers('input[name="studentAboutLesson"]', '#othersRadioButton2', '.othersRadioButton2');
     studyRadioOthers('input[name="studentDevice"]', '#othersRadioButton3', '.othersRadioButton3');
     studyRadioOthers('input[name="studentIllness"]', '#othersRadioButton4', '.othersRadioButton4');

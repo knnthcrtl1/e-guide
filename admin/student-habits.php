@@ -71,16 +71,16 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input othersRadioButton" type="radio" name="studyClass" id="othersRadioButton" value="6" targetId="othersRadioButton1" <?php echo ($row['student_habit_usually_study'] == 6) ? 'checked' : null ?>>
+                                    <input class="form-check-input othersRadioButton" type="radio" name="studyClass" value="6" targetId="othersRadioButton" <?php echo ($row['student_habit_usually_study'] == 6) ? 'checked' : null ?>>
                                     Others (pls. specify)
                                     <span class="circle">
                                         <span class="check"></span>
                                     </span>
                                 </label>
                             </div>
-                            <div class="form-group bmd-form-group" id="othersRadioButton1">
+                            <div class="form-group bmd-form-group" id="othersRadioButton">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studyClassOthers" class="form-control" disabled="false" id="">
+                                <input type="text" name="studyClassOthers" class="form-control" <?php echo ($row['student_habit_usually_study'] == 6) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_first']) ?>" >
                             </div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@ function studentHabits($conn)
                         <div class="col-md-4">
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="1" <?php echo ($row['student_habit_spend_studying'] == 1) ? 'checked' : null ?>>
+                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="1" <?php echo ($row['student_habit_usually_ask'] == 1) ? 'checked' : null ?>>
                                     Teacher
                                     <span class="circle">
                                         <span class="check"></span>
@@ -174,7 +174,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="2" <?php echo ($row['student_habit_spend_studying'] == 2) ? 'checked' : null ?>>
+                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="2" <?php echo ($row['student_habit_usually_ask'] == 2) ? 'checked' : null ?>>
                                     Classmate/s
                                     <span class="circle">
                                         <span class="check"></span>
@@ -183,7 +183,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="3" <?php echo ($row['student_habit_spend_studying'] == 3) ? 'checked' : null ?>>
+                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="3" <?php echo ($row['student_habit_usually_ask'] == 3) ? 'checked' : null ?>>
                                     Friend
                                     <span class="circle">
                                         <span class="check"></span>
@@ -194,7 +194,7 @@ function studentHabits($conn)
                         <div class="col-md-4">
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="4" <?php echo ($row['student_habit_spend_studying'] == 4) ? 'checked' : null ?>>
+                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="4" <?php echo ($row['student_habit_usually_ask'] == 4) ? 'checked' : null ?>>
                                     Mother
                                     <span class="circle">
                                         <span class="check"></span>
@@ -203,7 +203,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="5" <?php echo ($row['student_habit_spend_studying'] == 5) ? 'checked' : null ?>>
+                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="5" <?php echo ($row['student_habit_usually_ask'] == 5) ? 'checked' : null ?>>
                                     Brother
                                     <span class="circle">
                                         <span class="check"></span>
@@ -212,7 +212,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="6" <?php echo ($row['student_habit_spend_studying'] == 6) ? 'checked' : null ?>>
+                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="6" <?php echo ($row['student_habit_usually_ask'] == 6) ? 'checked' : null ?>>
                                     Sister
                                     <span class="circle">
                                         <span class="check"></span>
@@ -224,7 +224,7 @@ function studentHabits($conn)
                         <div class="col-md-4">
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="7" <?php echo ($row['student_habit_spend_studying'] == 7) ? 'checked' : null ?>>
+                                    <input class="form-check-input" type="radio" name="studentAboutLesson" value="7" <?php echo ($row['student_habit_usually_ask'] == 7) ? 'checked' : null ?>>
                                     Boyfriend / Girlfriend
                                     <span class="circle">
                                         <span class="check"></span>
@@ -233,7 +233,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input othersRadioButton2" type="radio" name="studentAboutLesson" value="8" targetId='othersRadioButton2' <?php echo ($row['student_habit_spend_studying'] == 8) ? 'checked' : null ?>>
+                                    <input class="form-check-input othersRadioButton2" type="radio" name="studentAboutLesson" value="8" targetId='othersRadioButton2' <?php echo ($row['student_habit_usually_ask'] == 8) ? 'checked' : null ?>>
                                     Others
                                     <span class="circle">
                                         <span class="check"></span>
@@ -242,7 +242,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton2">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studentAboutLessonOthers" class="form-control" disabled="false">
+                                <input type="text" name="studentAboutLessonOthers" class="form-control" <?php echo ($row['student_habit_usually_ask'] == 8) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_second']) ?>">
                             </div>
                         </div>
                     </div>
@@ -380,7 +380,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton3">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studentDeviceOthers" class="form-control" disabled="false">
+                                <input type="text" name="studentDeviceOthers" class="form-control" <?php echo ($row['student_habit_student_device'] == 5) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_third']) ?>">
                             </div>
                         </div>
                     </div>
@@ -477,7 +477,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton4">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studentIllnessOthers" class="form-control" disabled="false">
+                                <input type="text" name="studentIllnessOthers" class="form-control" <?php echo ($row['student_habit_physical_illness'] == 3) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_fourth']) ?>">
                             </div>
                         </div>
                     </div>
@@ -514,7 +514,7 @@ function studentHabits($conn)
                         <div class="col-md-4">
                             <div class="form-check form-check-radio">
                                 <label class="form-check-label">
-                                    <input class="form-check-input othersRadioButton5" type="radio" name="healthCondition" value="3" targetId='othersRadioButton6' <?php echo ($row['student_habit_health_condition'] == 3) ? 'checked' : null ?>>
+                                    <input class="form-check-input othersRadioButton5" type="radio" name="healthCondition" value="3" targetId='othersRadioButton5' <?php echo ($row['student_habit_health_condition'] == 3) ? 'checked' : null ?>>
                                     Others
                                     <span class="circle">
                                         <span class="check"></span>
@@ -523,7 +523,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton5">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="healthConditionOthers" class="form-control" disabled="false">
+                                <input type="text" name="healthConditionOthers" class="form-control" <?php echo ($row['student_habit_health_condition'] == 3) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_fifth']) ?>">
                             </div>
                         </div>
                     </div>

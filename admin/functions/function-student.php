@@ -156,6 +156,8 @@ if (isset($_POST['ajax'])) {
             }
         }
 
+       
+
         $studentId = mysqli_real_escape_string($conn, (strip_tags($_POST['student-id'])));
         $studyClass = mysqli_real_escape_string($conn, (strip_tags($_POST['studyClass'])));
         $studentSpendStudying = mysqli_real_escape_string($conn, (strip_tags($_POST['studentSpendStudying'])));
@@ -167,7 +169,33 @@ if (isset($_POST['ajax'])) {
         $studentIllness = mysqli_real_escape_string($conn, (strip_tags($_POST['studentIllness'])));
         $healthCondition = mysqli_real_escape_string($conn, (strip_tags($_POST['healthCondition'])));
 
-        $sql = "UPDATE tbl_student_habit SET student_habit_usually_study = '{$studyClass}', student_habit_spend_studying = '{$studentSpendStudying}', student_habit_usually_ask = '{$studentAboutLesson}', student_habit_internet = '{$studentInternetConnection}', student_habit_student_device = '{$studentDevice}', student_habit_general_health = '{$studentPhysicalHealth}', student_habit_area_home = '{$studentStudyCondition}', student_habit_internet = '{$studentInternetConnection}', student_habit_physical_illness = '{$studentIllness}', student_habit_health_condition = '{$healthCondition}' , student_habit_multiple_feelings = '{$anyExperiences}', student_habit_multiple_experience = '{$healthExp}', student_habit_multiple_concern = '{$botherYou}'    WHERE student_habit_student_id = '{$studentId}' ";
+        $studyClassOthers = "";
+        if($studyClass == 6){
+            $studyClassOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studyClassOthers'])));
+        }
+
+        $studentAboutLessonOthers = "";
+        if($studentAboutLesson == 8){
+            $studentAboutLessonOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studentAboutLessonOthers'])));
+        }
+
+        $studentDeviceOthers = "";
+        if($studentDevice == 5){
+            $studentDeviceOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studentAboutLessonOthers'])));
+        }
+
+        $studentIllnessOthers = "";
+        if($studentIllness == 3){
+            $studentIllnessOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studentIllnessOthers'])));
+        }
+
+        $healthConditionOthers = "";
+        if($healthCondition == 3){
+            $healthConditionOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['healthConditionOthers'])));
+        }
+
+
+        $sql = "UPDATE tbl_student_habit SET student_habit_usually_study = '{$studyClass}', student_habit_spend_studying = '{$studentSpendStudying}', student_habit_usually_ask = '{$studentAboutLesson}', student_habit_internet = '{$studentInternetConnection}', student_habit_student_device = '{$studentDevice}', student_habit_general_health = '{$studentPhysicalHealth}', student_habit_area_home = '{$studentStudyCondition}', student_habit_internet = '{$studentInternetConnection}', student_habit_physical_illness = '{$studentIllness}', student_habit_health_condition = '{$healthCondition}' , student_habit_multiple_feelings = '{$anyExperiences}', student_habit_multiple_experience = '{$healthExp}', student_habit_multiple_concern = '{$botherYou}' , student_habit_other_first = '{$studyClassOthers}', student_habit_other_second = '{$studentAboutLessonOthers}' , student_habit_other_third = '{$studentDeviceOthers}', student_habit_other_fourth = '{$studentIllnessOthers}', student_habit_other_fifth = '{$healthConditionOthers}'   WHERE student_habit_student_id = '{$studentId}' ";
 
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));
