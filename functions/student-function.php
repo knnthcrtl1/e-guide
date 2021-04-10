@@ -11,8 +11,10 @@ if (isset($_POST['ajax'])) {
         $studentEmail = mysqli_real_escape_string($conn, (strip_tags($_POST['email'])));
         $studentPassword = mysqli_real_escape_string($conn, (strip_tags($_POST['password'])));
 
+        $newPass = md5($studentPassword);
+
         $sql = "INSERT INTO tbl_users (user_username,user_password,user_level) VALUES ('{$studentEmail}',
-            '{$studentPassword}','7')";
+            '{$newPass}','7')";
 
         if (!mysqli_query($conn, $sql)) {
             // echo("Error description: " . mysqli_error($conn));

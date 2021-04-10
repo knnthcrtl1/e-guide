@@ -73,7 +73,6 @@
                                                         //     header('Location:view_dashboard.php');
                                                         //     exit();
                                                         //    }
-
                                                     }
                                                 } else {
                                                     session_destroy();
