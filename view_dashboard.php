@@ -1,16 +1,16 @@
 
-<?php include('header.php'); ?>
+<?php include('./header.php'); ?>
 
 <body>
   <div class="wrapper ">
     <?php
-    include('sidebar.php');
+    include('./sidebar.php');
     navigationList('dashboard');
     ?>
     <div class="main-panel">
       <!-- Navbar -->
       <?php
-      include('navbar.php');
+      include('./admin/navbar.php');
       $headerTitle = 'Dashboard';
       navbarContainer($headerTitle);
       ?>
@@ -20,4 +20,4 @@
           <!-- your content here -->
         </div>
       </div>
-      <?php include('footer.php'); ?>
+      <?php include('./footer.php'); ?>

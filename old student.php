@@ -1,23 +1,4 @@
-
-<?php include('header.php'); ?>
-
-<body>
-    <div class="wrapper ">
-        <?php
-        include('sidebar.php');
-        navigationList('student');
-        ?>
-        <div class="main-panel">
-            <!-- Navbar -->
-            <?php
-            include('navbar.php');
-            $headerTitle = 'Student';
-            navbarContainer($headerTitle);
-            ?>
-            <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
+<div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
@@ -338,10 +319,3 @@
                         </div>
 
                     </div>
-                    <!-- end row -->
-                    <!-- your content here -->
-                </div>
-            </div>
-            <?php include('footer.php'); ?>
-            <script src="./custom-js/student-script.js"></script>
-            <script src="./assets/js/plugins/jquery.dataTables.min"></script>
