@@ -86,7 +86,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Student No. *</label>
-                                                            <input name="student-studid" class="form-control">
+                                                            <input name="student-studid" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">

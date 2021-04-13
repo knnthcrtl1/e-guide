@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../connection.php');
+include('../../functions.php');
 
 if (isset($_POST['ajax'])) {
 
@@ -36,6 +37,17 @@ if (isset($_POST['ajax'])) {
         $studentJuniorHs = mysqli_real_escape_string($conn, (strip_tags($_POST['student-junior-hs'])));
         $studentVocational = mysqli_real_escape_string($conn, (strip_tags($_POST['student-vocational'])));
 
+        $newPass = getUsualPassword();
+
+        $sql = "INSERT INTO tbl_users (user_username,user_password,user_level) VALUES ('{$studentStudId}',
+            '{$newPass}','7')";
+
+        if (!mysqli_query($conn, $sql)) {
+            // echo("Error description: " . mysqli_error($conn));
+            echo 1;
+            return false;
+        }
+
         $studentTableFields = "student_firstname,student_middlname,student_lastname,student_nickname,student_address,student_gender,student_birthday,student_contact,student_email,student_permanent_address,student_ue_email_address,student_citizenship,student_religion,student_civil_status,student_sex,student_living_with,student_present_living_condition,student_type,student_stud_id,student_age,student_place_of_birth,student_section_id,student_elementry_school,student_high_school,student_vocational";
 
         $sql = "INSERT INTO tbl_students ( {$studentTableFields} ) VALUES 
@@ -50,6 +62,9 @@ if (isset($_POST['ajax'])) {
         $result = mysqli_query($conn, $sql);
 
         $studentId = mysqli_fetch_array($result)['student_id'];
+
+        $sql = "UPDATE tbl_users SET user_user_id = '{$studentId}' WHERE user_username = '{$studentStudId}' ";
+        mysqli_query($conn, $sql);
 
         $sql = "INSERT INTO tbl_students_family_guardian (students_family_guardian_student_id) VALUES ('{$studentId}')";
 
@@ -156,7 +171,7 @@ if (isset($_POST['ajax'])) {
             }
         }
 
-       
+
 
         $studentId = mysqli_real_escape_string($conn, (strip_tags($_POST['student-id'])));
         $studyClass = mysqli_real_escape_string($conn, (strip_tags($_POST['studyClass'])));
@@ -170,27 +185,27 @@ if (isset($_POST['ajax'])) {
         $healthCondition = mysqli_real_escape_string($conn, (strip_tags($_POST['healthCondition'])));
 
         $studyClassOthers = "";
-        if($studyClass == 6){
+        if ($studyClass == 6) {
             $studyClassOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studyClassOthers'])));
         }
 
         $studentAboutLessonOthers = "";
-        if($studentAboutLesson == 8){
+        if ($studentAboutLesson == 8) {
             $studentAboutLessonOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studentAboutLessonOthers'])));
         }
 
         $studentDeviceOthers = "";
-        if($studentDevice == 5){
+        if ($studentDevice == 5) {
             $studentDeviceOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studentAboutLessonOthers'])));
         }
 
         $studentIllnessOthers = "";
-        if($studentIllness == 3){
+        if ($studentIllness == 3) {
             $studentIllnessOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studentIllnessOthers'])));
         }
 
         $healthConditionOthers = "";
-        if($healthCondition == 3){
+        if ($healthCondition == 3) {
             $healthConditionOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['healthConditionOthers'])));
         }
 

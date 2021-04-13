@@ -49,13 +49,24 @@
                                             <input type="name" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" placeholder="Lastname">
                                         </div>
                                         <div class="form-group">
+                                            <input type="name" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" placeholder="Student id" required>
+                                        </div>
+                                        <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" aria-describedby="emailHelp" placeholder="Email">
                                         </div>
                                         <div class="form-group">
                                             <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" placeholder="Mobile Number">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user" id="studentRequired5" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-user" id="studentRequired5" placeholder="Password" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control " name="studentType">
+                                                <option value="">Student Type *</option>
+                                                <option value="0">Grade School</option>
+                                                <option value="1">High School </option>
+                                                <option value="2">Senior High</option>
+                                            </select>
                                         </div>
                                         <button id="submit-student-register-form" class="btn btn-primary btn-user btn-block">
                                             Submit

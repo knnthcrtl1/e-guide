@@ -62,7 +62,7 @@
                                                     }
                                                     if ($user == $username && $pass == $password) {
                                                         $_SESSION['user_level'] = $userLevel;
-                                                        $_SESSION["user_id"] = $userId;
+                                                        $_SESSION["student_user_id"] = $userId;
                                                         header('Location: view_student.php');
                                                         exit();
                                                         //    if($userLevel == 5 || $userLevel == 6) {
