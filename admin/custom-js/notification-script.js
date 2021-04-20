@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
 
+   
     $(document).on("click", "#submit-student-form", function (e) {
         e.preventDefault();
 
@@ -22,8 +23,42 @@ $(document).ready(function () {
                 //     return false;
                 // }
                 alert("Added Successfully!");
-                // fetchStudentTable();
             }
         });
     });
+
+    $(document).on("click", "#delete-notification", function (e) {
+
+        e.preventDefault();
+        let deleteId = $(this).attr('notification-id');
+
+        if (confirm("Are you sure you want to delete this data?")) {
+            $.ajax({
+                method: "POST",
+                url: "./delete/delete-notification.php",
+                data: `id=${deleteId}`,
+                success: function (data) {
+                    alert('Deleted Successfully');
+                    fetchNotificationTable();
+                }
+            });
+        }
+
+    });
+
+    const fetchNotificationTable = () => {
+        $.ajax({
+            method: "POST",
+            url: "./tables/notification_tables.php",
+            data: {},
+            success: function (data) {
+                $("#notificationTable table tbody").html(data);
+                $('#studentNotificationTable').DataTable();
+            }
+        });
+    }
+
+    fetchNotificationTable();
+
+
 });

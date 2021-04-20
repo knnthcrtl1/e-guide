@@ -84,9 +84,9 @@
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive" id="studentTable">
-                    <table class="table" id="studentDataTable">
-                      <thead class=" text-primary">
+                  <div class="table-responsive" id="notificationTable">
+                    <table class="table" id="studentNotificationTable">
+                      <thead class="text-primary">
                         <tr>
                           <th>
                             ID
@@ -122,3 +122,4 @@
         </div>
       </div>
       <?php include('footer.php'); ?>
+      <script src="./custom-js/notification-script.js"></script>
