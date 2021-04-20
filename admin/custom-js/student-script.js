@@ -96,10 +96,10 @@ $(document).ready(function () {
             url: "./functions/function-student.php",
             data: studentFormData + "&ajax=true",
             success: function (data) {
-                // if(data == 1){
-                //     alert('email already exists, please use other email');
-                //     return false;
-                // }
+                if(data == 1){
+                    alert('student id already exists, please use other student id');
+                    return false;
+                }
                 alert("Added Successfully!");
                 fetchStudentTable();
             }

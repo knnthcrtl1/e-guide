@@ -1,5 +1,6 @@
 <?php include('header.php'); ?>
 <?php include('./connection.php'); ?>
+
 <body>
   <div class="wrapper ">
     <?php
@@ -18,66 +19,7 @@
         <div class="container-fluid">
 
           <div class="row">
-            <div class="col-lg-12 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">Add Student</h4>
-                  <p class="card-category">Complete student profile</p>
-                </div>
-                <div class="card-body">
-                  <div class="tab-content">
-                    <div class="tab-pane active" id="pi">
-                      <form id="add-student-notification-form" method="post">
-                        <input type="hidden" name="function-type" value="add-student-notification" />
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                              <div class="form-group">
-                                <select class="form-control " name="student-sex">
-                                  <option value="">Student Name</option>
-                                  <?php
-                                    $sql = "SELECT * FROM tbl_students";
-                                    $result = mysqli_query($conn, $sql);
-                                    $row = mysqli_fetch_array($result);
-                                  ?>
-                                  <option value="<?php echo $row['student_id']; ?>"><?php echo $row['student_id'] . '-' . $row['student_firstname'] . ' ' . $row['student_lastname'] ?></option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group bmd-form-group">
-                              <label class="bmd-label-floating">Title</label>
-                              <input type="text" name="student-elementry-school" class="form-control">
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group bmd-form-group">
-                              <label class="bmd-label-floating">Message</label>
-                              <input name="student-vocational" class="form-control">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                          <button id="submit-student-form" class="btn btn-primary ">
-                            Submit
-                          </button>
-                        </div>
-                    </div>
-                    </form>
-
-                    <!-- <div class="tab-pane" id="cd">
-                                            2
-                                        </div>
-                                        <div class="tab-pane" id="ref">
-                                            3
-                                        </div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-12">
+            <div class="col-lg-12">
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Simple Table</h4>
@@ -117,9 +59,62 @@
               </div>
             </div>
 
-          </div>
-          <!-- your content here -->
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Send Notification</h4>
+                  <p class="card-category">Complete notification</p>
+                </div>
+                <div class="card-body">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="pi">
+                      <form id="add-student-notification-form" method="post">
+                        <input type="hidden" name="function-type" value="add-student-notification" />
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                              <div class="form-group">
+                                <select class="form-control " name="notification-student-id" required>
+                                  <option value="">Student Name</option>
+                                  <?php
+                                  $sql = "SELECT * FROM tbl_students";
+                                  $result = mysqli_query($conn, $sql);
+                                  $row = mysqli_fetch_array($result);
+                                  $studentName = $row['student_id'] . ' - ' . $row['student_firstname'] . ' ' . $row['student_lastname'];
+                                  ?>
+                                  <option value="<?php echo $row['student_id']; ?>"><?php echo $studentName; ?></option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                              <label class="bmd-label-floating">Title</label>
+                              <input type="text" name="notification-title" class="form-control" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group bmd-form-group">
+                              <label class="bmd-label-floating">Message</label>
+                              <input name="notification-message" class="form-control" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                          <button id="submit-notification-form" class="btn btn-primary ">
+                            Submit
+                          </button>
+                        </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
         </div>
+        <!-- your content here -->
       </div>
-      <?php include('footer.php'); ?>
-      <script src="./custom-js/notification-script.js"></script>
+    </div>
+    <?php include('footer.php'); ?>
+    <script src="./custom-js/notification-script.js"></script>

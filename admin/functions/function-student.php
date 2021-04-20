@@ -8,6 +8,7 @@ if (isset($_POST['ajax'])) {
 
 
     if ($_POST["function-type"] === "add-student") {
+
         $studentFirstname = mysqli_real_escape_string($conn, (strip_tags($_POST['student-firstname'])));
         $studentLastname = mysqli_real_escape_string($conn, (strip_tags($_POST['student-lastname'])));
         $studentMiddlename = mysqli_real_escape_string($conn, (strip_tags($_POST['student-middlename'])));
@@ -53,9 +54,11 @@ if (isset($_POST['ajax'])) {
         $sql = "INSERT INTO tbl_students ( {$studentTableFields} ) VALUES 
                 ('{$studentFirstname}','{$studentMiddlename}','{$studentLastname}','{$studentNickname}','{$studentPresentAddress}','{$studentGender}','{$studentBirthday}','{$studentContactNumber}','{$studentEmailAddress}','{$studentPermanentAddress}','{$studentUeEmailAddress}','{$studentCitizen}','{$studentReligion}','{$studentCivilStatus}','{$studentSex}','{$studentLivingWith}','{$studentLivingCondition}','{$studentType}','{$studentStudId}','{$studentAge}','{$studentPlaceofBirth}','{$studentSection}','{$studentELemSchool}','{$studentJuniorHs}','{$studentVocational}')";
 
+        
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));
         }
+
 
         $sql = "SELECT student_id FROM tbl_students ORDER BY student_id DESC LIMIT 1";
 

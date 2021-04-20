@@ -1,4 +1,3 @@
-
 <?php include('header.php'); ?>
 
 <body>
@@ -18,6 +17,54 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title ">Simple Table</h4>
+                                    <p class="card-category"> Here is a subtitle for this table</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive" id="studentTable">
+                                        <table class="table" id="studentDataTable">
+                                            <thead class=" text-primary">
+                                                <tr>
+                                                    <th>
+                                                        ID
+                                                    </th>
+                                                    <th>
+                                                        Firstname
+                                                    </th>
+                                                    <th>
+                                                        Middlename
+                                                    </th>
+                                                    <th>
+                                                        Lastname
+                                                    </th>
+                                                    <th>
+                                                        Email
+                                                    </th>
+                                                    <th>
+                                                        Contact Number
+                                                    </th>
+                                                    <th>
+                                                        Student Type
+                                                    </th>
+                                                    <th>
+                                                        Student School ID
+                                                    </th>
+                                                    <th>
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-lg-12 col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
@@ -288,54 +335,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header card-header-primary">
-                                    <h4 class="card-title ">Simple Table</h4>
-                                    <p class="card-category"> Here is a subtitle for this table</p>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive" id="studentTable">
-                                        <table class="table" id="studentDataTable">
-                                            <thead class=" text-primary">
-                                                <tr>
-                                                    <th>
-                                                        ID
-                                                    </th>
-                                                    <th>
-                                                        Firstname
-                                                    </th>
-                                                    <th>
-                                                        Middlename
-                                                    </th>
-                                                    <th>
-                                                        Lastname
-                                                    </th>
-                                                    <th>
-                                                        Email
-                                                    </th>
-                                                    <th>
-                                                        Contact Number
-                                                    </th>
-                                                    <th>
-                                                        Student Type
-                                                    </th>
-                                                    <th>
-                                                        Student School ID
-                                                    </th>
-                                                    <th>
-                                                        Action
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                     <!-- end row -->

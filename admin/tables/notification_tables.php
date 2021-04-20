@@ -6,6 +6,10 @@ $sql = "SELECT * FROM  tbl_notifications";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) != 0) {
     while ($row = mysqli_fetch_assoc($result)) {
+
+        $date = $row['notification_date'];
+        $newDate = date('F d, Y', strtotime($date));
+
 ?>
         <tr>
             <td><?php echo $row['notification_id'] ?></td>
@@ -21,7 +25,7 @@ if (mysqli_num_rows($result) != 0) {
             <td><?php echo $studentName ?></td>
             <td><?php echo $row['notification_title'] ?></td>
             <td><?php echo $row['notification_message'] ?></td>
-            <td><?php echo $row['notification_date'] ?></td>
+            <td><?php echo $newDate ?></td>
             <td class="td-actions text-right" style="display:flex;flex-direction:row">
                 <span id="delete-notification" class="btn btn-danger btn-round" notification-id="<?php echo $row['notification_id']; ?>"> <i class="material-icons">close</i> </span>
             </td>

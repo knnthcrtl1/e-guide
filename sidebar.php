@@ -29,6 +29,12 @@ function navigationList($active) {
                     <p>Student</p>
                 </a>
             </li>
+            <li class="nav-item <?php echo $active == "notification" ? 'active': null?> ">
+                <a class="nav-link" href="./view_notification.php">
+                <i class="material-icons">person</i>
+                    <p>Notification</p>
+                </a>
+            </li>
             <!-- your sidebar here -->
         </ul>
     </div>

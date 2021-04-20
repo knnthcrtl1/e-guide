@@ -17,7 +17,7 @@ $(document).ready(function () {
             data: studentFormData + "&ajax=true",
             success: function (data) {
                 if (data == 1) {
-                    alert('email already exists, please use other email');
+                    alert('user already exists, please use other email');
                     return false;
                 }
                 alert(data);
