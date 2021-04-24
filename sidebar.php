@@ -26,7 +26,7 @@ function navigationList($active) {
             <li class="nav-item <?php echo $active == "student" ? 'active': null?> ">
                 <a class="nav-link" href="./view_student.php">
                 <i class="material-icons">person</i>
-                    <p>Student</p>
+                    <p>Profile</p>
                 </a>
             </li>
             <li class="nav-item <?php echo $active == "notification" ? 'active': null?> ">
