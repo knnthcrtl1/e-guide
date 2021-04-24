@@ -34,6 +34,8 @@
                         return false;
                     }
 
+                    $studType = $row['student_type'];
+
                     ?>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
@@ -166,7 +168,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-5">
+                                                    <div class="col-md-2">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Place of birth *</label>
                                                             <input type="text" name="student-placeofbirth" class="form-control" value="<?php echo $row['student_place_of_birth'] ?>">
@@ -194,7 +196,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-sex" value="<?php echo $row['student_sex'] ?>">
@@ -207,7 +209,7 @@
                                                         </div>
                                                     </div>
                                                     <?php if($row['student_type'] == 2 || $row['student_type'] == 3) { ?>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-gender">
@@ -241,7 +243,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <!-- <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Civil Status</label>
                                                             <input type="text" name="student-civil-status" class="form-control" value="<?php echo $row['student_civil_status'] ?>">
@@ -257,7 +259,7 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
@@ -453,7 +455,7 @@
                                         </div>
                                         <div class="tab-pane" id="settings">
                                             <?php include('./student-habit.php'); ?>
-                                            <?php studentHabits($conn); ?>
+                                            <?php studentHabits($conn, $studType); ?>
                                         </div>
                                     </div>
                                 </div>
