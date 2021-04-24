@@ -66,6 +66,7 @@
                                                 <option value="0">Grade School</option>
                                                 <option value="1">High School </option>
                                                 <option value="2">Senior High</option>
+                                                <option value="3">College</option>
                                             </select>
                                         </div>
                                         <button id="submit-student-register-form" class="btn btn-primary btn-user btn-block">

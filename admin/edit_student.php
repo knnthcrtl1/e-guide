@@ -34,6 +34,7 @@
                         return false;
                     }
 
+                    $studType = $row['student_type'];
                     ?>
 
                     <div class="row">
@@ -199,7 +200,7 @@
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-sex" value="<?php echo $row['student_sex'] ?>">
-                                                                    <option value="">Gender</option>
+                                                                    <option value="">Sex</option>
                                                                     <option value="1" <?php echo $row['student_sex'] == 1 ? 'selected' : null ?>>Male</option>
                                                                     <option value="2" <?php echo $row['student_sex'] == 2 ? 'selected' : null ?>>Female</option>
                                                                     <option value="3" <?php echo $row['student_sex'] == 3 ? 'selected' : null ?>>Prefer not to say</option>
@@ -248,6 +249,7 @@
                                                                     <option value="0" <?php echo $row['student_type'] == 0 ? 'selected' : null ?>>Grade School</option>
                                                                     <option value="1" <?php echo $row['student_type'] == 1 ? 'selected' : null ?>>High School </option>
                                                                     <option value="2" <?php echo $row['student_type'] == 2 ? 'selected' : null ?>>Senior High</option>
+                                                                    <option value="3" <?php echo $row['student_type'] == 3 ? 'selected' : null ?>>College</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -445,9 +447,13 @@
                                                 </div>
                                             </form>
                                         </div>
+
                                         <div class="tab-pane" id="settings">
                                             <?php include('./student-habits.php'); ?>
-                                            <?php studentHabits($conn); ?>
+                                            
+                                            <?php 
+                                            studentHabits($conn, $studType); 
+                                            ?>
                                         </div>
                                     </div>
                                 </div>

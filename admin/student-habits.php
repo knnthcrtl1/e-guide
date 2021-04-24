@@ -1,6 +1,6 @@
 <?php
 
-function studentHabits($conn)
+function studentHabits($conn, $studentType)
 {
 ?>
 
@@ -80,7 +80,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studyClassOthers" class="form-control" <?php echo ($row['student_habit_usually_study'] == 6) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_first']) ?>" >
+                                <input type="text" name="studyClassOthers" class="form-control" <?php echo ($row['student_habit_usually_study'] == 6) ? null : 'disabled="false' ?> value="<?php echo ($row['student_habit_other_first']) ?>">
                             </div>
                         </div>
                     </div>
@@ -242,7 +242,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton2">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studentAboutLessonOthers" class="form-control" <?php echo ($row['student_habit_usually_ask'] == 8) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_second']) ?>">
+                                <input type="text" name="studentAboutLessonOthers" class="form-control" <?php echo ($row['student_habit_usually_ask'] == 8) ? null : 'disabled="false' ?> value="<?php echo ($row['student_habit_other_second']) ?>">
                             </div>
                         </div>
                     </div>
@@ -380,7 +380,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton3">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studentDeviceOthers" class="form-control" <?php echo ($row['student_habit_student_device'] == 5) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_third']) ?>">
+                                <input type="text" name="studentDeviceOthers" class="form-control" <?php echo ($row['student_habit_student_device'] == 5) ? null : 'disabled="false' ?> value="<?php echo ($row['student_habit_other_third']) ?>">
                             </div>
                         </div>
                     </div>
@@ -477,7 +477,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton4">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="studentIllnessOthers" class="form-control" <?php echo ($row['student_habit_physical_illness'] == 3) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_fourth']) ?>">
+                                <input type="text" name="studentIllnessOthers" class="form-control" <?php echo ($row['student_habit_physical_illness'] == 3) ? null : 'disabled="false' ?> value="<?php echo ($row['student_habit_other_fourth']) ?>">
                             </div>
                         </div>
                     </div>
@@ -523,7 +523,7 @@ function studentHabits($conn)
                             </div>
                             <div class="form-group bmd-form-group" id="othersRadioButton5">
                                 <label class="bmd-label-floating">Others </label>
-                                <input type="text" name="healthConditionOthers" class="form-control" <?php echo ($row['student_habit_health_condition'] == 3) ? null : 'disabled="false' ?>  value="<?php echo ($row['student_habit_other_fifth']) ?>">
+                                <input type="text" name="healthConditionOthers" class="form-control" <?php echo ($row['student_habit_health_condition'] == 3) ? null : 'disabled="false' ?> value="<?php echo ($row['student_habit_other_fifth']) ?>">
                             </div>
                         </div>
                     </div>
@@ -777,156 +777,252 @@ function studentHabits($conn)
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="survey-title">
-                        <p>For the past twelve (12) months, have you experienced any of the following:</P>
-                    </div>
-
                     <?php
 
                     $twelveExpArr = explode(",", $row['student_habit_multiple_experience']);
 
                     ?>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-check">
-                                <label class="form-check-label">
+                    <?php if ($studentType == 0) { ?>
+                        <div class="survey-title">
+                            <p>Which of the following emotions do you usually express (through words and/or actions)?</P>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="1" name="healthTwelve[]" <?php if (in_array(1, $twelveExpArr)) {
+                                                                                                                 echo "checked";       
+                                                                                                                       } ?>>
+                                        Happiness
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="2" name="healthTwelve[]" <?php if (in_array(2, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Sad
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="3" name="healthTwelve[]" <?php if (in_array(3, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Fear
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
 
-                                    <input class="form-check-input" type="checkbox" value="1" name="healthTwelve[]" <?php if (in_array(1, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Bullying
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
                             </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="2" name="healthTwelve[]" <?php if (in_array(2, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Physical
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="3" name="healthTwelve[]" <?php if (in_array(3, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Verbal
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="4" name="healthTwelve[]" <?php if (in_array(4, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Physical
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="5" name="healthTwelve[]" <?php if (in_array(5, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Abuse at Home
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="6" name="healthTwelve[]" <?php if (in_array(6, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Neglect/abandonment by parent(s)/guardian
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="7" name="healthTwelve[]" <?php if (in_array(7, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Death of a family member
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="8" name="healthTwelve[]" <?php if (in_array(8, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Social/Relational
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="9" name="healthTwelve[]" <?php if (in_array(9, $twelveExpArr)) {
-                                                                                                                        echo "checked";
-                                                                                                                    } ?>>
-                                    Cyber
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="10" name="healthTwelve[]" <?php if (in_array(10, $twelveExpArr)) {
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="4" name="healthTwelve[]" <?php if (in_array(4, $twelveExpArr)) {
                                                                                                                             echo "checked";
                                                                                                                         } ?>>
-                                    Sexual
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
+                                        Pain
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="5" name="healthTwelve[]" <?php if (in_array(5, $twelveExpArr)) {
+                                             echo "checked";
+                                                                                                                        } ?>>
+                                        Anger
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="11" name="healthTwelve[]" <?php if (in_array(11, $twelveExpArr)) {
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="6" name="healthTwelve[]" <?php if (in_array(6, $twelveExpArr)) {
                                                                                                                             echo "checked";
                                                                                                                         } ?>>
-                                    Economic
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="12" name="healthTwelve[]" <?php if (in_array(12, $twelveExpArr)) {
+                                        Irritability
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="7" name="healthTwelve[]" <?php if (in_array(7, $twelveExpArr)) {
                                                                                                                             echo "checked";
                                                                                                                         } ?>>
-                                    Emotional
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
+                                        Worry/Anxiety
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                    <?php } else { ?>
+
+
+                        <div class="survey-title">
+                            <p>For the past twelve (12) months, have you experienced any of the following:</P>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+
+                                        <input class="form-check-input" type="checkbox" value="1" name="healthTwelve[]" <?php if (in_array(1, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Bullying
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="2" name="healthTwelve[]" <?php if (in_array(2, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Physical
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="3" name="healthTwelve[]" <?php if (in_array(3, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Verbal
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="4" name="healthTwelve[]" <?php if (in_array(4, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Physical
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="5" name="healthTwelve[]" <?php if (in_array(5, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Abuse at Home
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="6" name="healthTwelve[]" <?php if (in_array(6, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Neglect/abandonment by parent(s)/guardian
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="7" name="healthTwelve[]" <?php if (in_array(7, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Death of a family member
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="8" name="healthTwelve[]" <?php if (in_array(8, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Social/Relational
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="9" name="healthTwelve[]" <?php if (in_array(9, $twelveExpArr)) {
+                                                                                                                            echo "checked";
+                                                                                                                        } ?>>
+                                        Cyber
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="10" name="healthTwelve[]" <?php if (in_array(10, $twelveExpArr)) {
+                                                                                                                                echo "checked";
+                                                                                                                            } ?>>
+                                        Sexual
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="11" name="healthTwelve[]" <?php if (in_array(11, $twelveExpArr)) {
+                                                                                                                                echo "checked";
+                                                                                                                            } ?>>
+                                        Economic
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="12" name="healthTwelve[]" <?php if (in_array(12, $twelveExpArr)) {
+                                                                                                                                echo "checked";
+                                                                                                                            } ?>>
+                                        Emotional
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
 
@@ -938,7 +1034,7 @@ function studentHabits($conn)
 
                     <?php
 
-                    $botherYouArr = explode(",", $row['student_habit_multiple_experience']);
+                    $botherYouArr = explode(",", $row['student_habit_multiple_concern']);
 
                     ?>
 
@@ -946,9 +1042,9 @@ function studentHabits($conn)
                         <div class="col-md-4">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="1" 
-                                    <?php if (in_array(1, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="1" <?php if (in_array(1, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     Academic
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -957,9 +1053,9 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="2"
-                                    <?php if (in_array(2, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="2" <?php if (in_array(2, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     Personal (own thoughts and feelings)
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -968,9 +1064,9 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="3"
-                                    <?php if (in_array(3, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="3" <?php if (in_array(3, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     Social (relationships with friends, classmates and teacher(s))
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -981,9 +1077,9 @@ function studentHabits($conn)
                         <div class="col-md-4">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="4"
-                                    <?php if (in_array(4, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="4" <?php if (in_array(4, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     Future Goals/Career Plans (for Senior High School)
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -992,9 +1088,9 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="5"
-                                    <?php if (in_array(5, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="5" <?php if (in_array(5, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     Family (relationship with parent(s), sibling(s), relative(s))
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -1003,9 +1099,9 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="6"
-                                    <?php if (in_array(6, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="6" <?php if (in_array(6, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     Housing
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -1017,9 +1113,9 @@ function studentHabits($conn)
                         <div class="col-md-4">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="7"
-                                    <?php if (in_array(7, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="7" <?php if (in_array(7, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     Financial
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -1028,9 +1124,9 @@ function studentHabits($conn)
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input othersRadioButton6" name="botherYou[]" type="checkbox" value="8" targetId='othersRadioButton6'
-                                    <?php if (in_array(8, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input othersRadioButton6" name="botherYou[]" type="checkbox" value="8" targetId='othersRadioButton6' <?php if (in_array(8, $botherYouArr)) {
+                                                                                                                                                                        echo "checked";
+                                                                                                                                                                    } ?>>
                                     Others
                                     <span class="form-check-sign">
                                         <span class="check"></span>
@@ -1043,9 +1139,9 @@ function studentHabits($conn)
                             </div> -->
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" name="botherYou[]" type="checkbox" value="9"
-                                    <?php if (in_array(9, $botherYouArr)) { echo "checked";} ?>
-                                    >
+                                    <input class="form-check-input" name="botherYou[]" type="checkbox" value="9" <?php if (in_array(9, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
                                     None at present
                                     <span class="form-check-sign">
                                         <span class="check"></span>

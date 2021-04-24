@@ -227,7 +227,7 @@
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-sex">
-                                                                    <option value="">Gender</option>
+                                                                    <option value="">Sex</option>
                                                                     <option value="1">Male</option>
                                                                     <option value="2">Female</option>
                                                                     <option value="3">Prefer not to say</option>

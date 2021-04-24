@@ -1,6 +1,6 @@
 <?php
 
-function studentHabits($conn)
+function studentHabits($conn, $studentType)
 {
 ?>
 
@@ -542,6 +542,7 @@ function studentHabits($conn)
                     $sixExpArr = explode(",", $row['student_habit_multiple_feelings']);
 
                     ?>
+
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-check">
@@ -772,20 +773,18 @@ function studentHabits($conn)
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="row">
                 <div class="col-md-12">
+                    <?php
+                    $twelveExpArr = explode(",", $row['student_habit_multiple_experience']);
+                    ?>
+
                     <div class="survey-title">
                         <p>For the past twelve (12) months, have you experienced any of the following:</P>
                     </div>
 
-                    <?php
-
-                    $twelveExpArr = explode(",", $row['student_habit_multiple_experience']);
-
-                    ?>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-check">

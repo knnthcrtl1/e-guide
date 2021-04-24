@@ -198,7 +198,7 @@
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-sex" value="<?php echo $row['student_sex'] ?>">
-                                                                    <option value="">Gender</option>
+                                                                    <option value="">Sex</option>
                                                                     <option value="1" <?php echo $row['student_sex'] == 1 ? 'selected' : null ?>>Male</option>
                                                                     <option value="2" <?php echo $row['student_sex'] == 2 ? 'selected' : null ?>>Female</option>
                                                                     <option value="3" <?php echo $row['student_sex'] == 3 ? 'selected' : null ?>>Prefer not to say</option>
@@ -206,6 +206,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php if($row['student_type'] == 2 || $row['student_type'] == 3) { ?>
                                                     <div class="col-md-6">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
@@ -222,6 +223,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php } ?>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-4">
@@ -241,12 +243,17 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
+                                                            <label class="bmd-label-floating">Civil Status</label>
+                                                            <input type="text" name="student-civil-status" class="form-control" value="<?php echo $row['student_civil_status'] ?>">
+                                                        </div>
+                                                        <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select class="form-control " name="student-type">
+                                                                <select class="form-control " name="student-type" disabled>
                                                                     <option value="">Student Type *</option>
                                                                     <option value="0" <?php echo $row['student_type'] == 0 ? 'selected' : null ?>>Grade School</option>
                                                                     <option value="1" <?php echo $row['student_type'] == 1 ? 'selected' : null ?>>High School </option>
                                                                     <option value="2" <?php echo $row['student_type'] == 2 ? 'selected' : null ?>>Senior High</option>
+                                                                    <option value="3" <?php echo $row['student_type'] == 2 ? 'selected' : null ?>>College</option>
                                                                 </select>
                                                             </div>
                                                         </div>
