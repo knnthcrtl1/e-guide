@@ -162,6 +162,43 @@ $(document).ready(function () {
 
     });
 
+    $(document).on('click', '#studentHabitIsActive', function (e) {
+        e.preventDefault();
+        let isActive = $(this).attr('is-active');
+        let studId = $(this).attr('studid');
+
+        var activateExam = 'activateExam';
+
+        jQuery.ajax({
+            method: "POST",
+            url: "./functions/function-student.php",
+            data: `&ajax=true&function-type=${activateExam}&isActive=${isActive}&student-id=${studId}`,
+            success: function (data) {
+                alert('Edited Successfully');
+                location.reload();
+                // fetchActiveStatus()
+            }
+        });
+    })
+
+
+    // const fetchActiveStatus = () => {
+
+    //     let studId = $('#studentHabitIsActive').attr('studid');
+
+    //     $.ajax({
+    //         method: "POST",
+    //         url: "./tables/get_active_status.php",
+    //         data: `studId=${studId}`,
+    //         success: function (data) {
+    //             $('#getActiveTitle').html(data);
+    //         }
+    //     });
+    // }
+
+    // fetchActiveStatus();
+
+
 
 
 });

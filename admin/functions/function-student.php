@@ -262,4 +262,29 @@ if (isset($_POST['ajax'])) {
 
         return false;
     }
+
+    if ($_POST['function-type'] === "activateExam") {
+
+        $isActive = mysqli_real_escape_string($conn, (strip_tags($_POST['isActive'])));
+        $studentId = mysqli_real_escape_string($conn, (strip_tags($_POST['student-id'])));
+
+        $setActive = null;
+
+        if(!$isActive || $isActive == 0) {
+            $setActive = true;
+        }
+        
+        if($isActive) {
+            $setActive = false;
+        }
+
+        $sql = "UPDATE tbl_student_habit SET student_habit_is_active = '{$setActive}' WHERE student_habit_student_id = '{$studentId}' ";
+
+        if (!mysqli_query($conn, $sql)) {
+            echo ("Error description: " . mysqli_error($conn));
+        }
+
+        echo $isActive;
+
+    }
 }

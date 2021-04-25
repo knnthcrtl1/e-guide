@@ -9,6 +9,15 @@ function studentHabits($conn, $studentType)
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     ?>
+    <div>
+        <div class="d-flex justify-content-end">
+            <button id="studentHabitIsActive" class="btn btn-primary" studid='<?php echo $_GET['id'] ?>' is-active="<?php echo $row['student_habit_is_active']; ?>">
+                <!-- <div id='getActiveTitle' studid=''></div> -->
+                <?php echo ($row['student_habit_is_active'] == 0) ? 'Activate' : 'Deactivate';?>
+            </button>
+        </div>
+    </div>
+    
     <form id="edit-student-habits-form" method="post">
         <input type="hidden" name="student-id" value="<?php echo $_GET['id'] ?>">
         <input type="hidden" name="function-type" value="edit-student-habits" />

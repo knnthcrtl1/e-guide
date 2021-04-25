@@ -208,23 +208,23 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <?php if($row['student_type'] == 2 || $row['student_type'] == 3) { ?>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group bmd-form-group">
-                                                            <div class="form-group">
-                                                                <select class="form-control " name="student-gender">
-                                                                    <option value="">Gender Identity</option>
-                                                                    <option value="0" <?php echo $row['student_gender'] == 0 ? 'selected' : null ?>>Straight/Heterosexual</option>
-                                                                    <option value="1" <?php echo $row['student_gender'] == 1 ? 'selected' : null ?>>Transgender </option>
-                                                                    <option value="2" <?php echo $row['student_gender'] == 2 ? 'selected' : null ?>>Prefer not to say</option>
-                                                                    <option value="3" <?php echo $row['student_gender'] == 3 ? 'selected' : null ?>>Lesbian</option>
-                                                                    <option value="4" <?php echo $row['student_gender'] == 4 ? 'selected' : null ?>>Gay</option>
-                                                                    <option value="5" <?php echo $row['student_gender'] == 5 ? 'selected' : null ?>>Bisexual</option>
-                                                                    <option value="6" <?php echo $row['student_gender'] == 6 ? 'selected' : null ?>>Others</option>
-                                                                </select>
+                                                    <?php if ($row['student_type'] == 2 || $row['student_type'] == 3) { ?>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group bmd-form-group">
+                                                                <div class="form-group">
+                                                                    <select class="form-control " name="student-gender">
+                                                                        <option value="">Gender Identity</option>
+                                                                        <option value="0" <?php echo $row['student_gender'] == 0 ? 'selected' : null ?>>Straight/Heterosexual</option>
+                                                                        <option value="1" <?php echo $row['student_gender'] == 1 ? 'selected' : null ?>>Transgender </option>
+                                                                        <option value="2" <?php echo $row['student_gender'] == 2 ? 'selected' : null ?>>Prefer not to say</option>
+                                                                        <option value="3" <?php echo $row['student_gender'] == 3 ? 'selected' : null ?>>Lesbian</option>
+                                                                        <option value="4" <?php echo $row['student_gender'] == 4 ? 'selected' : null ?>>Gay</option>
+                                                                        <option value="5" <?php echo $row['student_gender'] == 5 ? 'selected' : null ?>>Bisexual</option>
+                                                                        <option value="6" <?php echo $row['student_gender'] == 6 ? 'selected' : null ?>>Others</option>
+                                                                    </select>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
                                                     <?php } ?>
                                                 </div>
                                                 <div class="row">
