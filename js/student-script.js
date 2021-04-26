@@ -191,6 +191,7 @@ $(document).ready(function () {
             data: editStudentFamilyForm + "&ajax=true",
             success: function (data) {
                 alert("Edited Successfully!");
+                location.reload();
             }
         });
 
