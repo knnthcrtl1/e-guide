@@ -2,6 +2,33 @@ $(document).ready(function () {
 
     // study habit 1
 
+    $(document).on("submit", "#add-student-form", function (e) {
+        e.preventDefault();
+
+        var studentFormData = $("#add-student-form").serialize();
+
+        // // if (!validateEmail(studentRequired3)){
+        // //     alert('Please provide correct email address');
+
+        // //     return false;
+        // // }
+
+        jQuery.ajax({
+            method: "POST",
+            url: "./functions/function-student.php",
+            data: studentFormData + "&ajax=true",
+            success: function (data) {
+                if (data == 1) {
+                    alert('student id already exists, please use other student id');
+                    return false;
+                }
+                alert("Added Successfully!");
+                fetchStudentTable();
+            }
+        });
+
+    });
+
     const studyRadioOthers = (inputNameRadio, targetRadioButton, mainRadioButton) => {
         let exampleRadName = inputNameRadio;
         let exampleRadio1 = $(exampleRadName);
@@ -80,32 +107,6 @@ $(document).ready(function () {
 
     });
 
-    $(document).on("click", "#submit-student-form", function (e) {
-        e.preventDefault();
-
-        var studentFormData = $("#add-student-form").serialize();
-
-        // // if (!validateEmail(studentRequired3)){
-        // //     alert('Please provide correct email address');
-
-        // //     return false;
-        // // }
-
-        jQuery.ajax({
-            method: "POST",
-            url: "./functions/function-student.php",
-            data: studentFormData + "&ajax=true",
-            success: function (data) {
-                if(data == 1){
-                    alert('student id already exists, please use other student id');
-                    return false;
-                }
-                alert("Added Successfully!");
-                fetchStudentTable();
-            }
-        });
-
-    });
 
     $(document).on("click", "#submit-edit-student-form", function (e) {
         e.preventDefault();

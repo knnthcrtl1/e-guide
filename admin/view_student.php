@@ -101,25 +101,25 @@
                                 <div class="card-body">
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="pi">
-                                            <form id="add-student-form" method="post">
+                                            <form id="add-student-form" method="POST">
                                                 <input type="hidden" name="function-type" value="add-student" />
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Firstname *</label>
-                                                            <input type="text" name="student-firstname" class="form-control">
+                                                            <input type="text" name="student-firstname" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Lastname *</label>
-                                                            <input name="student-lastname" class="form-control">
+                                                            <input name="student-lastname" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Middlename *</label>
-                                                            <input name="student-middlename" class="form-control">
+                                                            <input name="student-middlename" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
