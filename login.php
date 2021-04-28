@@ -21,24 +21,57 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary login-background">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/eguide/login.php">Student <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eguide/admin/login.php">Admin</a>
+                    </li>
+                </ul>
+                <div>
+                    <a class="nav-link" href="/eguide/student_register.php">REGISTER</a>
+                </div>
+                <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+            </div>
+        </div>
+
+    </nav>
 
     <div class="container">
+
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="bg-login-container">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="p-5">
+                            <div class="col-md-6 d-flex align-items-center">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img class="app__logo" src="./admin/assets/img/logo.png" style="max-width: 50%;" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="" style="padding: 10px; padding-right:20px">
                                     <div class="text-center">
-                                        <img class="app__logo" src="./admin/assets/img/logo.png" style="max-width: 60px;" />
-                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">Student Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT LOGIN</h1>
                                     </div>
                                     <?php
                                     include('./admin/connection.php');
@@ -86,21 +119,20 @@
                                     }
                                     ?>
                                     <form class="user" method="POST">
-                                        <div class="form-group">
-                                            <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                        <div class="form-group  bmd-form-group">
+                                        <label class="bmd-label-floating">Student ID</label>
+                                            <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" >
                                         </div>
                                         <!-- <div class="form-group">
                       <input type="email" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div> -->
-                                        <div class="form-group">
-                                            <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                        <div class="form-group  bmd-form-group">
+                                        <label class="bmd-label-floating">Password</label>
+                                            <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
                                         </div>
                                         <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="./student_register.php">Register new account</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -114,11 +146,5 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="./admin/assets/js/core/jquery.min.js"></script>
-    <script src="./admin/assets/js/core/bootstrap-material-design.min.js"></script>
+    <?php include('footer.php'); ?>
     <script src="./js/student-script"></script>
-
-
-</body>
-
-</html>

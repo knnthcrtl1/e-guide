@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Student Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -21,52 +21,85 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary login-background">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/eguide/login.php">Student <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eguide/admin/login.php">Admin</a>
+                    </li>
+                </ul>
+                <div>
+                    <a class="nav-link" href="/eguide/login.php">LOGIN</a>
+                </div>
+                <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+            </div>
+        </div>
+
+    </nav>
 
     <div class="container">
+
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="bg-login-container">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="p-5">
+                        <div class="row justify-content-end">
+                            <div class="col-md-6 d-flex align-items-center">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img class="app__logo" src="./admin/assets/img/logo.png" style="max-width: 50%;" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="" style="padding: 10px; padding-right:20px">
                                     <div class="text-center">
-                                        <img class="app__logo" src="./admin/assets/img/logo.png" style="max-width: 60px;" />
-                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">Student Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT LOGIN</h1>
                                     </div>
                                     <form class="user" method="POST" id="add-student-register-form">
-                                        <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user"aria-describedby="emailHelp" placeholder="Firstname">
+                                        <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname">
                                         <div class="form-group bmd-form-group">
                                             <label class="bmd-label-floating">Firstname *</label>
                                             <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
                                         </div>
                                         <div class="form-group bmd-form-group">
-                                        <label class="bmd-label-floating">Lastname *</label>
+                                            <label class="bmd-label-floating">Lastname *</label>
                                             <!-- <input type="name" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp"> -->
-                                            <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required >
+                                            <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required>
                                         </div>
                                         <div class="form-group bmd-form-group">
                                             <label class="bmd-label-floating">Student ID *</label>
-                                            <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp"  maxlength="15" required>
+                                            <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" maxlength="15" required>
                                         </div>
                                         <div class="form-group bmd-form-group">
                                             <label class="bmd-label-floating">Email *</label>
-                                            <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" aria-describedby="emailHelp" required >
+                                            <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" aria-describedby="emailHelp" required>
                                         </div>
                                         <div class="form-group bmd-form-group">
                                             <label class="bmd-label-floating">Mobile Number</label>
                                             <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
-                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4"  required maxlength="11">
+                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" required maxlength="11">
                                         </div>
                                         <div class="form-group  bmd-form-group">
                                             <label class="bmd-label-floating">Password</label>
-                                            <input type="password" name="password" class="form-control form-control-user" id="studentRequired5"  required>
+                                            <input type="password" name="password" class="form-control form-control-user" id="studentRequired5" required>
                                         </div>
                                         <div class="form-group  bmd-form-group">
                                             <select class="form-control " name="studentType" id="studentRequired7" required>
@@ -76,11 +109,19 @@
                                                 <option value="2">Senior High</option>
                                             </select>
                                         </div>
+                                        <div class="form-group bmd-form-group" style="margin-left: 15px">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px">
+                                                Accept privacy policy
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
                                         <button id="submit-student-register-form" class="btn btn-primary btn-user btn-block">
                                             Submit
                                         </button>
                                     </form>
-                                    <hr>
                                 </div>
                             </div>
                         </div>
@@ -94,5 +135,6 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-<?php include('footer.php'); ?>
-<script src="./js/student-script.js"></script>
+    <?php include('footer.php'); ?>
+
+    <script src="./js/student-script"></script>
