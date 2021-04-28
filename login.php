@@ -51,7 +51,7 @@
                                                 $user = $_POST['user'];
                                                 $pass = md5($_POST['pass']);
                                                 //selecting database
-                                                $query = mysqli_query($conn, "SELECT * FROM tbl_users WHERE user_username='" . $user . "' AND user_password='" . $pass . "'");
+                                                $query = mysqli_query($conn, "SELECT * FROM tbl_users WHERE user_username='" . $user . "' AND user_password='" . $pass . "' AND user_level = 7");
                                                 $numrows = mysqli_num_rows($query);
                                                 if ($numrows != 0) {
                                                     while ($row = mysqli_fetch_assoc($query)) {

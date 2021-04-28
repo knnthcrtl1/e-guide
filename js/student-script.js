@@ -5,9 +5,15 @@ $(document).ready(function () {
 
         var studentFormData = $("#add-student-register-form").serialize();
         var studentRequired3 = $("#studentRequired3").val();
+        var studentRequired7 = $('#studentRequired7').val();
 
         if (!validateEmail(studentRequired3)) {
             alert('Please provide correct email address');
+            return false;
+        }
+
+        if (!validateEmail(studentRequired7)) {
+            alert('Please provide student type');
             return false;
         }
 
@@ -20,10 +26,8 @@ $(document).ready(function () {
                     alert('user already exists, please use other email');
                     return false;
                 }
-                alert(data);
+                alert("Register Successfully");
                 document.location.href = 'login.php';
-                // alert("Register Successfully");
-                // fetchStudentTable();
             }
         });
 

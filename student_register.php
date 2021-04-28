@@ -41,32 +41,39 @@
                                         <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">Student Login</h1>
                                     </div>
                                     <form class="user" method="POST" id="add-student-register-form">
-                                        <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" placeholder="Firstname">
-                                        <div class="form-group">
-                                            <input type="name" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" placeholder="Firstname">
+                                        <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user"aria-describedby="emailHelp" placeholder="Firstname">
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Firstname *</label>
+                                            <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="name" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" placeholder="Lastname">
+                                        <div class="form-group bmd-form-group">
+                                        <label class="bmd-label-floating">Lastname *</label>
+                                            <!-- <input type="name" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp"> -->
+                                            <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required >
                                         </div>
-                                        <div class="form-group">
-                                            <input type="name" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" placeholder="Student id" required>
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Student ID *</label>
+                                            <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp"  maxlength="15" required>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" aria-describedby="emailHelp" placeholder="Email">
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Email *</label>
+                                            <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" aria-describedby="emailHelp" required >
                                         </div>
-                                        <div class="form-group">
-                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" placeholder="Mobile Number">
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Mobile Number</label>
+                                            <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
+                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4"  required maxlength="11">
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user" id="studentRequired5" placeholder="Password" required>
+                                        <div class="form-group  bmd-form-group">
+                                            <label class="bmd-label-floating">Password</label>
+                                            <input type="password" name="password" class="form-control form-control-user" id="studentRequired5"  required>
                                         </div>
-                                        <div class="form-group">
-                                            <select class="form-control " name="studentType">
+                                        <div class="form-group  bmd-form-group">
+                                            <select class="form-control " name="studentType" id="studentRequired7" required>
                                                 <option value="">Student Type *</option>
                                                 <option value="0">Grade School</option>
                                                 <option value="1">High School </option>
                                                 <option value="2">Senior High</option>
-                                                <option value="3">College</option>
                                             </select>
                                         </div>
                                         <button id="submit-student-register-form" class="btn btn-primary btn-user btn-block">
@@ -87,10 +94,5 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="./admin/assets/js/core/jquery.min.js"></script>
-    <script src="./admin/assets/js/core/bootstrap-material-design.min.js"></script>
-    <script src="./js/student-script.js"></script>
-
-</body>
-
-</html>
+<?php include('footer.php'); ?>
+<script src="./js/student-script.js"></script>
