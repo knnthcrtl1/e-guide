@@ -49,17 +49,17 @@
                     </h4>
                 </div>
 
-                <?php $url = $_SERVER['REQUEST_URI']; ?>
+                <?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/eguide/'; ?>
                 <div class="row" style="margin-top: 20px;">
 
                     <div class="col-md-6">
-                        <a href="<?php echo $url . '/login.php'; ?>" class="link_index">
+                        <a href="<?php echo $root . 'login.php'; ?>" class="link_index">
                             Student
                         </a>
                     </div>
 
                     <div class="col-md-6">
-                        <a href="<?php echo $url . '/admin/login.php'; ?>" class="link_index"> 
+                        <a href="<?php echo $root . 'admin/login.php'; ?>" class="link_index"> 
                             Admin
                         </a>
                     </div>
