@@ -7,6 +7,14 @@ $(document).ready(function () {
 
         var studentFormData = $("#add-student-form").serialize();
 
+        // var studentTypeRequired = $("#studentTypeRequired").val();
+
+        // if (!validateEmail(studentTypeRequired)) {
+        //     alert('Please provide student type');
+        //     return false;
+        // }
+
+
         // // if (!validateEmail(studentRequired3)){
         // //     alert('Please provide correct email address');
 
@@ -108,7 +116,7 @@ $(document).ready(function () {
     });
 
 
-    $(document).on("click", "#submit-edit-student-form", function (e) {
+    $(document).on("click", "#edit-student-form", function (e) {
         e.preventDefault();
 
         var studentFormData = $("#edit-student-form").serialize();

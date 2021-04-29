@@ -145,7 +145,7 @@ $(document).ready(function () {
 
     });
 
-    $(document).on("click", "#submit-edit-student-form", function (e) {
+    $(document).on("click", "#edit-student-form", function (e) {
         e.preventDefault();
 
         var studentFormData = $("#edit-student-form").serialize();

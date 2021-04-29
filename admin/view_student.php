@@ -133,13 +133,13 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Student No. *</label>
-                                                            <input name="student-studid" class="form-control" required>
+                                                            <input name="student-studid" maxlength="15" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Strand and Section *</label>
-                                                            <input name="student-strand-section" class="form-control">
+                                                            <input name="student-strand-section" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -147,7 +147,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Present Address *</label>
-                                                            <input name="student-present-address" class="form-control">
+                                                            <input name="student-present-address" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -155,7 +155,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Permanent Address *</label>
-                                                            <input name="student-permanent-address" class="form-control">
+                                                            <input name="student-permanent-address" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -163,7 +163,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Contact Number *</label>
-                                                            <input type="number" name="student-contact-number" class="form-control">
+                                                            <input type="number" name="student-contact-number" maxlength="11" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -175,7 +175,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Email Address *</label>
-                                                            <input type="email" name="student-email-address" class="form-control">
+                                                            <input type="email" name="student-email-address" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -183,7 +183,7 @@
                                                     <div class="col-md-2">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Age *</label>
-                                                            <input type="number" name="student-age" class="form-control">
+                                                            <input type="number" name="student-age" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -198,7 +198,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Place of birth *</label>
-                                                            <input type="text" name="student-placeofbirth" class="form-control">
+                                                            <input type="text" name="student-placeofbirth" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -206,7 +206,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Citizenship *</label>
-                                                            <input type="text" name="student-citizenship" class="form-control">
+                                                            <input type="text" name="student-citizenship" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -271,7 +271,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select class="form-control " name="student-type">
+                                                                <select class="form-control " name="student-type" id="studentTypeRequired" required>
                                                                     <option value="">Student Type *</option>
                                                                     <option value="0">Grade School</option>
                                                                     <option value="1">High School </option>

@@ -73,26 +73,26 @@
                                 <div class="card-body">
                                     <div class="tab-content">
                                         <div class="tab-pane   active show" id="profile">
-                                            <form id="edit-student-form" method="post">
+                                            <form id="edit-student-form" method="post" >
                                                 <input type="hidden" name="function-type" value="edit-student" />
                                                 <input type="hidden" name="student-id" value="<?php echo $_GET['id'] ?>">
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Firstname *</label>
-                                                            <input type="text" name="student-firstname" class="form-control" value="<?php echo $row['student_firstname'] ?>">
+                                                            <input type="text" name="student-firstname" class="form-control" value="<?php echo $row['student_firstname'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Lastname *</label>
-                                                            <input name="student-lastname" class="form-control" value="<?php echo $row['student_lastname'] ?>">
+                                                            <input name="student-lastname" class="form-control" value="<?php echo $row['student_lastname'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Middlename *</label>
-                                                            <input name="student-middlename" class="form-control" value="<?php echo $row['student_middlname'] ?>">
+                                                            <input name="student-middlename" class="form-control" value="<?php echo $row['student_middlname'] ?>" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -106,13 +106,13 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Student No. *</label>
-                                                            <input name="student-studid" class="form-control" value="<?php echo $row['student_stud_id'] ?>">
+                                                            <input name="student-studid" class="form-control" maxlength="15" value="<?php echo $row['student_stud_id'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Strand and Section *</label>
-                                                            <input name="student-strand-section" class="form-control" value="<?php echo $row['student_section_id'] ?>">
+                                                            <input name="student-strand-section" class="form-control" value="<?php echo $row['student_section_id'] ?>" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -120,7 +120,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Present Address *</label>
-                                                            <input name="student-present-address" class="form-control" value="<?php echo $row['student_address'] ?>">
+                                                            <input name="student-present-address" class="form-control" value="<?php echo $row['student_address'] ?>" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,7 +136,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Contact Number *</label>
-                                                            <input type="number" name="student-contact-number" class="form-control" value="<?php echo $row['student_contact'] ?>">
+                                                            <input type="number" name="student-contact-number" maxlength="11" class="form-control" value="<?php echo $row['student_contact'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -148,7 +148,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Email Address *</label>
-                                                            <input type="email" name="student-email-address" class="form-control" value="<?php echo $row['student_email'] ?>">
+                                                            <input type="email" name="student-email-address" class="form-control" value="<?php echo $row['student_email'] ?>" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -156,7 +156,7 @@
                                                     <div class="col-md-3">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Age *</label>
-                                                            <input type="number" name="student-age" class="form-control" value="<?php echo $row['student_age'] ?>">
+                                                            <input type="number" name="student-age" class="form-control" value="<?php echo $row['student_age'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -171,7 +171,7 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Place of birth *</label>
-                                                            <input type="text" name="student-placeofbirth" class="form-control" value="<?php echo $row['student_place_of_birth'] ?>">
+                                                            <input type="text" name="student-placeofbirth" class="form-control" value="<?php echo $row['student_place_of_birth'] ?>" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,7 +179,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Citizenship *</label>
-                                                            <input type="text" name="student-citizenship" class="form-control" value="<?php echo $row['student_citizenship'] ?>">
+                                                            <input type="text" name="student-citizenship" class="form-control" value="<?php echo $row['student_citizenship'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -244,12 +244,11 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <div class="form-group">
-                                                                <select class="form-control " name="student-type">
+                                                                <select class="form-control " name="student-type" id="studentTypeRequired" required>
                                                                     <option value="">Student Type *</option>
                                                                     <option value="0" <?php echo $row['student_type'] == 0 ? 'selected' : null ?>>Grade School</option>
                                                                     <option value="1" <?php echo $row['student_type'] == 1 ? 'selected' : null ?>>High School </option>
                                                                     <option value="2" <?php echo $row['student_type'] == 2 ? 'selected' : null ?>>Senior High</option>
-                                                                    <option value="3" <?php echo $row['student_type'] == 3 ? 'selected' : null ?>>College</option>
                                                                 </select>
                                                             </div>
                                                         </div>

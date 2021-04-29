@@ -1,12 +1,5 @@
       <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <a href="/">
-              E-guide
-            </a>
-          </nav>
-          <!-- your footer here -->
-        </div>
+       
       </footer>
       </div>
       </div>
