@@ -136,3 +136,40 @@ a.link_index {
   padding: 50px;
   border-radius: 10px;
 }
+
+.row.student_login_row > div {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.custom_header_nav {
+  background-color: #ffffff;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.row.student_login_row {
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+
+.row.custom_header_nav_row {
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.app__logo{
+  width: 100%;
+  max-width: 180px;
+}
+
+.app_logo__left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  flex: 1;
+}

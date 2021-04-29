@@ -21,35 +21,91 @@
 
 </head>
 
+<?php $url = $_SERVER['REQUEST_URI']; ?>
+
 <body class="bg-gradient-primary login-background">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="custom_header_nav">
         <div class="container">
-            <!-- <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
+            <div class="row custom_header_nav_row">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/login.php">Student <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin/login.php">Admin</a>
-                    </li>
-                </ul>
-                <div>
-                    <a class="nav-link" href="/student_register.php">REGISTER</a>
+                <div class="col-lg-6">
+                    test
                 </div>
-                <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
-            </div>
-        </div>
 
-    </nav>
+                <div class="col-lg-6">
+                    <?php
+                    include('./admin/connection.php');
+                    session_start();
+                    if (isset($_POST["admin-login"])) {
+                        $_SESSION["user"] = $_POST["user"];
+                        $_SESSION["pass"] = md5($_POST["pass"]);
+                        $_SESSION['last_time'] = time(); {
+                            if (!empty($_POST['user']) && !empty(md5($_POST['pass']))) {
+                                $user = $_POST['user'];
+                                $pass = md5($_POST['pass']);
+                                //selecting database
+                                $query = mysqli_query($conn, "SELECT * FROM tbl_users WHERE user_username='" . $user . "' AND user_password='" . $pass . "' AND user_level = 7");
+                                $numrows = mysqli_num_rows($query);
+                                if ($numrows != 0) {
+                                    while ($row = mysqli_fetch_assoc($query)) {
+                                        $username = $row['user_username'];
+                                        $password = $row['user_password'];
+                                        $userLevel = $row['user_level'];
+                                        $userId = $row['user_user_id'];
+                                    }
+                                    if ($user == $username && $pass == $password) {
+                                        $_SESSION['user_level'] = $userLevel;
+                                        $_SESSION["student_user_id"] = $userId;
+                                        header('Location: view_student.php');
+                                        exit();
+                                        //    if($userLevel == 5 || $userLevel == 6) {
+                                        //     header('Location:view_project.php');
+                                        //     exit();
+                                        //    } else {
+                                        // 		 //Redirect Browser
+                                        //     header('Location:view_dashboard.php');
+                                        //     exit();
+                                        //    }
+                                    }
+                                } else {
+                                    session_destroy();
+                                    echo "<script>alert('Invalid Username or Password!');</script>";
+                                }
+                            } else {
+                                session_destroy();
+                                echo "<script>alert('Required all fields');</script>";
+                            }
+                        }
+                    }
+                    ?>
+                    <form class="user" method="POST" style="margin: 0;">
+                        <div class="row student_login_row">
+                            <div class="form-group  bmd-form-group">
+                                <label class="bmd-label-floating">Student ID</label>
+                                <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
+                            </div>
+                            <!-- <div class="form-group">
+                      <input type="email" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                    </div> -->
+                            <div class="form-group  bmd-form-group">
+                                <label class="bmd-label-floating">Password</label>
+                                <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
+                            </div>
+                            <div>
+                                <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
 
     <div class="container">
 
@@ -64,8 +120,9 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row justify-content-center">
                             <div class="col-md-6 d-flex align-items-center">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img class="app__logo" src="./admin/assets/img/logo.png" style="max-width: 50%;" />
+                                <div class="app_logo__left">
+                                    <img class="app__logo" src="./admin/assets/img/logo.png" />
+                                    <img class="app__logo" src="./admin/assets/img/logo.png" style="margin-top:20px;" />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -73,64 +130,54 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT LOGIN</h1>
                                     </div>
-                                    <?php
-                                    include('./admin/connection.php');
-                                    session_start();
-                                    if (isset($_POST["admin-login"])) {
-                                        $_SESSION["user"] = $_POST["user"];
-                                        $_SESSION["pass"] = md5($_POST["pass"]);
-                                        $_SESSION['last_time'] = time(); {
-                                            if (!empty($_POST['user']) && !empty(md5($_POST['pass']))) {
-                                                $user = $_POST['user'];
-                                                $pass = md5($_POST['pass']);
-                                                //selecting database
-                                                $query = mysqli_query($conn, "SELECT * FROM tbl_users WHERE user_username='" . $user . "' AND user_password='" . $pass . "' AND user_level = 7");
-                                                $numrows = mysqli_num_rows($query);
-                                                if ($numrows != 0) {
-                                                    while ($row = mysqli_fetch_assoc($query)) {
-                                                        $username = $row['user_username'];
-                                                        $password = $row['user_password'];
-                                                        $userLevel = $row['user_level'];
-                                                        $userId = $row['user_user_id'];
-                                                    }
-                                                    if ($user == $username && $pass == $password) {
-                                                        $_SESSION['user_level'] = $userLevel;
-                                                        $_SESSION["student_user_id"] = $userId;
-                                                        header('Location: view_student.php');
-                                                        exit();
-                                                        //    if($userLevel == 5 || $userLevel == 6) {
-                                                        //     header('Location:view_project.php');
-                                                        //     exit();
-                                                        //    } else {
-                                                        // 		 //Redirect Browser
-                                                        //     header('Location:view_dashboard.php');
-                                                        //     exit();
-                                                        //    }
-                                                    }
-                                                } else {
-                                                    session_destroy();
-                                                    echo "Invalid Username or Password!";
-                                                }
-                                            } else {
-                                                session_destroy();
-                                                echo "Required All fields!";
-                                            }
-                                        }
-                                    }
-                                    ?>
-                                    <form class="user" method="POST">
-                                        <div class="form-group  bmd-form-group">
-                                        <label class="bmd-label-floating">Student ID</label>
-                                            <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" >
+                                    <form class="user" method="POST" id="add-student-register-form">
+                                        <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname" required>
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Firstname *</label>
+                                            <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
                                         </div>
-                                        <!-- <div class="form-group">
-                      <input type="email" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                    </div> -->
-                                        <div class="form-group  bmd-form-group">
-                                        <label class="bmd-label-floating">Password</label>
-                                            <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Lastname *</label>
+                                            <!-- <input type="name" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp"> -->
+                                            <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required>
                                         </div>
-                                        <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Student ID *</label>
+                                            <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" required maxlength="15">
+                                        </div>
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Email *</label>
+                                            <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" required aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group bmd-form-group">
+                                            <label class="bmd-label-floating">Mobile Number</label>
+                                            <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
+                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" maxlength="11">
+                                        </div>
+                                        <div class="form-group  bmd-form-group">
+                                            <label class="bmd-label-floating">Password *</label>
+                                            <input type="password" name="password" class="form-control form-control-user" required id="studentRequired5">
+                                        </div>
+                                        <div class="form-group  bmd-form-group">
+                                            <select class="form-control " name="studentType" id="studentRequired7" required>
+                                                <option value="">Student Type *</option>
+                                                <option value="0">Grade School</option>
+                                                <option value="1">High School </option>
+                                                <option value="2">Senior High</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group bmd-form-group" style="margin-left: 15px">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required>
+                                                Accept privacy policy
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <button id="submit-student-register-form" class="btn btn-primary btn-user btn-block">
+                                            Submit
+                                        </button>
                                     </form>
                                     <hr>
                                 </div>
@@ -147,4 +194,37 @@
 
     <!-- Bootstrap core JavaScript-->
     <?php include('footer.php'); ?>
-    <script src="./js/student-script"></script>
+    <script>
+        $(document).on("submit", "#add-student-register-form", function(e) {
+            e.preventDefault();
+
+            var studentFormData = $("#add-student-register-form").serialize();
+            var studentRequired3 = $("#studentRequired3").val();
+            var studentRequired7 = $('#studentRequired7').val();
+
+            // if (!validateEmail(studentRequired3)) {
+            //     alert('Please provide correct email address');
+            //     return false;
+            // }
+
+            // if (!validateEmail(studentRequired7)) {
+            //     alert('Please provide student type');
+            //     return false;
+            // }
+
+            jQuery.ajax({
+                method: "POST",
+                url: "./functions/student-function.php",
+                data: studentFormData + "&ajax=true",
+                success: function(data) {
+                    if (data == 1) {
+                        alert('user already exists, please use other email');
+                        return false;
+                    }
+                    alert("Register Successfully");
+                    document.location.href = 'login.php';
+                }
+            });
+
+        });
+    </script>

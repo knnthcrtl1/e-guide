@@ -135,6 +135,5 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <?php include('footer.php'); ?>
 
     <script src="./js/student-script"></script>
