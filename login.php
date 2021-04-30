@@ -21,7 +21,7 @@
 
 </head>
 
-<?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/eguide/'; ?>
+<?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'; ?>
 
 <body class="bg-gradient-primary login-background">
 

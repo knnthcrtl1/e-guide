@@ -49,7 +49,7 @@
                     </h4>
                 </div>
 
-                <?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/eguide/'; ?>
+                <?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'; ?>
                 <div class="row" style="margin-top: 20px;">
 
                     <div class="col-md-6">
