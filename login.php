@@ -89,7 +89,7 @@
                     <form class="user" method="POST" style="margin: 0;">
                         <div class="row student_login_row">
                             <div class="form-group bmd-form-group student__form">
-                                <span class="student__form--label">Student ID </span>
+                                <span class="student__form--label">Username</span>
                                 <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
                             </div>
                             <!-- <div class="form-group">
