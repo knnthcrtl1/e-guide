@@ -1,6 +1,6 @@
 <?php include('./header.php'); ?>
 
-<body>
+<body class="dashboard__content">
   <div class="wrapper ">
     <?php
     include('./sidebar.php');
@@ -14,7 +14,7 @@
       navbarContainer($headerTitle);
       ?>
       <!-- End Navbar -->
-      <div class="content dashboard__content" >
+      <div class="content" >
         <div class="container-fluid">
           <!-- your content here -->
           <div class="row">
