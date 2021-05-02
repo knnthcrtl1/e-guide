@@ -91,8 +91,15 @@ select.custom-select.custom-select-sm.form-control.form-control-sm {
   padding: 20px;
 }
 
+.dashboard__content{
+  background-image: url(../img/dashboard.jpg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .login-background{
-  background-image: url(../img/student_portal_2013.jpg);
+  background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -188,5 +195,5 @@ a.link_index {
 
 .student__form--label {
   padding-right: 10px;
-  width: 30%;
+  width: 40%;
 }

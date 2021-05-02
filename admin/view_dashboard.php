@@ -14,7 +14,7 @@
       navbarContainer($headerTitle);
       ?>
       <!-- End Navbar -->
-      <div class="content">
+      <div class="content dashboard__content" >
         <div class="container-fluid">
           <!-- your content here -->
 
