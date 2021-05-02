@@ -88,15 +88,15 @@
                     ?>
                     <form class="user" method="POST" style="margin: 0;">
                         <div class="row student_login_row">
-                            <div class="form-group  bmd-form-group">
-                                <label class="bmd-label-floating">Student ID</label>
+                            <div class="form-group bmd-form-group student__form">
+                                <span class="student__form--label">Student ID </span>
                                 <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
                             </div>
                             <!-- <div class="form-group">
                       <input type="email" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div> -->
-                            <div class="form-group  bmd-form-group">
-                                <label class="bmd-label-floating">Password</label>
+                            <div class="form-group bmd-form-group student__form">
+                                <span class="student__form--label">Pasword</span>
                                 <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
                             </div>
                             <div>
@@ -129,7 +129,7 @@
                             <div class="col-md-6 d-flex align-items-center">
                                 <div class="app_logo__left">
                                     <img class="app__logo" src="./admin/assets/img/logo.png" />
-                                    <img class="app__logo" src="./admin/assets/img/logo.png" style="margin-top:20px;" />
+                                    <img class="app__logo" src="./admin/assets/img/gcsgo.png" style="margin-top:20px;" />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -139,35 +139,36 @@
                                     </div>
                                     <form class="user" method="POST" id="add-student-register-form">
                                         <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname" required>
-                                        <div class="form-group bmd-form-group">
-                                            <label class="bmd-label-floating">Firstname *</label>
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Firstname *</span>
                                             <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
                                         </div>
-                                        <div class="form-group bmd-form-group">
-                                            <label class="bmd-label-floating">Lastname *</label>
-                                            <!-- <input type="name" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp"> -->
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Lastname *</span>
+                                            <!-- <label class="bmd-label-floating">Lastname *</label> -->
                                             <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required>
                                         </div>
-                                        <div class="form-group bmd-form-group">
-                                            <label class="bmd-label-floating">Student ID *</label>
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Student ID *</span>
                                             <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" required maxlength="15">
                                         </div>
-                                        <div class="form-group bmd-form-group">
-                                            <label class="bmd-label-floating">Email *</label>
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Email *</span>
                                             <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" required aria-describedby="emailHelp">
                                         </div>
-                                        <div class="form-group bmd-form-group">
-                                            <label class="bmd-label-floating">Mobile Number</label>
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Mobile Number</span>
                                             <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
                                             <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" maxlength="11">
                                         </div>
-                                        <div class="form-group  bmd-form-group">
-                                            <label class="bmd-label-floating">Password *</label>
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Password *</span>
                                             <input type="password" name="password" class="form-control form-control-user" required id="studentRequired5">
                                         </div>
-                                        <div class="form-group  bmd-form-group">
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Student Type</span>
                                             <select class="form-control " name="studentType" id="studentRequired7" required>
-                                                <option value="">Student Type *</option>
+                                                <option value=""></option>
                                                 <option value="0">Grade School</option>
                                                 <option value="1">High School </option>
                                                 <option value="2">Senior High</option>
@@ -202,6 +203,11 @@
     <!-- Bootstrap core JavaScript-->
     <?php include('footer.php'); ?>
     <script>
+        function _validateMobileNumber(num) {
+            let re = /^(09|\+639|9)\d{9}$/;
+            return re.test(String(num).toLowerCase());
+        };
+
         $(document).on("submit", "#add-student-register-form", function(e) {
             e.preventDefault();
 
@@ -209,6 +215,10 @@
             var studentRequired3 = $("#studentRequired3").val();
             var studentRequired7 = $('#studentRequired7').val();
 
+            if (!_validateMobileNumber) {
+                alert('Please provide corrent mobile number');
+                return false;
+            }
             // if (!validateEmail(studentRequired3)) {
             //     alert('Please provide correct email address');
             //     return false;

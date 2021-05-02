@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="col-md-6 text-center">
-                        <img src='./admin/assets/img/logo.png' class="ue_logo" />
+                        <img src='./admin/assets/img/gcsgo.png' class="ue_logo" />
                     </div>
                 </div>
 

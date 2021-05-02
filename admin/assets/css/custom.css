@@ -173,3 +173,18 @@ a.link_index {
   align-content: center;
   flex: 1;
 }
+
+.student__form{
+  display: flex;
+  flex-direction: row;
+}
+
+.student__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.student__form--label {
+  padding-right: 10px;
+}

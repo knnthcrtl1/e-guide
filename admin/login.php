@@ -61,7 +61,7 @@
           </div>
 
           <div class="col-md-6 text-center">
-            <img src='./assets/img/logo.png' class="ue_logo" style="width: 120px;" />
+            <img src='./assets/img/gcsgo.png' class="ue_logo" style="width: 120px;" />
           </div>
         </div>
 
@@ -110,7 +110,7 @@
         }
         ?>
         <form class="user" method="POST">
-          <div class="form-group bmd-form-group">
+          <div class="form-group bmd-form-group student_form">
             <label class="bmd-label-floating">Username</label>
             <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
           </div>
