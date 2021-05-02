@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row custom_header_nav_row">
 
-                <div class="col-lg-6">
+                <div class="col-lg-3">
                     <a href="<?php echo $root . 'index.php'; ?>">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -40,7 +40,7 @@
                     </a>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-9">
                     <?php
                     include('./admin/connection.php');
                     session_start();

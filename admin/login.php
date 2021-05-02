@@ -110,7 +110,7 @@
         }
         ?>
         <form class="user" method="POST">
-          <div class="form-group bmd-form-group student_form">
+          <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Username</label>
             <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
           </div>

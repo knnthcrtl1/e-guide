@@ -149,9 +149,10 @@ a.link_index {
 }
 
 .row.student_login_row {
-  justify-content: flex-end;
-  align-items: center;
-  align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
 }
 
 .row.custom_header_nav_row {
@@ -187,4 +188,5 @@ a.link_index {
 
 .student__form--label {
   padding-right: 10px;
+  width: 30%;
 }
