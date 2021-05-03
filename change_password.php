@@ -31,12 +31,24 @@
                                     <form id="change-password-form" method="post">
                                         <input type="hidden" name="function-type" value="change-password">
                                         <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <div class="col-sm-4 mb-4 mb-sm-0">
                                                 <input type="hidden" name="password-user-id" id="equipmentRequired3" value="<?php echo $_SESSION['student_user_id']; ?>">
-                                                <input type="password" class="form-control form-control-user" name="password" id="equipmentRequired1" placeholder="Enter new password*">
+                                                <div class="form-group bmd-form-group">
+                                                    <label class="bmd-label-floating">Enter old password *</label>
+                                                    <input type="password" class="form-control form-control-user" name="oldPassword" id="equipmentRequired3">
+                                                </div>
                                             </div>
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="password" class="form-control form-control-user" name="password-retype-password" id="equipmentRequired2" placeholder="Re type new password">
+                                            <div class="col-sm-4 mb-4 mb-sm-0">
+                                                <div class="form-group bmd-form-group">
+                                                    <label class="bmd-label-floating">Enter new password *</label>
+                                                    <input type="password" class="form-control form-control-user" name="password" id="equipmentRequired1">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 mb-4 mb-sm-0">
+                                                <div class="form-group bmd-form-group">
+                                                    <label class="bmd-label-floating">Re type new password *</label>
+                                                    <input type="password" class="form-control form-control-user" name="password-retype-password" id="equipmentRequired2">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group row d-flex justify-content-center">
@@ -70,8 +82,14 @@
                 var equipmentRequired2 = $("#equipmentRequired2").val();
                 var id = $('#equipmentRequired3').val();
 
-                if (equipmentRequired1.length <= 6) { // checks the password value length
+                if (equipmentRequired1.length <= 6 || equipmentRequired2.length <= 6) {
+                    // checks the password value length
                     alert('Password must be greater than 6 characters');
+                    return false;
+                }
+
+                if (equipmentRequired1.length >= 12 || equipmentRequired2.length >= 12) { // checks the password value length
+                    alert('Password must be less than 12 characters');
                     return false;
                 }
 
@@ -85,12 +103,19 @@
                     return false;
                 }
 
-
                 jQuery.ajax({
                     method: "POST",
                     url: "./functions/function-user.php",
                     data: changePassFormData + `&ajax=true&id=${id}`,
                     success: function(data) {
+                        if (data == 1) {
+                            alert('invalid old password');
+                            return false;
+                        }
+                        if (data == 2) {
+                            alert('new password must not be the same with previous password');
+                            return false;
+                        }
                         location.reload()
                         alert("Password Updated Successfully!");
                     }

@@ -1,23 +1,35 @@
  <?php
 
 
- function navbarContainer($headerTitle) {
-?>
- 
- <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;"><?php echo $headerTitle; ?></a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end">
-            <!-- <form class="navbar-form">
+  function navbarContainer($headerTitle)
+  {
+  ?>
+
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+     <div class="container-fluid">
+       <div class="navbar-wrapper">
+         <?php
+          if ($headerTitle == 'Dashboard') {
+          ?>
+           <a class="navbar-brand" href="javascript:;" style="color: #ffffff"><?php echo $headerTitle; ?></a>
+
+         <?php
+          } else {
+          ?>
+           <a class="navbar-brand" href="javascript:;" style="color: #ffffff"><?php echo $headerTitle; ?></a>
+         <?php
+          }
+          ?>
+       </div>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="navbar-toggler-icon icon-bar"></span>
+         <span class="navbar-toggler-icon icon-bar"></span>
+         <span class="navbar-toggler-icon icon-bar"></span>
+       </button>
+       <div class="collapse navbar-collapse justify-content-end">
+         <!-- <form class="navbar-form">
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
@@ -26,8 +38,8 @@
                 </button>
               </div>
             </form> -->
-            <ul class="navbar-nav">
-              <!-- <li class="nav-item">
+         <ul class="navbar-nav">
+           <!-- <li class="nav-item">
                 <a class="nav-link" href="javascript:;">
                   <i class="material-icons">dashboard</i>
                   <p class="d-lg-none d-md-block">
@@ -51,24 +63,35 @@
                   <a class="dropdown-item" href="#">Another One</a>
                 </div>
               </li> -->
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="./change_password.php">Settings</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="./logout.php">Log out</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
+           <li class="nav-item dropdown">
+             <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <?php
+                if ($headerTitle == 'Dashboard') {
+                ?>
+                 <i class="material-icons" style="color: #ffffff;">person</i>
+               <?php
+                } else {
+                ?>
+                 <i class="material-icons">person</i>
+               <?php
+                }
 
-<?php } ?>
+                ?>
+               <p class="d-lg-none d-md-block">
+                 Account
+               </p>
+             </a>
+             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+               <a class="dropdown-item" href="#">Profile</a>
+               <a class="dropdown-item" href="./change_password.php">Settings</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="./logout.php">Log out</a>
+             </div>
+           </li>
+         </ul>
+       </div>
+     </div>
+   </nav>
+   <!-- End Navbar -->
+
+ <?php } ?>

@@ -9,7 +9,7 @@
     <div class="main-panel">
       <!-- Navbar -->
       <?php
-      include('./admin/navbar.php');
+    include('./navbar.php');
       $headerTitle = 'Dashboard';
       navbarContainer($headerTitle);
       ?>

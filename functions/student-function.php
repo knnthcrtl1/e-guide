@@ -10,10 +10,11 @@ if (isset($_POST['ajax'])) {
         $studentLastname = mysqli_real_escape_string($conn, (strip_tags($_POST['lname'])));
         $studentEmail = mysqli_real_escape_string($conn, (strip_tags($_POST['email'])));
         $studentPassword = mysqli_real_escape_string($conn, (strip_tags($_POST['password'])));
+        $confirmPassword = mysqli_real_escape_string($conn, (strip_tags($_POST['confirmPassword'])));
         $studentStudId = mysqli_real_escape_string($conn, (strip_tags($_POST['studentId'])));
         $studentType = mysqli_real_escape_string($conn, (strip_tags($_POST['studentType'])));
 
-        $newPass = md5($studentPassword);
+        $newPass = md5($confirmPassword);
 
         $sql = "INSERT INTO tbl_users (user_username,user_password,user_level) VALUES ('{$studentStudId}',
             '{$newPass}','7')";

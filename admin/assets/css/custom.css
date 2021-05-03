@@ -1,3 +1,7 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
 .custom-bg-danger, .card-header-primary{
     background: #EE4540 !important;
 }
@@ -196,4 +200,14 @@ a.link_index {
 .student__form--label {
   padding-right: 10px;
   width: 40%;
+}
+
+.privacy__policy__title {
+  color: #000 !important;
+}
+
+span.password__description {
+  display: block;
+  text-align: right;
+  font-size: 10px;
 }

@@ -1,11 +1,28 @@
 $(document).ready(function () {
 
     // study habit 1
-
+    function validateName(text) {
+        let re = /^[a-zA-Z]+$/;
+        return re.test(String(text).toLowerCase());
+    }
+    
     $(document).on("submit", "#add-student-form", function (e) {
         e.preventDefault();
 
         var studentFormData = $("#add-student-form").serialize();
+
+        var studentRequired1 = $('#studentRequired1').val();
+        var studentRequired2 = $('#studentRequired2').val();
+
+        if (!validateName(studentRequired1)) {
+            alert('Please input text only for firstname');
+            return false;
+        }
+
+        if (!validateName(studentRequired2)) {
+            alert('Please input text only for lastname');
+            return false;
+        }
 
         // var studentTypeRequired = $("#studentTypeRequired").val();
 
@@ -121,6 +138,19 @@ $(document).ready(function () {
 
         var studentFormData = $("#edit-student-form").serialize();
 
+        var studentRequired1 = $('#studentRequired1').val();
+        var studentRequired2 = $('#studentRequired2').val();
+
+        if (!validateName(studentRequired1)) {
+            alert('Please input text only for firstname');
+            return false;
+        }
+
+        if (!validateName(studentRequired2)) {
+            alert('Please input text only for lastname');
+            return false;
+        }
+        
         jQuery.ajax({
             method: "POST",
             url: "./functions/function-student.php",

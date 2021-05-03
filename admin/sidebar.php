@@ -11,7 +11,7 @@ function navigationList($active) {
   -->
     <div class="logo">
         <img src='./assets/img/logo.png' class="eguide-logo"/>
-        <a href='./index.php' class="simple-text logo-mini">
+        <a href='#' class="simple-text logo-mini">
             E-GUIDE
         </a>
     </div>

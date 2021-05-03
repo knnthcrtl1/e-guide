@@ -150,7 +150,7 @@
                                         </div>
                                         <div class="form-group bmd-form-group student__form">
                                             <span class="student__form--label">Student ID *</span>
-                                            <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" required maxlength="15">
+                                            <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" required maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                                         </div>
                                         <div class="form-group bmd-form-group student__form">
                                             <span class="student__form--label">Email *</span>
@@ -159,11 +159,16 @@
                                         <div class="form-group bmd-form-group student__form">
                                             <span class="student__form--label">Mobile Number</span>
                                             <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
-                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" maxlength="11">
+                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" minlength="11" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                         </div>
                                         <div class="form-group bmd-form-group student__form">
                                             <span class="student__form--label">Password *</span>
                                             <input type="password" name="password" class="form-control form-control-user" required id="studentRequired5">
+                                        </div>
+                                        <span class="password__description">Password must be greater than 6 and less than 12 characters</span>
+                                        <div class="form-group bmd-form-group student__form">
+                                            <span class="student__form--label">Confirm password *</span>
+                                            <input type="password" name="confirmPassword" class="form-control form-control-user" required id="studentRequired8">
                                         </div>
                                         <div class="form-group bmd-form-group student__form">
                                             <span class="student__form--label">Student Type</span>
@@ -175,14 +180,15 @@
                                             </select>
                                         </div>
                                         <div class="form-group bmd-form-group" style="margin-left: 15px">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required>
-                                                Accept privacy policy
+                                            <label class="form-check-label privacy__policy__title">
+                                                <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required oninvalid="this.setCustomValidity('Please accept privacy policy to proceed')" onchange="this.setCustomValidity('')">
+                                                I have read and accepted the Privacy Policy.
                                                 <span class="form-check-sign">
                                                     <span class="check"></span>
                                                 </span>
                                             </label>
                                         </div>
+
                                         <button id="submit-student-register-form" class="btn btn-primary btn-user btn-block">
                                             Submit
                                         </button>
@@ -208,17 +214,59 @@
             return re.test(String(num).toLowerCase());
         };
 
+
+        function validateName(text) {
+            let re = /^[a-zA-Z]+$/;
+            return re.test(String(text).toLowerCase());
+        }
+
         $(document).on("submit", "#add-student-register-form", function(e) {
             e.preventDefault();
 
             var studentFormData = $("#add-student-register-form").serialize();
+
+            var studentRequired1 = $('#studentRequired1').val();
+            var studentRequired2 = $('#studentRequired2').val();
+
             var studentRequired3 = $("#studentRequired3").val();
+
+            var studentRequired5 = $("#studentRequired5").val();
+
+            var studentRequired8 = $("#studentRequired8").val();
+
             var studentRequired7 = $('#studentRequired7').val();
+
+
+            if (!validateName(studentRequired1)) {
+                alert('Please input text only for firstname');
+                return false;
+            }
+
+            if (!validateName(studentRequired2)) {
+                alert('Please input text only for lastname');
+                return false;
+            }
 
             if (!_validateMobileNumber) {
                 alert('Please provide corrent mobile number');
                 return false;
             }
+
+            if (studentRequired5 !== studentRequired8) {
+                alert('Password must be the same');
+                return false;
+            }
+
+            if (studentRequired8.length <= 6 || studentRequired5.length <= 6) { // checks the password value length
+                alert('Password must be greater than 6 characters');
+                return false;
+            }
+
+            if (studentRequired8.length >= 12 || studentRequired5.length >= 12) { // checks the password value length
+                alert('Password must be less than 12 characters');
+                return false;
+            }
+
             // if (!validateEmail(studentRequired3)) {
             //     alert('Please provide correct email address');
             //     return false;
@@ -235,7 +283,7 @@
                 data: studentFormData + "&ajax=true",
                 success: function(data) {
                     if (data == 1) {
-                        alert('user already exists, please use other email');
+                        alert('student id already exists, please use other student id');
                         return false;
                     }
                     alert("Register Successfully");

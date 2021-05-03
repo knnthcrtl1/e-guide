@@ -10,6 +10,10 @@ $(document).ready(function () {
         return re.test(String(num).toLowerCase());
     };
 
+    function validateName(text) {
+        let re = /^[a-zA-Z]+$/;
+        return re.test(String(text).toLowerCase());
+    }
 
     // study habit 1
 
@@ -122,6 +126,19 @@ $(document).ready(function () {
         e.preventDefault();
 
         var studentFormData = $("#edit-student-form").serialize();
+        
+        var studentRequired1 = $('#studentRequired1').val();
+        var studentRequired2 = $('#studentRequired2').val();
+
+        if (!validateName(studentRequired1)) {
+            alert('Please input text only for firstname');
+            return false;
+        }
+
+        if (!validateName(studentRequired2)) {
+            alert('Please input text only for lastname');
+            return false;
+        }
 
         jQuery.ajax({
             method: "POST",

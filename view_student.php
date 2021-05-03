@@ -10,7 +10,7 @@
         <div class="main-panel">
             <!-- Navbar -->
             <?php
-            include('./admin/navbar.php');
+            include('./navbar.php');
             $headerTitle = 'Student';
             navbarContainer($headerTitle);
             ?>
@@ -80,13 +80,13 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Firstname *</label>
-                                                            <input type="text" name="student-firstname" class="form-control" value="<?php echo $row['student_firstname'] ?>" required>
+                                                            <input type="text" name="student-firstname" id="studentRequired1" class="form-control" value="<?php echo $row['student_firstname'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Lastname *</label>
-                                                            <input name="student-lastname" class="form-control" value="<?php echo $row['student_lastname'] ?>" required>
+                                                            <input name="student-lastname" class="form-control"  id="studentRequired2" value="<?php echo $row['student_lastname'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -106,7 +106,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Student No. *</label>
-                                                            <input name="student-studid" class="form-control" maxlength="15" value="<?php echo $row['student_stud_id'] ?>" required>
+                                                            <input name="student-studid" class="form-control" maxlength="11" value="<?php echo $row['student_stud_id'] ?>" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
