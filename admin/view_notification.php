@@ -79,10 +79,14 @@
                                   <?php
                                   $sql = "SELECT * FROM tbl_students";
                                   $result = mysqli_query($conn, $sql);
-                                  $row = mysqli_fetch_array($result);
-                                  $studentName = $row['student_id'] . ' - ' . $row['student_firstname'] . ' ' . $row['student_lastname'];
+                                  if (mysqli_num_rows($result) != 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                    $studentName = $row['student_id'] . ' - ' . $row['student_firstname'] . ' ' . $row['student_lastname'];
                                   ?>
-                                  <option value="<?php echo $row['student_id']; ?>"><?php echo $studentName; ?></option>
+                                      <option value="<?php echo $row['student_id']; ?>"><?php echo $studentName; ?></option>
+                                  <?php }
+                                  }
+                                  ?>
                                 </select>
                               </div>
                             </div>
@@ -112,9 +116,9 @@
               </div>
             </div>
 
+          </div>
+          <!-- your content here -->
         </div>
-        <!-- your content here -->
       </div>
-    </div>
-    <?php include('footer.php'); ?>
-    <script src="./custom-js/notification-script.js"></script>
+      <?php include('footer.php'); ?>
+      <script src="./custom-js/notification-script.js"></script>
