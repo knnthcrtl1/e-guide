@@ -15,11 +15,11 @@ if (isset($_POST['ajax'])) {
 
         $studentTableFields = "notification_student,notification_title,notification_message";
 
-        // $sql = "SELECT * FROM tbl_students WHERE student_id = '{$studentId}'";
-        // $result = mysqli_query($conn, $sql);
-        // $row = mysqli_fetch_array($result);
+        $sql = "SELECT * FROM tbl_students WHERE student_id = '{$studentId}'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
    
-        $to = "vortexbears@gmail.com";
+        $to = $row['student_email'];
         $subject = $notificationTitle;
         $txt = $notificationMessage;
         $headers = "From: ue-eguide@email.com";
