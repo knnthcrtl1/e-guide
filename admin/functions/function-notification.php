@@ -22,15 +22,15 @@ if (isset($_POST['ajax'])) {
         $to = "vortexbears@gmail.com";
         $subject = $notificationTitle;
         $txt = $notificationMessage;
-        $headers = "From: test@email.com";
+        $headers = "From: ue-eguide@email.com";
 
         mail($to, $subject, $txt, $headers);
 
-        // $sql = "INSERT INTO tbl_notifications ( {$studentTableFields} ) VALUES 
-        //         ('{$studentId}','{$notificationTitle}','{$notificationMessage}')";
+        $sql = "INSERT INTO tbl_notifications ( {$studentTableFields} ) VALUES 
+                ('{$studentId}','{$notificationTitle}','{$notificationMessage}')";
 
-        // if (!mysqli_query($conn, $sql)) {
-        //     echo ("Error description: " . mysqli_error($conn));
-        // }
+        if (!mysqli_query($conn, $sql)) {
+            echo ("Error description: " . mysqli_error($conn));
+        }
     }
 }

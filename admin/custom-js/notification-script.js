@@ -40,12 +40,11 @@ $(document).ready(function () {
             url: "./functions/function-student.php",
             data: studentFormData + "&ajax=true",
             success: function (data) {
-                alert(data);
                 // if(data == 1){
                 //     alert('email already exists, please use other email');
                 //     return false;
                 // }
-                // alert("Added Successfully!");
+                alert("Added Successfully!");
             }
         });
     });
