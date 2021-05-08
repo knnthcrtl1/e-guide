@@ -51,21 +51,22 @@
 
   <div class="container">
 
-    <div class="row justify-content-center">
+    <!-- <div class="row justify-content-center"> -->
+    <div class="">
 
       <div class="main__container">
 
         <div class="row" style="margin-bottom: 15px;">
-          <div class="col-md-6 text-center">
+          <div class="col-md-12 text-center">
             <img src='./assets/img/logo.png' class="ue_logo" style="width: 120px;" />
           </div>
 
-          <div class="col-md-6 text-center">
+          <!-- <div class="col-md-6 text-center">
             <img src='./assets/img/gcsgo.png' class="ue_logo" style="width: 120px;" />
-          </div>
+          </div> -->
         </div>
 
-        <h3 style="text-align:center">ADMIN/CO ADMIN</h3>
+        <h3 style="text-align:center;color:#fff">ADMIN/CO ADMIN</h3>
         <?php
         include('./connection.php');
         session_start();
@@ -112,16 +113,16 @@
         <form class="user" method="POST">
           <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Username</label>
-            <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
+            <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" style="color:#ffffff">
           </div>
           <!-- <div class="form-group">
                       <input type="email" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div> -->
           <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Password</label>
-            <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
+            <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword" style="color:#ffffff">
           </div>
-          <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
+          <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block" >
         </form>
       </div>
       <!-- <div class="text-center">

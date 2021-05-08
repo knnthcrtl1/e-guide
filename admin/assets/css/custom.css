@@ -1,5 +1,5 @@
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .custom-bg-danger, .card-header-primary{
@@ -110,16 +110,27 @@ select.custom-select.custom-select-sm.form-control.form-control-sm {
   padding-bottom: 50px;
 }
 
+
 .bg-login-container {
-  background-color: white;
-  border-radius: 6px;
-  margin-top: 50px;
+  background: rgba(0,0,0,0.85);
+  width: 720px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  color: #ffffff;
+  margin-top: 30px;
 }
 
-.vision_container , .mission_container{
-  background-color: #ffffff;
+.student__login__container .form-control-user {
+  color: #ffffff;
+}
+
+.vision_container, .mission_container {
+  background-color: rgba(0,0,0,0.85);
   padding: 20px;
   border-radius: 6px;
+  color: #ffffff;
+  border: 1px solid #333;
 }
 
 img.ue_logo {
@@ -142,10 +153,11 @@ a.link_index {
 }
 
 .main__container {
-  background: #fff;
-  width: 590px;
+  background: rgba(0,0,0,0.85);
+  width: 480px;
   padding: 50px;
   border-radius: 10px;
+  border: 1px solid #333;
 }
 
 .row.student_login_row > div {
@@ -174,7 +186,7 @@ a.link_index {
 
 .app__logo{
   width: 100%;
-  max-width: 180px;
+  max-width: 130px;
 }
 
 .app_logo__left {
@@ -200,6 +212,7 @@ a.link_index {
 .student__form--label {
   padding-right: 10px;
   width: 40%;
+  font-size: 14px;
 }
 
 .privacy__policy__title {

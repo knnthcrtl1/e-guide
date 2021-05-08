@@ -1,5 +1,4 @@
-<footer class="footer">
-      </footer>
+
       </div>
       </div>
      <!--   Core JS Files   -->

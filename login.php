@@ -118,7 +118,8 @@
 
 
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center"> -->
+        <div class="">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
@@ -126,72 +127,90 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row justify-content-center">
-                            <div class="col-md-6 d-flex align-items-center">
+                            <!-- <div class="col-md-12 d-flex align-items-center">
                                 <div class="app_logo__left">
-                                    <img class="app__logo" src="./admin/assets/img/logo.png" />
-                                    <img class="app__logo" src="./admin/assets/img/gcsgo.png" style="margin-top:20px;" />
+                                    <div class="row" style="background-color: #fff">
+                                        <div class="col-md-6">
+                                            <img class="app__logo" src="./admin/assets/img/logo.png" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img class="app__logo" src="./admin/assets/img/gcsgo.png" />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
+                            </div> -->
+                            <div class="col-md-12 student__login__container">
                                 <div class="" style="padding: 10px; padding-right:20px">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT LOGIN</h1>
                                     </div>
                                     <form class="user" method="POST" id="add-student-register-form">
                                         <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname" required>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Firstname *</span>
-                                            <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
-                                        </div>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Lastname *</span>
-                                            <!-- <label class="bmd-label-floating">Lastname *</label> -->
-                                            <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required>
-                                        </div>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Student ID *</span>
-                                            <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" required maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                                        </div>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Email *</span>
-                                            <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" required aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Mobile Number</span>
-                                            <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
-                                            <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" minlength="11" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-                                        </div>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Password *</span>
-                                            <input type="password" name="password" class="form-control form-control-user" required id="studentRequired5">
-                                        </div>
-                                        <span class="password__description">Password must be greater than 6 and less than 12 characters</span>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Confirm password *</span>
-                                            <input type="password" name="confirmPassword" class="form-control form-control-user" required id="studentRequired8">
-                                        </div>
-                                        <div class="form-group bmd-form-group student__form">
-                                            <span class="student__form--label">Student Type</span>
-                                            <select class="form-control " name="studentType" id="studentRequired7" required>
-                                                <option value=""></option>
-                                                <option value="0">Grade School</option>
-                                                <option value="1">High School </option>
-                                                <option value="2">Senior High</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group bmd-form-group" style="margin-left: 15px">
-                                            <label class="form-check-label privacy__policy__title">
-                                                <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required oninvalid="this.setCustomValidity('Please accept privacy policy to proceed')" onchange="this.setCustomValidity('')">
-                                                I have read and accepted the Privacy Policy.
-                                                <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
+
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Firstname *</span>
+                                                    <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
+                                                </div>
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Lastname *</span>
+                                                    <!-- <label class="bmd-label-floating">Lastname *</label> -->
+                                                    <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required>
+                                                </div>
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Student ID *</span>
+                                                    <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" required maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                                                </div>
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Email *</span>
+                                                    <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" required aria-describedby="emailHelp">
+                                                </div>
+                                                <div class="form-group bmd-form-group" style="margin-left: 15px">
+                                                    <label class="form-check-label privacy__policy__title">
+                                                        <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required oninvalid="this.setCustomValidity('Please accept privacy policy to proceed')" onchange="this.setCustomValidity('')">
+                                                        <span style="color: #fff">I have read and accepted the Privacy Policy.</span>
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Mobile Number</span>
+                                                    <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
+                                                    <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" minlength="11" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                </div>
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Password *</span>
+                                                    <input type="password" name="password" class="form-control form-control-user" required id="studentRequired5">
+                                                </div>
+                                                <span class="password__description">Password must be greater than 6 and less than 12 characters</span>
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Confirm password *</span>
+                                                    <input type="password" name="confirmPassword" class="form-control form-control-user" required id="studentRequired8">
+                                                </div>
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Student Type</span>
+                                                    <select class="form-control " name="studentType" id="studentRequired7" required>
+                                                        <option value=""></option>
+                                                        <option value="0">Grade School</option>
+                                                        <option value="1">High School </option>
+                                                        <option value="2">Senior High</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <button id="submit-student-register-form" class="btn btn-primary btn-user btn-block">
-                                            Submit
-                                        </button>
+
+                                        <div class="row justify-content-center">
+                                            <button id="submit-student-register-form" class="btn btn-primary btn-user ">
+                                                Submit
+                                            </button>
+                                        </div>
+
                                     </form>
                                     <hr>
                                 </div>
