@@ -68,7 +68,7 @@
                 <div class="card-body">
                   <div class="tab-content">
                     <div class="tab-pane active" id="pi">
-                      <form id="add-student-notification-form" method="post">
+                      <form id="add-student-notification-form" method="POST">
                         <input type="hidden" name="function-type" value="add-student-notification" />
                         <div class="row">
                           <div class="col-md-6">
@@ -81,7 +81,7 @@
                                   $result = mysqli_query($conn, $sql);
                                   if (mysqli_num_rows($result) != 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                    $studentName = $row['student_id'] . ' - ' . $row['student_firstname'] . ' ' . $row['student_lastname'];
+                                      $studentName = $row['student_id'] . ' - ' . $row['student_firstname'] . ' ' . $row['student_lastname'];
                                   ?>
                                       <option value="<?php echo $row['student_id']; ?>"><?php echo $studentName; ?></option>
                                   <?php }
@@ -105,7 +105,7 @@
                           </div>
                         </div>
                         <div class="d-flex justify-content-end">
-                          <button id="submit-notification-form" class="btn btn-primary ">
+                          <button class="btn btn-primary ">
                             Submit
                           </button>
                         </div>

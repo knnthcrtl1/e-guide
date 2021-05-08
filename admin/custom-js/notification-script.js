@@ -1,16 +1,11 @@
 
 $(document).ready(function () {
 
-    $(document).on("click", "#submit-notification-form", function (e) {
+    $(document).on("submit", "#add-student-notification-form", function (e) {
         e.preventDefault();
 
         var studentFormData = $("#add-student-notification-form").serialize();
 
-        // // if (!validateEmail(studentRequired3)){
-        // //     alert('Please provide correct email address');
-
-        // //     return false;
-        // // }
         jQuery.ajax({
             method: "POST",
             url: "./functions/function-notification.php",
