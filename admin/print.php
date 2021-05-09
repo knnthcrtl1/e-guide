@@ -1,7 +1,7 @@
 <?php
-include('./admin/connection.php');
+include('./connection.php');
 // Load autoloader (using Composer)
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '../../vendor/autoload.php';
 $pdf = new TCPDF();                 // create TCPDF object with default constructor args
 // add a page
 $pdf->AddPage();
