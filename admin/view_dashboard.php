@@ -1,4 +1,8 @@
 <?php include('header.php'); ?>
+<?php
+include('./functions/functions.php');
+include('./connection.php');
+?>
 
 <body class="dashboard__content">
   <div class="wrapper ">
@@ -9,12 +13,17 @@
     <div class="main-panel">
       <!-- Navbar -->
       <?php
+      
+      checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Dashboard");
+
       include('navbar.php');
       $headerTitle = 'Dashboard';
       navbarContainer($headerTitle);
+
+      
       ?>
       <!-- End Navbar -->
-      <div class="content " >
+      <div class="content ">
         <div class="container-fluid">
           <!-- your content here -->
 

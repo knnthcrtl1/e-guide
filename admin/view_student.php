@@ -1,4 +1,9 @@
 <?php include('header.php'); ?>
+<?php
+include('./functions/functions.php');
+include('./connection.php');
+?>
+
 
 <body>
     <div class="wrapper ">
@@ -9,6 +14,8 @@
         <div class="main-panel">
             <!-- Navbar -->
             <?php
+            checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Student");
+
             include('navbar.php');
             $headerTitle = 'Student';
             navbarContainer($headerTitle);
