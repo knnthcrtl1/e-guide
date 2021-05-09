@@ -276,6 +276,6 @@ $tbl = <<<EOD
 EOD;
 
 $pdf->writeHTML($tbl, true, false, false, false, '');
-$pdf->Output($_SERVER['DOCUMENT_ROOT'] . 'student.pdf', 'F');
+$pdf->Output($_SERVER['DOCUMENT_ROOT'] . 'student.pdf', 'I');
 
 ?>
