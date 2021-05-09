@@ -1,0 +1,12 @@
+{
+    "name": "dell/eguide",
+    "authors": [
+        {
+            "name": "kenneth cartel",
+            "email": "kcartel@svengroup.com"
+        }
+    ],
+    "require": {
+        "tecnickcom/tcpdf": "^6.2.13"
+    }
+}
