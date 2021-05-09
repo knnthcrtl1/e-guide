@@ -275,9 +275,7 @@ $tbl = <<<EOD
 
 EOD;
 
-$fileName = $student_firstname . ' ' . $student_lastname;
 $pdf->writeHTML($tbl, true, false, false, false, '');
-$pdf->Output('fileName.pdf', 'FI');
-
+$pdf->Output('example_048.pdf', 'I');
 
 ?>
