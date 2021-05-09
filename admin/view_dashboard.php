@@ -20,7 +20,7 @@
       $headerTitle = 'Dashboard';
       navbarContainer($headerTitle);
 
-      checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Dashboard");
+      // checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Dashboard");
 
       
       ?>

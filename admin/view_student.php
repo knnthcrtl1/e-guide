@@ -18,7 +18,7 @@
             $headerTitle = 'Student';
             navbarContainer($headerTitle);
 
-            checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Student");
+            // checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Student");
 
             ?>
             <!-- End Navbar -->

@@ -18,7 +18,7 @@
       $headerTitle = 'Notification';
       navbarContainer($headerTitle);
 
-      checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Notification");
+      // checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Notification");
 
       ?>
       <!-- End Navbar -->
