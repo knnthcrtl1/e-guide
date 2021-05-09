@@ -1,7 +1,10 @@
 
 <?php 
 
+include('./connection.php');
 function navigationList($active) {
+include('./functions/functions.php');
+
 ?>
 <div class="sidebar" data-color="purple" data-background-color="white">
     <!--
