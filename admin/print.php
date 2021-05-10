@@ -74,9 +74,54 @@ if($rowSex == 2){
 if($rowSex == 3){
     $student_sex = "Prefer not to say";
 } 
-$student_living_with = $row['student_living_with'];
-$student_present_living_condition = $row['student_present_living_condition'];
-$student_type = $row['student_type'];
+
+$rowLivingWith = $row['student_living_with'];
+$student_living_with = null;
+if($rowLivingWith == 1){
+    $student_living_with = "Parents";
+} 
+if($rowLivingWith == 2){
+    $student_living_with = "Siblings only";
+} 
+if($rowLivingWith == 3){
+    $student_living_with = "Relatives";
+} 
+if($rowLivingWith == 4){
+    $student_living_with = "Alone, in a rented space/dormitory";
+} 
+if($rowLivingWith == 5){
+    $student_living_with = "Alone, as a bed spacer";
+} 
+if($rowLivingWith == 6){
+    $student_living_with = "Others";
+} 
+
+$studentLivingCondition = $row['student_present_living_condition'];
+$student_present_living_condition = null;
+
+if($studentLivingCondition == 1){
+    $student_present_living_condition = "Lower Class";
+} 
+if($studentLivingCondition == 2){
+    $student_present_living_condition = "Middle Class";
+} 
+if($studentLivingCondition == 3){
+    $student_present_living_condition = "Upper Class";
+} 
+
+
+$rowStudentType = $row['student_type'];
+$student_type = null;
+if($rowStudentType == 0){
+    $student_type = "Grade School";
+} 
+if($rowStudentType == 1){
+    $student_type = "High School";
+} 
+if($rowStudentType == 2){
+    $student_type = "Senior High";
+} 
+
 $student_age = $row['student_age'];
 $student_place_of_birth = $row['student_place_of_birth'];
 $student_elementry_school = $row['student_elementry_school'];

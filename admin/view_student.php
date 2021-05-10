@@ -170,8 +170,8 @@
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
-                                                            <label class="bmd-label-floating">Contact Number *</label>
-                                                            <input type="number" name="student-contact-number" maxlength="11" class="form-control" required>
+                                                            <label class="bmd-label-floating">Phone Number *</label>
+                                                            <input type="number" name="student-contact-number" maxlength="11" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -188,18 +188,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-2">
+                                                    <!-- <div class="col-md-2">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Age *</label>
                                                             <input type="number" name="student-age" class="form-control" required>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="col-md-6">
                                                         <div class="date__birth__container">
                                                             <div class="date__birth__container--title">Date of Birth</div>
                                                             <div class="form-group bmd-form-group">
                                                                 <!-- <label class="bmd-label-floating">Date of Birth *</label> -->
-                                                                <input type="date" name="student-birthday" class="form-control">
+                                                                <input type="date" name="student-birthday" class="form-control" required>
                                                             </div>
                                                         </div>
                                                     </div>

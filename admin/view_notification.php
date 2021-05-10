@@ -88,7 +88,7 @@
                                   $result = mysqli_query($conn, $sql);
                                   if (mysqli_num_rows($result) != 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
-                                      $studentName = $row['student_id'] . ' - ' . $row['student_firstname'] . ' ' . $row['student_lastname'];
+                                      $studentName = $row['student_firstname'] . ' ' . $row['student_lastname'];
                                   ?>
                                       <option value="<?php echo $row['student_id']; ?>"><?php echo $studentName; ?></option>
                                   <?php }

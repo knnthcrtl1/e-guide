@@ -33,6 +33,13 @@
                         echo 'No data found!';
                         return false;
                     }
+                    
+                    $bday = $row['student_birthday'];
+                    $studBday = null;
+                    if($bday){
+                        $date = DateTime::createFromFormat("Y-m-d", $bday);
+                        $studBday = date("Y") - $date->format("Y");
+                    }
 
                     $studType = $row['student_type'];
 
@@ -156,14 +163,14 @@
                                                     <div class="col-md-3">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Age *</label>
-                                                            <input type="number" name="student-age" class="form-control" value="<?php echo $row['student_age'] ?>" required>
+                                                            <input type="number" name="student-age" class="form-control" value="<?php echo $studBday; ?>" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="date__birth__container">
                                                             <div class="date__birth__container--title">Date of Birth</div>
                                                             <div class="form-group bmd-form-group">
-                                                                <input type="date" name="student-birthday" class="form-control" value="<?php echo $row['student_birthday'] ?>">
+                                                                <input type="date" name="student-birthday" class="form-control" value="<?php echo $row['student_birthday'] ?>" required>
                                                             </div>
                                                         </div>
                                                     </div>

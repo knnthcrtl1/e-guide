@@ -89,7 +89,7 @@
                     <form class="user" method="POST" style="margin: 0;">
                         <div class="row student_login_row">
                             <div class="form-group bmd-form-group student__form">
-                                <span class="student__form--label">Username</span>
+                                <span class="student__form--label">Student ID</span>
                                 <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
                             </div>
                             <!-- <div class="form-group">
@@ -142,7 +142,7 @@
                             <div class="col-md-12 student__login__container">
                                 <div class="" style="padding: 10px; padding-right:20px">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT LOGIN</h1>
+                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT SIGN UP</h1>
                                     </div>
                                     <form class="user" method="POST" id="add-student-register-form">
                                         <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname" required>
@@ -255,6 +255,8 @@
 
             var studentRequired7 = $('#studentRequired7').val();
 
+            var studentRequired4 = $('#studentRequired4').val();
+
 
             if (!validateName(studentRequired1)) {
                 alert('Please input text only for firstname');
@@ -266,7 +268,7 @@
                 return false;
             }
 
-            if (!_validateMobileNumber) {
+            if (!_validateMobileNumber(studentRequired4)) {
                 alert('Please provide corrent mobile number');
                 return false;
             }

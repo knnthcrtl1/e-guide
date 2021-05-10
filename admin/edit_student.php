@@ -34,6 +34,13 @@
                         return false;
                     }
 
+                    $bday = $row['student_birthday'];
+                    $studBday = null;
+                    if($bday){
+                        $date = DateTime::createFromFormat("Y-m-d", $bday);
+                        $studBday = date("Y") - $date->format("Y");
+                    }
+
                     $studType = $row['student_type'];
                     ?>
 
@@ -73,7 +80,7 @@
                                 <div class="card-body">
                                     <div class="tab-content">
                                         <div class="tab-pane   active show" id="profile">
-                                            <form id="edit-student-form" method="post" >
+                                            <form id="edit-student-form" method="post">
                                                 <input type="hidden" name="function-type" value="edit-student" />
                                                 <input type="hidden" name="student-id" value="<?php echo $_GET['id'] ?>">
                                                 <div class="row">
@@ -156,14 +163,14 @@
                                                     <div class="col-md-3">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Age *</label>
-                                                            <input type="number" name="student-age" class="form-control" value="<?php echo $row['student_age'] ?>" required>
+                                                            <input type="number" name="student-age" class="form-control" value="<?php echo $studBday; ?>" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="date__birth__container">
                                                             <div class="date__birth__container--title">Date of Birth</div>
                                                             <div class="form-group bmd-form-group">
-                                                                <input type="date" name="student-birthday" class="form-control" value="<?php echo $row['student_birthday'] ?>">
+                                                                <input type="date" name="student-birthday" class="form-control" value="<?php echo $row['student_birthday'] ?>" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -332,9 +339,10 @@
                                                             <input type="number" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>">
                                                         </div>
                                                         <div class="form-group bmd-form-group">
+                                                            <span class="">Is your father an ofw?</span>
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-father-is-ofw">
-                                                                    <option value="">Is your father an ofw?</option>
+                                                                    <option value=""></option>
                                                                     <option value="0" <?php echo ($row['students_family_guardian_father_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
                                                                     <option value="1" <?php echo ($row['students_family_guardian_father_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
                                                                 </select>
@@ -367,9 +375,10 @@
                                                             <input type="number" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>">
                                                         </div>
                                                         <div class="form-group bmd-form-group">
+                                                        <span class="">Is your mother an ofw?</span>
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-mother-is-ofw">
-                                                                    <option value="">Is your mother an ofw?</option>
+                                                                    <option value=""></option>
                                                                     <option value="0" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
                                                                     <option value="1" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
                                                                 </select>
@@ -449,9 +458,9 @@
 
                                         <div class="tab-pane" id="settings">
                                             <?php include('./student-habits.php'); ?>
-                                            
-                                            <?php 
-                                            studentHabits($conn, $studType); 
+
+                                            <?php
+                                            studentHabits($conn, $studType);
                                             ?>
                                         </div>
                                     </div>
