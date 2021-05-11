@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row custom_header_nav_row">
 
-                <div class="col-lg-3">
+                <!-- <div class="col-lg-3">
                     <a href="<?php echo $root . 'index.php'; ?>">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -38,7 +38,7 @@
                         </span>
                         STUDENT
                     </a>
-                </div>
+                </div> -->
 
                 <div class="col-lg-9">
                     <?php
@@ -87,23 +87,27 @@
                     }
                     ?>
                     <form class="user" method="POST" style="margin: 0;">
-                        <div class="row student_login_row">
-                            <div class="form-group bmd-form-group student__form">
-                                <span class="student__form--label">Student ID</span>
+                        <div class="row ">
+                            <div class="form-group bmd-form-group student__form col-md-4">
+                                <p class="student__form--label">Student ID</p>
                                 <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
                             </div>
                             <!-- <div class="form-group">
                       <input type="email" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div> -->
-                            <div class="form-group bmd-form-group student__form">
-                                <span class="student__form--label">Pasword</span>
+                            <div class="form-group bmd-form-group student__form col-md-4">
+                                <p class="student__form--label">Pasword</p>
                                 <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
                             </div>
-                            <div>
+                            <div class="col-md-2">
                                 <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
+                            </div>
+                            <div class="register__container col-md-2" >
+                                <a href="./register.php">Register</a>
                             </div>
                         </div>
                     </form>
+
                 </div>
 
             </div>
@@ -114,7 +118,7 @@
 
 
 
-    <div class="container">
+    <div class="container" style="height: 100vh;">
 
 
         <!-- Outer Row -->
@@ -123,111 +127,18 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="bg-login-container">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row justify-content-center">
-                            <!-- <div class="col-md-12 d-flex align-items-center">
-                                <div class="app_logo__left">
-                                    <div class="row" style="background-color: #fff">
-                                        <div class="col-md-6">
-                                            <img class="app__logo" src="./admin/assets/img/logo.png" />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img class="app__logo" src="./admin/assets/img/gcsgo.png" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="col-md-12 student__login__container">
-                                <div class="" style="padding: 10px; padding-right:20px">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT SIGN UP</h1>
-                                    </div>
-                                    <form class="user" method="POST" id="add-student-register-form">
-                                        <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname" required>
-
-                                        <div class="row">
-
-                                            <div class="col-md-6">
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Firstname *</span>
-                                                    <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
-                                                </div>
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Lastname *</span>
-                                                    <!-- <label class="bmd-label-floating">Lastname *</label> -->
-                                                    <input type="text" name="lname" class="form-control form-control-user" id="studentRequired2" aria-describedby="emailHelp" required>
-                                                </div>
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Student ID *</span>
-                                                    <input type="number" name="studentId" class="form-control form-control-user" id="studentRequired6" aria-describedby="emailHelp" required maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
-                                                </div>
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Email *</span>
-                                                    <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" required aria-describedby="emailHelp">
-                                                </div>
-                                                <div class="form-group bmd-form-group" style="margin-left: 15px">
-                                                    <label class="form-check-label privacy__policy__title">
-                                                        <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required oninvalid="this.setCustomValidity('Please accept privacy policy to proceed')" onchange="this.setCustomValidity('')">
-                                                        <span style="color: #fff">I have read and accepted the Privacy Policy.</span>
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Mobile Number</span>
-                                                    <!-- <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" aria-describedby="emailHelp" > -->
-                                                    <input type="number" name="mobile-number" class="form-control form-control-user" id="studentRequired4" minlength="11" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-                                                </div>
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Password *</span>
-                                                    <input type="password" name="password" class="form-control form-control-user" required id="studentRequired5">
-                                                </div>
-                                                <span class="password__description">Password must be greater than 6 and less than 12 characters</span>
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Confirm password *</span>
-                                                    <input type="password" name="confirmPassword" class="form-control form-control-user" required id="studentRequired8">
-                                                </div>
-                                                <div class="form-group bmd-form-group student__form">
-                                                    <span class="student__form--label">Student Type</span>
-                                                    <select class="form-control " name="studentType" id="studentRequired7" required>
-                                                        <option value=""></option>
-                                                        <option value="0">Grade School</option>
-                                                        <option value="1">High School </option>
-                                                        <option value="2">Senior High</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+                <div class="">
 
 
-                                        <div class="row justify-content-center">
-                                            <button id="submit-student-register-form" class="btn btn-primary btn-user ">
-                                                Submit
-                                            </button>
-                                        </div>
-
-                                    </form>
-                                    <hr>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
 
         </div>
 
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <?php include('footer.php'); ?>
-    <script>
+        <!-- Bootstrap core JavaScript-->
+        <?php include('footer.php'); ?>
+        <!-- <script>
         function _validateMobileNumber(num) {
             let re = /^(09|\+639|9)\d{9}$/;
             return re.test(String(num).toLowerCase());
@@ -313,4 +224,4 @@
             });
 
         });
-    </script>
+    </script> -->
