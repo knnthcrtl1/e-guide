@@ -28,12 +28,12 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="main__container">
+            <div class="index__container">
 
                 <div>
                     <h2 class="text-center">WELCOME WARRIORS</h2>
                 </div>
-                <div class="row" style="margin-top: 20px">
+                <!-- <div class="row" style="margin-top: 20px">
                     <div class="col-md-6 text-center">
                         <img src='./admin/assets/img/logo.png' class="ue_logo" />
                     </div>
@@ -41,7 +41,7 @@
                     <div class="col-md-6 text-center">
                         <img src='./admin/assets/img/gcsgo.png' class="ue_logo" />
                     </div>
-                </div>
+                </div> -->
 
                 <div style="margin-top: 20px">
                     <h4 class="text-center">

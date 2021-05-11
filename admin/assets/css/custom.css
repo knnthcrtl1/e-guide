@@ -2,6 +2,10 @@ body{
   font-family: 'Roboto', sans-serif !important;
 }
 
+p{
+  margin: 0;
+}
+
 .custom-bg-danger, .card-header-primary{
     background: #EE4540 !important;
 }
@@ -158,6 +162,21 @@ a.link_index {
   padding: 50px;
   border-radius: 10px;
   border: 1px solid #333;
+}
+
+
+.index__container {
+  background: rgba(0,0,0,0.85);
+  width: 650px;
+  padding: 50px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  color: #ffffff;
+  margin-top: 120px;
+}
+
+.register__container {
+  text-align: -webkit-right;
 }
 
 .row.student_login_row > div {
