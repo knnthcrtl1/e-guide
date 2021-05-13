@@ -31,7 +31,7 @@
         <!-- <div class="row justify-content-center"> -->
         <div class="">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-md-12">
 
                 <div class="bg-login-container">
                     <div class="card-body p-0">

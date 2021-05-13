@@ -122,7 +122,8 @@ select.custom-select.custom-select-sm.form-control.form-control-sm {
   border-radius: 10px;
   border: 1px solid #333;
   color: #ffffff;
-  margin-top: 30px;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
 .student__login__container .form-control-user {
@@ -231,7 +232,12 @@ a.link_index {
 .student__form--label {
   padding-right: 10px;
   width: 40%;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.register__container a {
+  text-decoration: underline;
+  font-size: 12px;
 }
 
 .privacy__policy__title {

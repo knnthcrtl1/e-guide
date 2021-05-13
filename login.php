@@ -87,7 +87,7 @@
                     }
                     ?>
                     <form class="user" method="POST" style="margin: 0;">
-                        <div class="row ">
+                        <div class="row justify-content-center align-items-center">
                             <div class="form-group bmd-form-group student__form col-md-4">
                                 <p class="student__form--label">Student ID</p>
                                 <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
@@ -99,10 +99,10 @@
                                 <p class="student__form--label">Pasword</p>
                                 <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
                             </div>
-                            <div class="register__container col-md-2" >
+                            <div class="register__container col-md-1" >
                                 <a href="./register.php">Register</a>
                             </div>
                         </div>
