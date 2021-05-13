@@ -195,6 +195,104 @@ $students_family_guardian_guardian_work_address = $row['students_family_guardian
 $students_family_guardian_guardian_work_number = $row['students_family_guardian_guardian_work_number'];
 $students_family_guardian_guardian_relationship = $row['students_family_guardian_guardian_relationship'];
 
+$sql = "SELECT * FROM  tbl_student_habit WHERE student_habit_student_id = '{$_GET['id']}'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+
+$student_habit_child_guardian_assist = null;
+$rowGuardianAssist = $row['student_habit_child_guardian_assist'];
+
+if($rowGuardianAssist == 1){
+    $student_habit_child_guardian_assist = 'Is your child/ward studying alone or with your assistance?';
+}
+if($rowGuardianAssist == 3){
+    $student_habit_child_guardian_assist = 'Yes, s/he is often studying alone';
+}
+if($rowGuardianAssist == 6){
+    $student_habit_child_guardian_assist = 'No, s/he is often studying with assistance';
+}
+
+$student_habit_spend_studying = null;
+$rowSpendStudying = $row['student_habit_spend_studying'];
+
+if($rowSpendStudying == 1){
+    $student_habit_spend_studying = 'Everyday';
+}
+if($rowSpendStudying == 2){
+    $student_habit_spend_studying = 'Twice a week';
+}
+if($rowSpendStudying == 3){
+    $student_habit_spend_studying = 'Once a week';
+}
+if($rowSpendStudying == 4){
+    $student_habit_spend_studying = 'When there is a quiz';
+}
+if($rowSpendStudying == 5){
+    $student_habit_spend_studying = 'During examination week';
+}
+if($rowSpendStudying == 6){
+    $student_habit_spend_studying = 'When he/she feels like studying';
+}
+
+$student_habit_child_usual_study = null;
+$rowUsualStudy = $row['student_habit_child_usual_study'];
+
+if($rowUsualStudy == 1){
+    $student_habit_child_usual_study = '1 hour a day';
+}
+
+if($rowUsualStudy == 2){
+    $student_habit_child_usual_study = 'More than an hour a day';
+}
+
+if($rowUsualStudy == 3){
+    $student_habit_child_usual_study = 'less than an hour a day';
+}
+
+if($rowUsualStudy == 4){
+    $student_habit_child_usual_study = '1 hour a week';
+}
+
+if($rowUsualStudy == 5){
+    $student_habit_child_usual_study = 'More than an hour a week';
+}
+if($rowUsualStudy == 6){
+    $student_habit_child_usual_study = 'Less than an hour a week';
+}
+
+$student_habit_usually_ask = null;
+$rowUsuallyAsks = $row['student_habit_usually_ask'];
+
+if($rowUsuallyAsks == 1){
+    $student_habit_usually_ask = 'Teacher';
+}
+
+if($rowUsuallyAsks == 2){
+    $student_habit_usually_ask = 'Classmate/s';
+}
+
+if($rowUsuallyAsks == 3){
+    $student_habit_usually_ask = 'Friend';
+}
+
+if($rowUsuallyAsks == 4){
+    $student_habit_usually_ask = 'Mother';
+}
+
+if($rowUsuallyAsks == 5){
+    $student_habit_usually_ask = 'Brother';
+}
+
+if($rowUsuallyAsks == 6){
+    $student_habit_usually_ask = 'Sister';
+}
+
+if($rowUsuallyAsks == 7){
+    $student_habit_usually_ask = 'Others';
+}
+
+
+
 // The '@' character is used to indicate that follows an image data stream and not an image file name
 $tbl = <<<EOD
 <table border="1" cellpadding="5" cellspacing="0" nobr="true">
@@ -317,10 +415,50 @@ $tbl = <<<EOD
  <td colspan="3">Guardian work address: <br/> $students_family_guardian_guardian_work_address</td>
  </tr>
  </table>
+ <br/><br/>
+ <table border="1" cellpadding="5" cellspacing="0" nobr="true" >
+ <tr>
+  <th colspan="1" align="center">SURVEY</th>
+ </tr>
+ <tr>
+ <td>Is your child/ward studying alone or with your assistance?: <br/>
+<strong>$student_habit_child_guardian_assist</strong>
+ </td>
+</tr>
+<tr>
+ <td>How often does s/he study?: <br/>
+ <strong>$student_habit_spend_studying</strong>
+ </td>
+</tr>
+<tr>
+ <td>How many hours is your child usually studying? <br/>
+ <strong>$student_habit_child_usual_study</strong>
+ </td>
+</tr>
+<tr>
+ <td>When you have question/s about your lesson, to whom do you usually ask? <br/>
+ <strong>$student_habit_usually_ask</strong>
+ </td>
+</tr>
+<tr>
+ <td>Work Address: $students_family_guardian_father_work_address</td>
+ <td>Work Address: $students_family_guardian_mother_work_address</td>
+</tr>
+<tr>
+ <td>Work Contact #: $students_family_guardian_father_work_contact</td>
+ <td>Work Contact #: $students_family_guardian_mother_work_contact</td>
+</tr>
+<tr>
+ <td>Is Ofw?: $students_family_guardian_father_is_ofw</td>
+ <td>Is Ofw?: $students_family_guardian_mother_is_ofw</td>
+</tr>
+<tr>
+ <td colspan="3">Marital Status of Parents: $students_family_guardian_marital_status</td>
+</tr>
+
+ </table>
 
 EOD;
 
 $pdf->writeHTML($tbl, true, false, false, false, '');
 $pdf->Output($_SERVER['DOCUMENT_ROOT'] . 'student.pdf', 'FI');
-
-?>
