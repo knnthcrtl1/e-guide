@@ -26,21 +26,10 @@
 <body class="bg-gradient-primary login-background">
 
     <div class="custom_header_nav">
-        <div class="container">
-            <div class="row custom_header_nav_row">
+        <div class="container" >
+            <div class="">
 
-                <!-- <div class="col-lg-3">
-                    <a href="<?php echo $root . 'index.php'; ?>">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-                            </svg>
-                        </span>
-                        STUDENT
-                    </a>
-                </div> -->
-
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <?php
                     include('./admin/connection.php');
                     session_start();
@@ -87,22 +76,30 @@
                     }
                     ?>
                     <form class="user" method="POST" style="margin: 0;">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="form-group bmd-form-group student__form col-md-4">
+                        <div class="form__container__login">
+                            <div class="row justify-content-center">
+                                <a href="<?php echo $root . 'index.php'; ?>">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                                        </svg>
+                                    </span>
+                                    Back
+                                    <!-- STUDENT -->
+                                </a>
+                            </div>
+                            <div class="student__form ">
                                 <p class="student__form--label">Student ID</p>
                                 <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
                             </div>
-                            <!-- <div class="form-group">
-                      <input type="email" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                    </div> -->
-                            <div class="form-group bmd-form-group student__form col-md-4">
+                            <div class="student__form ">
                                 <p class="student__form--label">Pasword</p>
                                 <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
                             </div>
-                            <div class="col-md-3">
+                            <div class="">
                                 <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
                             </div>
-                            <div class="register__container col-md-1" >
+                            <div class="register__container ">
                                 <a href="./register.php">Register</a>
                             </div>
                         </div>

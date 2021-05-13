@@ -5,14 +5,20 @@ $(document).ready(function () {
         let re = /^[a-zA-Z]+$/;
         return re.test(String(text).toLowerCase());
     }
-    
+
+    function _validateMobileNumber(num) {
+        let re = /^(09|\+639|9)\d{9}$/;
+        return re.test(String(num).toLowerCase());
+    };
+
     $(document).on("submit", "#add-student-form", function (e) {
         e.preventDefault();
 
         var studentFormData = $("#add-student-form").serialize();
 
         var studentRequired1 = $('#studentRequired1').val();
-        var studentRequired2 = $('#studentRequired2').val();
+        var studentRequired2 = $('#studentRequired2').val();    
+        var studentRequiredPhone = $('#studentRequiredPhone').val();
 
         if (!validateName(studentRequired1)) {
             alert('Please input text only for firstname');
@@ -21,6 +27,11 @@ $(document).ready(function () {
 
         if (!validateName(studentRequired2)) {
             alert('Please input text only for lastname');
+            return false;
+        }
+
+        if (!_validateMobileNumber(studentRequiredPhone)) {
+            alert('Please provide corrent mobile number');
             return false;
         }
 
@@ -144,6 +155,8 @@ $(document).ready(function () {
         var studentRequired1 = $('#studentRequired1').val();
         var studentRequired2 = $('#studentRequired2').val();
 
+        var studentRequiredPhone = $('#studentRequiredPhone').val();
+
         if (!validateName(studentRequired1)) {
             alert('Please input text only for firstname');
             return false;
@@ -153,7 +166,12 @@ $(document).ready(function () {
             alert('Please input text only for lastname');
             return false;
         }
-        
+
+        if (!_validateMobileNumber(studentRequiredPhone)) {
+            alert('Please provide corrent mobile number');
+            return false;
+        }
+
         jQuery.ajax({
             method: "POST",
             url: "./functions/function-student.php",

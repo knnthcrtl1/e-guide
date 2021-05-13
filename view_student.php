@@ -109,7 +109,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Student No. *</label>
-                                                        <input name="student-studid" class="form-control" maxlength="11" value="<?php echo $row['student_stud_id'] ?>" required>
+                                                        <input type="number" name="student-studid" class="form-control" maxlength="11" value="<?php echo $row['student_stud_id'] ?>" required disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -139,7 +139,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Contact Number *</label>
-                                                        <input type="number" name="student-contact-number" class="form-control" value="<?php echo $row['student_contact'] ?>" required maxlength="15">
+                                                        <input type="number" id="studentRequiredPhone" name="student-contact-number" class="form-control" value="<?php echo $row['student_contact'] ?>" required maxlength="15">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
