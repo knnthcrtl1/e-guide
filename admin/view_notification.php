@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 <?php
-  include('connection.php')
+include('connection.php')
 ?>
 
 
@@ -27,6 +27,9 @@
                 <p class="card-category"> Here is a subtitle for this table</p>
               </div>
               <div class="card-body">
+                <form method="post" action="./export_notification.php">
+                  <input type="submit" name="export_excel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" value="Export to Excel" />
+                </form>
                 <div class="table-responsive" id="notificationTable">
                   <table class="table" id="studentNotificationTable">
                     <thead class="text-primary">

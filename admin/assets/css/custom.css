@@ -33,7 +33,7 @@ img.eguide-logo {
   margin-right: 10px;
 }
 
-div#studentDataTable_filter label{
+div#studentDataTable_filter label, div#studentNotificationTable_filter label{
   flex-direction: row;
   display: flex;
   flex: 1;
@@ -41,7 +41,7 @@ div#studentDataTable_filter label{
   justify-content: flex-end;
 }
 
-div#studentDataTable_length label {
+div#studentDataTable_length label, div#studentNotificationTable_length label {
   flex-direction: row;
   display: flex;
   flex: 1;
