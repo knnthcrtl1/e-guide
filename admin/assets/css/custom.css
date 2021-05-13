@@ -1,5 +1,6 @@
 body{
   font-family: 'Roboto', sans-serif !important;
+  background-color: #ffffff;
 }
 
 p{
@@ -248,4 +249,40 @@ span.password__description {
   display: block;
   text-align: right;
   font-size: 10px;
+}
+
+/* new updates */
+
+.logo__user__container img {
+  width: 100%;
+  max-width: 100px;
+  text-align: center;
+}
+
+.logo__user__container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 30px;
+}
+
+.dashboard__fillup__container {
+  background: #f1f1f1;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+a.dashboard__fillup__container--link {
+    color: #333;
+    font-size: 18px;
+}
+
+.student__card__body{
+  padding-top: 50px !important;
 }
