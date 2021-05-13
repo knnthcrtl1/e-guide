@@ -100,6 +100,7 @@ $(document).ready(function () {
 
         var studentFormData = $("#add-student-form").serialize();
 
+
         // // if (!validateEmail(studentRequired3)){
         // //     alert('Please provide correct email address');
 
@@ -129,6 +130,7 @@ $(document).ready(function () {
         
         var studentRequired1 = $('#studentRequired1').val();
         var studentRequired2 = $('#studentRequired2').val();
+        var studentRequiredPhone = $('#studentRequiredPhone').val();
 
         if (!validateName(studentRequired1)) {
             alert('Please input text only for firstname');
@@ -137,6 +139,11 @@ $(document).ready(function () {
 
         if (!validateName(studentRequired2)) {
             alert('Please input text only for lastname');
+            return false;
+        }
+
+        if (!_validateMobileNumber(studentRequiredPhone)) {
+            alert('Please provide corrent mobile number');
             return false;
         }
 
