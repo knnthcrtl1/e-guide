@@ -95,10 +95,13 @@ $(document).ready(function () {
     studyRadioOthers('input[name="healthCondition"]', '#othersRadioButton5', '.othersRadioButton5');
 
     const fetchStudentTable = () => {
+
+        let studentType = $('#studentTypeId').attr('id-attr');
+        console.log(studentType);
         $.ajax({
             method: "POST",
             url: "./tables/student_tables.php",
-            data: {},
+            data: `studentType=${studentType}`,
             success: function (data) {
                 $("#studentTable table tbody").html(data);
                 $('#studentDataTable').DataTable();

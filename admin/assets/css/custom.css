@@ -159,6 +159,8 @@ a.link_index {
 }
 
 .main__container {
+  margin: 0 auto;
+  margin-top: 60px;
   background: rgba(0,0,0,0.85);
   width: 480px;
   padding: 50px;
