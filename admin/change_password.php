@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <hr />
-                <?php include('./new_menus.php');
+                <?php include('./newMenus.php');
                 newMenus();
                 ?>
 
@@ -29,7 +29,7 @@
                                     <input type="hidden" name="function-type" value="change-password">
                                     <div class="form-group row">
                                         <div class="col-sm-4 mb-4 mb-sm-0">
-                                            <input type="hidden" name="password-user-id" id="equipmentRequired3" value="<?php echo $_SESSION['student_user_id']; ?>">
+                                            <input type="hidden" name="password-user-id" id="equipmentRequired3" value="<?php echo $_SESSION['user_id']; ?>">
                                             <div class="form-group bmd-form-group">
                                                 <label class="bmd-label-floating">Enter old password *</label>
                                                 <input type="password" class="form-control form-control-user" name="oldPassword" id="equipmentRequired3">

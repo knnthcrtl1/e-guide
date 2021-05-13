@@ -41,6 +41,17 @@ div#studentDataTable_filter label, div#studentNotificationTable_filter label{
   justify-content: flex-end;
 }
 
+.form__container__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.form__container__login > div {
+  margin: 10px;
+}
+
 div#studentDataTable_length label, div#studentNotificationTable_length label {
   flex-direction: row;
   display: flex;
