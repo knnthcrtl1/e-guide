@@ -299,3 +299,11 @@ a.dashboard__fillup__container--link {
 .student__card__body{
   padding-top: 50px !important;
 }
+
+.login__spill__container {
+  background: rgba(0,0,0,0.85);
+  color: #ffff;
+  padding: 30px;
+  margin-top: 60px;
+  border-radius: 8px;
+}
