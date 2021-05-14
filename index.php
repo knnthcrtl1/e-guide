@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="bg-gradient-primary login-background">
+<body style="background-image:url(./admin/assets/img/main-bg.jpg)"class="bg-gradient-primary login-background">
 
     <div class="container">
 

@@ -23,7 +23,7 @@
 
 <?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'; ?>
 
-<body class="bg-gradient-primary login-background">
+<body style="background-image:url(./admin/assets/img/student-reg-bg.jpg)" class="bg-gradient-primary login-background">
 
     <div class="container">
 
