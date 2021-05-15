@@ -1,11 +1,26 @@
 <?php
 
 
-
 function newMenus()
 {
+    include('./admin/connection.php');
+    $sql = "SELECT * FROM tbl_students WHERE student_id = '{$_SESSION['student_user_id']}'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
 
 ?>
+
+    <div class="row">
+        <div class="logo__user__container">
+            <img src="<?php echo $row['student_image'] ?>" />
+        </div>
+    </div>
+    <hr />
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
     <div class="row">
         <div class="col-md-4 ">
             <a href="./view_student.php" class="dashboard__fillup__container--link">
@@ -42,7 +57,7 @@ function newMenus()
                 </div>
             </a>
         </div>
-       
+
     </div>
 <?php
 }

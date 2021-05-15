@@ -121,7 +121,7 @@ if (isset($_POST['ajax'])) {
         $sql = "UPDATE tbl_students SET student_firstname = '{$studentFirstname}' , student_middlname = '{$studentMiddlename}', student_lastname = '{$studentLastname}', student_nickname  = '{$studentNickname}' , student_address = '{$studentPresentAddress}' , student_gender = '{$studentGender}', student_birthday = '{$studentBirthday}', student_contact  = '{$studentContactNumber}', student_email = '{$studentEmailAddress}' , student_permanent_address = '{$studentPermanentAddress}', student_ue_email_address = '{$studentUeEmailAddress}', student_citizenship  = '{$studentCitizen}' , student_religion = '{$studentReligion}' , student_civil_status = '{$studentCivilStatus}', student_sex = '{$studentSex}', student_living_with  = '{$studentLivingWith}', student_present_living_condition = '{$studentLivingCondition}' , student_type = '{$studentType}', student_stud_id = '{$studentStudId}', student_age  = '{$studentAge}', student_place_of_birth  = '{$studentPlaceofBirth}', student_section_id  = '{$studentSection}', student_elementry_school  = '{$studentELemSchool}', student_high_school  = '{$studentJuniorHs}', student_vocational = '{$studentVocational}' WHERE student_id = '{$studentId}' ";
 
         if (!mysqli_query($conn, $sql)) {
-            echo ("Error description: " . mysqli_error($conn));
+        echo ("Error description: " . mysqli_error($conn));
         }
 
         return false;

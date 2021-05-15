@@ -9,7 +9,7 @@
           <div class="logo__user__container">
             <img src="./assets/img/logo.png" />
           </div>
-        </div>
+      </div>
         <hr />
         <?php include('./newMenus.php');
         newMenus();

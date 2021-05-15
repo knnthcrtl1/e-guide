@@ -4,8 +4,12 @@
 
 function newMenus()
 {
+   
+
+    // Check if file already exists
 
 ?>
+   
     <div class="row">
         <div class="col-md-4 ">
             <a href="./view_student.php?studentType=0" class="dashboard__fillup__container--link">
