@@ -100,7 +100,8 @@
                                 <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
                             </div>
                             <div class="register__container ">
-                                <a href="./register.php">Register</a>
+                                <a href="./register.php">Register</a> <br/>
+                                <a href="./forgot_password.php">Forgot Password?</a>
                             </div>
                         </div>
                     </form>
