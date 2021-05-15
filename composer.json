@@ -7,6 +7,7 @@
         }
     ],
     "require": {
-        "tecnickcom/tcpdf": "^6.2.13"
+        "tecnickcom/tcpdf": "^6.2.13",
+        "calcinai/php-imagick": "^0.1.2"
     }
 }
