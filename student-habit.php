@@ -1494,6 +1494,37 @@ function studentHabits($conn, $studentType)
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="survey-title">
+                            <p>Do you want request for guidance counceling?</P>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-check form-check-radio">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="studentGuidanceCounceling" value="Yes" <?php echo ($row['student_habit_guidance_counseling'] == "Yes") ? 'checked' : null ?>>
+                                        Yes
+                                        <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check form-check-radio">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="studentGuidanceCounceling" value="No" <?php echo ($row['student_habit_guidance_counseling'] == "No") ? 'checked' : null ?>>
+                                        No
+                                        <span class="circle">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <?php if ($isActive) {
                     echo "";
                 } else { ?>

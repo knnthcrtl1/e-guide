@@ -314,7 +314,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Firstname </label>
-                                                        <input type="text" name="student-father-name" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
+                                                        <input type="text" name="student-father-name" id="fatherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Contact # </label>
@@ -350,7 +350,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Firstname </label>
-                                                        <input type="text" name="student-mother-name" class="form-control" value="<?php echo $row['students_family_guardian_mother_name'] ?>">
+                                                        <input type="text" name="student-mother-name" id="motherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_mother_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Contact # </label>
@@ -400,7 +400,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian name</label>
-                                                        <input type="text" name="student-guardian-name" class="form-control" value="<?php echo $row['students_family_guardian_name'] ?>">
+                                                        <input type="text" name="student-guardian-name" id="guardianNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_name'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -436,7 +436,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Relationship with guardian</label>
-                                                        <input type="text" name="student-guardian-relationship" class="form-control" value="<?php echo $row['students_family_guardian_guardian_relationship'] ?>">
+                                                        <input type="text" name="student-guardian-relationship" id="relationShipNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_guardian_relationship'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
