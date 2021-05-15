@@ -268,8 +268,9 @@ span.password__description {
 
 .logo__user__container img {
   width: 100%;
-  max-width: 100px;
+  max-width: 130px;
   text-align: center;
+  border: 1px solid #f1f1f1;
 }
 
 .logo__user__container {
