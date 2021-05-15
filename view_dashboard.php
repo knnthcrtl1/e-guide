@@ -1,6 +1,6 @@
 <?php include('./header.php'); ?>
 
-<body class="">
+<body class="" style="background-image: url(./admin/assets/img/student-dashboard.jpg); color: #ffffff;">
   <div class="wrapper ">
 
     <div class="content">
