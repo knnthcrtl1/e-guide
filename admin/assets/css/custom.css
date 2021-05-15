@@ -273,6 +273,11 @@ span.password__description {
   border: 1px solid #f1f1f1;
 }
 
+.about__container {
+  background-color: rgba(0,0,0,0.5);
+  padding: 30px;
+}
+
 .student__background__image__container{
   background-image: url(../img/student-dashboard.jpg);
   color: #ffffff;
