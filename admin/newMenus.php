@@ -30,28 +30,28 @@ function newMenus()
         </div>
     </div>
     <div class="row">
-        <!-- <div class="col-md-3">
-            <a href="#" class="dashboard__fillup__container--link">
+        <div class="col-md-3">
+            <a href="./about.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
-                    REQUEST DATA
+                    ABOUT US
                 </div>
             </a>
-        </div> -->
-        <div class="col-md-4">
+        </div>
+        <div class="col-md-3">
             <a href="./view_notification.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     NOTIFICATION
                 </div>
             </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="./change_password.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     CHANGE PASSWORD
                 </div>
             </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="./logout.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     LOGOUT

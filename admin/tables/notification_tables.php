@@ -16,11 +16,11 @@ if (mysqli_num_rows($result) != 0) {
 
             <?php
 
-            $sql2 = "SELECT * FROM tbl_students WHERE student_id = '{$row['notification_student_id']}'";
+            $sql2 = "SELECT * FROM tbl_students WHERE student_id = '{$row['notification_student']}'";
             $result2 = mysqli_query($conn, $sql2);
             $row2 = mysqli_fetch_array($result2);
 
-            $studentName = $row2['student_id'] . ' - ' . $row2['student_firstname'] . ' ' . $row2['student_lastname'];
+            $studentName = $row2['student_firstname'] . ' ' . $row2['student_lastname'];
             ?>
             <td><?php echo $studentName ?></td>
             <td><?php echo $row['notification_title'] ?></td>
