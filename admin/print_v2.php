@@ -216,43 +216,40 @@ $student_habit_spend_studying = null;
 $rowSpendStudying = $row['student_habit_spend_studying'];
 
 if ($rowSpendStudying == 1) {
-    $student_habit_spend_studying = 'Everyday';
+    $student_habit_spend_studying = '1 hour a day';
 }
 if ($rowSpendStudying == 2) {
-    $student_habit_spend_studying = 'Twice a week';
+    $student_habit_spend_studying = 'More than an hour a day';
 }
 if ($rowSpendStudying == 3) {
-    $student_habit_spend_studying = 'Once a week';
+    $student_habit_spend_studying = 'Less than an hour a day';
 }
 if ($rowSpendStudying == 4) {
-    $student_habit_spend_studying = 'When there is a quiz';
+    $student_habit_spend_studying = '1 hour a week';
 }
 if ($rowSpendStudying == 5) {
-    $student_habit_spend_studying = 'During examination week';
+    $student_habit_spend_studying = 'More than an hour a week';
 }
 if ($rowSpendStudying == 6) {
-    $student_habit_spend_studying = 'When he/she feels like studying';
+    $student_habit_spend_studying = 'Less than an hour a week';
 }
 
 $student_habit_child_usual_study = null;
+
 $rowUsualStudy = $row['student_habit_child_usual_study'];
 
 if ($rowUsualStudy == 1) {
     $student_habit_child_usual_study = '1 hour a day';
 }
-
 if ($rowUsualStudy == 2) {
     $student_habit_child_usual_study = 'More than an hour a day';
 }
-
 if ($rowUsualStudy == 3) {
     $student_habit_child_usual_study = 'less than an hour a day';
 }
-
 if ($rowUsualStudy == 4) {
     $student_habit_child_usual_study = '1 hour a week';
 }
-
 if ($rowUsualStudy == 5) {
     $student_habit_child_usual_study = 'More than an hour a week';
 }
@@ -402,31 +399,51 @@ if (in_array(20, $sixExpArr)) {
 $student_habit_multiple_experience = null;
 $twelveExpArr = explode(",", $row['student_habit_multiple_experience']);
 if (in_array(1, $twelveExpArr)) {
-    $student_habit_multiple_experience .= 'Happiness, ';
+    $student_habit_multiple_experience .= 'Bullying, ';
 }
 if (in_array(2, $twelveExpArr)) {
-    $student_habit_multiple_experience .= 'Sad, ';
+    $student_habit_multiple_experience .= 'Physical, ';
 }
-
 if (in_array(3, $twelveExpArr)) {
-    $student_habit_multiple_experience .= 'Fear, ';
+    $student_habit_multiple_experience .= 'Verbal, ';
 }
 
 if (in_array(4, $twelveExpArr)) {
-    $student_habit_multiple_experience .= 'Pain, ';
+    $student_habit_multiple_experience .= 'Physical, ';
 }
 
 if (in_array(5, $twelveExpArr)) {
-    $student_habit_multiple_experience .= 'Anger, ';
+    $student_habit_multiple_experience .= 'Abuse at home, ';
 }
 
 if (in_array(6, $twelveExpArr)) {
-    $student_habit_multiple_experience .= 'Irritability, ';
+    $student_habit_multiple_experience .= 'Neglect/abandonment by parent(s)/guardian, ';
 }
 
 if (in_array(7, $twelveExpArr)) {
-    $student_habit_multiple_experience .= 'Worry/Anxiety,';
+    $student_habit_multiple_experience .= 'Death of a family member, ';
 }
+
+if (in_array(8, $twelveExpArr)) {
+    $student_habit_multiple_experience .= 'Social/Relational,';
+}
+
+if (in_array(9, $twelveExpArr)) {
+    $student_habit_multiple_experience .= 'Cyber,';
+}
+
+if (in_array(10, $twelveExpArr)) {
+    $student_habit_multiple_experience .= 'Sexual,';
+}
+
+if (in_array(11, $twelveExpArr)) {
+    $student_habit_multiple_experience .= 'Economic,';
+}
+
+if (in_array(12, $twelveExpArr)) {
+    $student_habit_multiple_experience .= 'Emotional,';
+}
+
 
 $student_habit_multiple_concern = null;
 $botherYouArr = explode(",", $row['student_habit_multiple_concern']);
@@ -631,12 +648,7 @@ $tbl = <<<EOD
 </tr>
 <tr>
  <td>When you have question/s about your lesson, to whom do you usually ask? <br/>
- <strong>$student_habit_usually_ask</strong>
- </td>
-</tr>
-<tr>
- <td>As the student’s parent/guardian, how often do you assist your child/ward to study? <br/>
- <strong>$student_habit_child_guardian_assist2</strong>
+ <strong>$student_habit_spend_studying</strong>
  </td>
 </tr>
 <tr>
@@ -662,7 +674,8 @@ $tbl = <<<EOD
 </td>
 </tr>
 <tr>
-<td>Which of the following emotions do you usually express (through words and/or actions)? <br/>
+<td>For the past twelve (12) months, have you experienced any of the following:
+ <br/>
 <strong>$student_habit_multiple_experience</strong>
 </td>
 
