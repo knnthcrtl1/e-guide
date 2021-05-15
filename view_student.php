@@ -319,7 +319,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Firstname </label>
-                                                        <input type="text" name="student-father-name" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
+                                                        <input type="text" name="student-father-name" id="guardianNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Contact # </label>
@@ -342,9 +342,10 @@
                                                         <input type="number" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
+                                                        <span class="">Is your father an ofw?</span>
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-father-is-ofw">
-                                                                <option value="">Is your father an ofw?</option>
+                                                                <option value=""></option>
                                                                 <option value="0" <?php echo ($row['students_family_guardian_father_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
                                                                 <option value="1" <?php echo ($row['students_family_guardian_father_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
                                                             </select>
@@ -354,7 +355,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Firstname </label>
-                                                        <input type="text" name="student-mother-name" class="form-control" value="<?php echo $row['students_family_guardian_mother_name'] ?>">
+                                                        <input type="text" name="student-mother-name" id="motherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_mother_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Contact # </label>
@@ -377,9 +378,10 @@
                                                         <input type="number" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
+                                                        <span class="">Is your mother an ofw?</span>
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-mother-is-ofw">
-                                                                <option value="">Is your mother an ofw?</option>
+                                                                <option value=""></option>
                                                                 <option value="0" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
                                                                 <option value="1" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
                                                             </select>
@@ -403,7 +405,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian name</label>
-                                                        <input type="text" name="student-guardian-name" class="form-control" value="<?php echo $row['students_family_guardian_name'] ?>">
+                                                        <input type="text" name="student-guardian-name"  id="guardianNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_name'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -439,7 +441,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Relationship with guardian</label>
-                                                        <input type="text" name="student-guardian-relationship" class="form-control" value="<?php echo $row['students_family_guardian_guardian_relationship'] ?>">
+                                                        <input type="text" name="student-guardian-relationship"  id="relationShipNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_guardian_relationship'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">

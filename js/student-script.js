@@ -3,7 +3,7 @@ $(document).ready(function () {
     function validateEmail(email) {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    }   
+    }
 
     function _validateMobileNumber(num) {
         let re = /^(09|\+639|9)\d{9}$/;
@@ -127,7 +127,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         var studentFormData = $("#edit-student-form").serialize();
-        
+
         var studentRequired1 = $('#studentRequired1').val();
         var studentRequired2 = $('#studentRequired2').val();
         var studentRequiredPhone = $('#studentRequiredPhone').val();
@@ -167,8 +167,32 @@ $(document).ready(function () {
         e.preventDefault();
 
         var editStudentFamilyForm = $("#edit-student-family-form").serialize();
+        
+        var relationShipNameRequired = $('#relationShipNameRequired').val();
+        var fatherNameRequired = $('#fatherNameRequired').val();
+        var motherNameRequired = $('#motherNameRequired').val();
+        var guardianNameRequired = $('#guardianNameRequired').val();
 
-        // console.log(editStudentFamilyForm);
+        if (!validateName(relationShipNameRequired)) {
+            alert('Please input text only for guardian relationship with');
+            return false;
+        }
+
+        if (!validateName(fatherNameRequired)) {
+            alert('Please input text only for father name');
+            return false;
+        }
+
+        if (!validateName(motherNameRequired)) {
+            alert('Please input text only for mother name');
+            return false;
+        }
+
+        if (!validateName(guardianNameRequired)) {
+            alert('Please input text only for guardian name');
+            return false;
+        }
+
 
         jQuery.ajax({
             method: "POST",

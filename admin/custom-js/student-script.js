@@ -193,7 +193,30 @@ $(document).ready(function () {
 
         var editStudentFamilyForm = $("#edit-student-family-form").serialize();
 
-        // console.log(editStudentFamilyForm);
+        var relationShipNameRequired = $('#relationShipNameRequired').val();
+        var fatherNameRequired = $('#fatherNameRequired').val();
+        var motherNameRequired = $('#motherNameRequired').val();
+        var guardianNameRequired = $('#guardianNameRequired').val();
+
+        if (!validateName(relationShipNameRequired)) {
+            alert('Please input text only for guardian relationship with');
+            return false;
+        }
+
+        if (!validateName(fatherNameRequired)) {
+            alert('Please input text only for father name');
+            return false;
+        }
+
+        if (!validateName(motherNameRequired)) {
+            alert('Please input text only for mother name');
+            return false;
+        }
+
+        if (!validateName(guardianNameRequired)) {
+            alert('Please input text only for guardian name');
+            return false;
+        }
 
         jQuery.ajax({
             method: "POST",
