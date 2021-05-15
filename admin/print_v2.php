@@ -619,18 +619,13 @@ $tbl = <<<EOD
  <tr>
   <th colspan="1" align="center">SURVEY</th>
  </tr>
- <tr>
- <td>Is your child/ward studying alone or with your assistance? <br/>
-<strong>$student_habit_child_guardian_assist</strong>
- </td>
-</tr>
 <tr>
- <td>How often does s/he study?: <br/>
+ <td>When do you usually study?<br/>
  <strong>$student_habit_spend_studying</strong>
  </td>
 </tr>
 <tr>
- <td>How many hours is your child usually studying? <br/>
+ <td>How many hours do you usually spend studying?<br/>
  <strong>$student_habit_child_usual_study</strong>
  </td>
 </tr>
@@ -651,7 +646,7 @@ $tbl = <<<EOD
  </td>
 </tr>
 <tr>
- <td>Kindly describe the usual quality of your Internet Connection: <br/>
+ <td>Kindly describe the usual quality of your Internet Connection? <br/>
  <strong>$student_habit_internet</strong>
  </td>
 </tr>
