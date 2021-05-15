@@ -108,7 +108,7 @@
 
                                             mail($email, $subject, $message, $headers);
 
-                                            echo "Your new password has been emailed to you" . $row['student_email'];
+                                            echo "Your new password has been emailed to you";
                                         } else {
                                             echo "This id does not exist.";
                                         }
