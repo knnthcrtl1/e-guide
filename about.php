@@ -1,6 +1,6 @@
 <?php include('./header.php'); ?>
 
-<body class="">
+<body >
     <div class="wrapper ">
 
         <div class="content">

@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 
-<body>
+<body class="student__background__image__container">
     <div class="wrapper ">
 
         <div class="content">

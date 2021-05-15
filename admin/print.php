@@ -292,6 +292,50 @@ if ($rowUsuallyAsks == 7) {
 }
 
 
+$student_habit_area_home = null;
+$rowStudentCondition = $row['student_habit_area_home'];
+
+if ($rowStudentCondition == 1) {
+    $student_habit_area_home = 'Yes';
+}
+if ($rowStudentCondition == 2) {
+    $student_habit_area_home = 'No';
+}
+
+$student_habit_internet = null;
+$studentInternetConnection = $row['student_habit_internet'];
+
+if ($studentInternetConnection == 1) {
+    $student_habit_internet = 'Poor/Usually unstable';
+}
+if ($studentInternetConnection == 2) {
+    $student_habit_internet = 'Good/Fairly Stable';
+}
+
+if ($studentInternetConnection == 3) {
+    $student_habit_internet = 'Excellent/Usually stable';
+}
+
+$student_habit_student_device = null;
+$rowStudentDevice = $row['student_habit_student_device'];
+if ($rowStudentDevice == 1) {
+    $student_habit_student_device = 'Mobile Phone';
+}
+if ($rowStudentDevice == 2) {
+    $student_habit_student_device = 'Tablet';
+}
+if ($rowStudentDevice == 3) {
+    $student_habit_student_device = 'Laptop';
+}
+if ($rowStudentDevice == 4) {
+    $student_habit_student_device = 'Desktop';
+}
+if ($rowStudentDevice == 5) {
+    $student_habit_student_device = 'Others' . $row['student_habit_other_third'];
+}
+
+
+
 
 $tbl = <<<EOD
 <div>
@@ -448,16 +492,20 @@ $tbl = <<<EOD
  </td>
 </tr>
 <tr>
- <td>Work Address: $students_family_guardian_father_work_address</td>
- <td>Work Address: $students_family_guardian_mother_work_address</td>
+ <td>Do you have a study area at home that is conducive for online classes?<br/>
+ <strong>$student_habit_area_home</strong>
+ 
+ </td>
 </tr>
 <tr>
- <td>Work Contact #: $students_family_guardian_father_work_contact</td>
- <td>Work Contact #: $students_family_guardian_mother_work_contact</td>
+ <td>Kindly describe the usual quality of your Internet Connection? <br/>
+ <strong>$student_habit_internet</strong>
+ </td>
 </tr>
 <tr>
- <td>Is Ofw?: $students_family_guardian_father_is_ofw</td>
- <td>Is Ofw?: $students_family_guardian_mother_is_ofw</td>
+ <td>Kindly identify the device(s) that you can use for your online classes: <br/>
+    <strong>$student_habit_student_device</strong>
+ </td>
 </tr>
 <tr>
  <td colspan="3">Marital Status of Parents: $students_family_guardian_marital_status</td>

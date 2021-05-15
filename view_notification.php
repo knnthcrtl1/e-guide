@@ -1,7 +1,7 @@
 <?php include('./header.php'); ?>
 <?php include('./admin/connection.php'); ?>
 
-<body>
+<body class="student__background__image__container">
   <div class="wrapper ">
     <div class="content">
       <div class="container">
