@@ -424,7 +424,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian email address</label>
-                                                        <input type="number" name="student-guardian-email-address" class="form-control" value="<?php echo $row['students_family_guardian_guardian_email'] ?>">
+                                                        <input type="email" name="student-guardian-email-address" class="form-control" value="<?php echo $row['students_family_guardian_guardian_email'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">

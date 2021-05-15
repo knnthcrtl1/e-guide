@@ -16,11 +16,13 @@ function newMenus()
         </div>
     </div>
     <hr />
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-    </form>
+    <div class="row justify-content-center">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Select photo:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" class="btn-info" name="submit">
+        </form>
+    </div>
     <div class="row">
         <div class="col-md-4 ">
             <a href="./view_student.php" class="dashboard__fillup__container--link">
@@ -30,9 +32,11 @@ function newMenus()
             </a>
         </div>
         <div class="col-md-4">
-            <div class="dashboard__fillup__container">
-                ABOUT
-            </div>
+            <a href="./about.php" class="dashboard__fillup__container--link">
+                <div class="dashboard__fillup__container">
+                    ABOUT
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
             <a href="./view_notification.php" class="dashboard__fillup__container--link">
@@ -43,6 +47,7 @@ function newMenus()
         </div>
     </div>
     <div class="row">
+
         <div class="col-md-4">
             <a href="./change_password.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">

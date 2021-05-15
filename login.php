@@ -125,16 +125,14 @@
             <div class="row">
 
                 <div class="col-lg-6">
-                    <div class="login__spill__container">
-
-                        <p>
-                            The cumulative folder is a record developed to assist in the student’s educational growth and progress. The teacher and other school personnel use it as a tool for student guidance and the improvement of instruction. A well-developed cumulative folder may afford a teacher an opportunity to analyze students’ school history, test scores, and rate of growth so that a proper course of action for helping the student can be determined. The cumulative folder is only as useful as the quality of data entered. The Special Education record is an essential part of the cumulative folder and must be maintained accordingly with all security and confidentiality requirements.
-                        </p>
-                    </div>
-
                 </div>
 
                 <div class="col-lg-6">
+                    <div class="login__spill__container">
+                        <p>
+                            The <span style="font-weight:bold;">cumulative folder</span> is a record developed to assist in the student’s educational growth and progress. The teacher and other school personnel use it as a tool for student guidance and the improvement of instruction. A well-developed <span style="font-weight:bold;">cumulative folder</span> may afford a teacher an opportunity to analyze students’ school history, test scores, and rate of growth so that a proper course of action for helping the student can be determined. The <span style="font-weight:bold;">cumulative folder</span> is only as useful as the quality of data entered. The Special Education record is an essential part of the <span style="font-weight:bold;">cumulative folder</span > and must be maintained accordingly with all security and confidentiality requirements.
+                        </p>
+                    </div>
                 </div>
 
             </div>
