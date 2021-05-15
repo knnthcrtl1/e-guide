@@ -97,16 +97,17 @@
                                             mysqli_query($conn, "UPDATE tbl_users SET user_password='{$new_password}' WHERE user_username = '{$email}'");
 
                                             //send the password to the user
-
+                                            
+                                            $sendEmail = $row['student_email'];
                                             $subject = "Login Information";
-                                            $message = "Your password has been change to " . $row['student_email'] . "";
+                                            $message = "Your password has been change to " . $sendEmail . "";
                                             // $headers = "MIME-Version: 1.0" . "\r\n";
                                             // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                                             // More headers
                                             $headers = "From: ue-eguide@email.com";
 
-                                            mail($email, $subject, $message, $headers);
+                                            mail($sendEmail, $subject, $message, $headers);
 
                                             echo "Your new password has been emailed to you";
                                         } else {
