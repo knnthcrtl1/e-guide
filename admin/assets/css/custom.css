@@ -315,3 +315,10 @@ a.dashboard__fillup__container--link {
   padding: 0px;
   margin: 0px;
 }
+
+.col-lg-12.register__container__header {
+  padding: 10px 0px;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+}
