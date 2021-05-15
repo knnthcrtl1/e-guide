@@ -291,7 +291,8 @@ if ($rowUsuallyAsks == 7) {
     $student_habit_usually_ask = 'Others';
 }
 
-// The '@' character is used to indicate that follows an image data stream and not an image file name
+
+
 $tbl = <<<EOD
 <div>
         <p style="text-align:center;font-weight:bold;">UNIVERSITY OF THE EAST</p>
