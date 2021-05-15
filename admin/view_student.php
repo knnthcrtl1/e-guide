@@ -27,7 +27,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive" id="studentTable">
-                                <p id="studentTypeId" id-attr="<?php  echo $_GET['studentType']; ?>" style="display:none;"></p>
+                                <p id="studentTypeId" id-attr='<?php  echo $_GET['studentType']; ?>'></p>
                                     <table class="table" id="studentDataTable">
                                         <thead class=" text-primary">
                                             <tr>

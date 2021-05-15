@@ -29,27 +29,27 @@ $student_address = $row['student_address'];
 $rowGender = $row['student_gender'];
 $student_gender = null;
 
-if($rowGender == 0){
+if ($rowGender == 0) {
     $student_gender = "Straight/Heterosexual";
-} 
-if($rowGender == 1){
+}
+if ($rowGender == 1) {
     $student_gender = "Transgender";
-} 
-if($rowGender == 2){
+}
+if ($rowGender == 2) {
     $student_gender = "Prefer not to say";
-} 
-if($rowGender == 3){
+}
+if ($rowGender == 3) {
     $student_gender = "Lesbian";
-} 
-if($rowGender == 4){
+}
+if ($rowGender == 4) {
     $student_gender = "Gay";
-} 
-if($rowGender == 5){
+}
+if ($rowGender == 5) {
     $student_gender = "Bisexual";
-} 
-if($rowGender == 6){
+}
+if ($rowGender == 6) {
     $student_gender = "Others";
-} 
+}
 
 $student_birthday = $row['student_birthday'];
 $student_contact = $row['student_contact'];
@@ -65,62 +65,62 @@ $student_civil_status = $row['student_civil_status'];
 
 $rowSex = $row['student_sex'];
 $student_sex = $row['student_sex'];
-if($rowSex == 1){
+if ($rowSex == 1) {
     $student_sex = "Male";
-} 
-if($rowSex == 2){
+}
+if ($rowSex == 2) {
     $student_sex = "Female";
-} 
-if($rowSex == 3){
+}
+if ($rowSex == 3) {
     $student_sex = "Prefer not to say";
-} 
+}
 
 $rowLivingWith = $row['student_living_with'];
 $student_living_with = null;
-if($rowLivingWith == 1){
+if ($rowLivingWith == 1) {
     $student_living_with = "Parents";
-} 
-if($rowLivingWith == 2){
+}
+if ($rowLivingWith == 2) {
     $student_living_with = "Siblings only";
-} 
-if($rowLivingWith == 3){
+}
+if ($rowLivingWith == 3) {
     $student_living_with = "Relatives";
-} 
-if($rowLivingWith == 4){
+}
+if ($rowLivingWith == 4) {
     $student_living_with = "Alone, in a rented space/dormitory";
-} 
-if($rowLivingWith == 5){
+}
+if ($rowLivingWith == 5) {
     $student_living_with = "Alone, as a bed spacer";
-} 
-if($rowLivingWith == 6){
+}
+if ($rowLivingWith == 6) {
     $student_living_with = "Others";
-} 
+}
 
 $studentLivingCondition = $row['student_present_living_condition'];
 $student_present_living_condition = null;
 
-if($studentLivingCondition == 1){
+if ($studentLivingCondition == 1) {
     $student_present_living_condition = "Lower Class";
-} 
-if($studentLivingCondition == 2){
+}
+if ($studentLivingCondition == 2) {
     $student_present_living_condition = "Middle Class";
-} 
-if($studentLivingCondition == 3){
+}
+if ($studentLivingCondition == 3) {
     $student_present_living_condition = "Upper Class";
-} 
+}
 
 
 $rowStudentType = $row['student_type'];
 $student_type = null;
-if($rowStudentType == 0){
+if ($rowStudentType == 0) {
     $student_type = "Grade School";
-} 
-if($rowStudentType == 1){
+}
+if ($rowStudentType == 1) {
     $student_type = "High School";
-} 
-if($rowStudentType == 2){
+}
+if ($rowStudentType == 2) {
     $student_type = "Senior High";
-} 
+}
 
 $student_age = $row['student_age'];
 $student_place_of_birth = $row['student_place_of_birth'];
@@ -142,10 +142,10 @@ $students_family_guardian_father_work_contact = $row['students_family_guardian_f
 $rowFatherOfw = $row['students_family_guardian_father_is_ofw'];
 $students_family_guardian_father_is_ofw = null;
 
-if($rowFatherOfw == 0) {
+if ($rowFatherOfw == 0) {
     $students_family_guardian_father_is_ofw = "Yes";
 }
-if($rowFatherOfw == 1) {
+if ($rowFatherOfw == 1) {
     $students_family_guardian_father_is_ofw = "No";
 }
 
@@ -160,29 +160,29 @@ $students_family_guardian_mother_is_ofw = $row['students_family_guardian_mother_
 $rowMotherOfw = $row['students_family_guardian_mother_is_ofw'];
 $students_family_guardian_mother_is_ofw = null;
 
-if($rowMotherOfw == 0) {
+if ($rowMotherOfw == 0) {
     $students_family_guardian_mother_is_ofw = "Yes";
 }
-if($rowMotherOfw == 1) {
+if ($rowMotherOfw == 1) {
     $students_family_guardian_mother_is_ofw = "No";
 }
 
 $rowMaritalStatus = $row['students_family_guardian_marital_status'];
 $students_family_guardian_marital_status = null;
 
-if($rowMaritalStatus == 0){
+if ($rowMaritalStatus == 0) {
     $students_family_guardian_marital_status = 'Married';
 }
-if($rowMaritalStatus == 1){
+if ($rowMaritalStatus == 1) {
     $students_family_guardian_marital_status = 'Living Together';
 }
-if($rowMaritalStatus == 2){
+if ($rowMaritalStatus == 2) {
     $students_family_guardian_marital_status = 'Widow/Widower';
 }
-if($rowMaritalStatus == 3){
+if ($rowMaritalStatus == 3) {
     $students_family_guardian_marital_status = 'Annulled/Separated';
 }
-if($rowMaritalStatus == 4){
+if ($rowMaritalStatus == 4) {
     $students_family_guardian_marital_status = 'Others';
 }
 
@@ -202,99 +202,105 @@ $row = mysqli_fetch_array($result);
 $student_habit_child_guardian_assist = null;
 $rowGuardianAssist = $row['student_habit_child_guardian_assist'];
 
-if($rowGuardianAssist == 1){
+if ($rowGuardianAssist == 1) {
     $student_habit_child_guardian_assist = 'Is your child/ward studying alone or with your assistance?';
 }
-if($rowGuardianAssist == 3){
+if ($rowGuardianAssist == 3) {
     $student_habit_child_guardian_assist = 'Yes, s/he is often studying alone';
 }
-if($rowGuardianAssist == 6){
+if ($rowGuardianAssist == 6) {
     $student_habit_child_guardian_assist = 'No, s/he is often studying with assistance';
 }
 
 $student_habit_spend_studying = null;
 $rowSpendStudying = $row['student_habit_spend_studying'];
 
-if($rowSpendStudying == 1){
+if ($rowSpendStudying == 1) {
     $student_habit_spend_studying = 'Everyday';
 }
-if($rowSpendStudying == 2){
+if ($rowSpendStudying == 2) {
     $student_habit_spend_studying = 'Twice a week';
 }
-if($rowSpendStudying == 3){
+if ($rowSpendStudying == 3) {
     $student_habit_spend_studying = 'Once a week';
 }
-if($rowSpendStudying == 4){
+if ($rowSpendStudying == 4) {
     $student_habit_spend_studying = 'When there is a quiz';
 }
-if($rowSpendStudying == 5){
+if ($rowSpendStudying == 5) {
     $student_habit_spend_studying = 'During examination week';
 }
-if($rowSpendStudying == 6){
+if ($rowSpendStudying == 6) {
     $student_habit_spend_studying = 'When he/she feels like studying';
 }
 
 $student_habit_child_usual_study = null;
 $rowUsualStudy = $row['student_habit_child_usual_study'];
 
-if($rowUsualStudy == 1){
+if ($rowUsualStudy == 1) {
     $student_habit_child_usual_study = '1 hour a day';
 }
 
-if($rowUsualStudy == 2){
+if ($rowUsualStudy == 2) {
     $student_habit_child_usual_study = 'More than an hour a day';
 }
 
-if($rowUsualStudy == 3){
+if ($rowUsualStudy == 3) {
     $student_habit_child_usual_study = 'less than an hour a day';
 }
 
-if($rowUsualStudy == 4){
+if ($rowUsualStudy == 4) {
     $student_habit_child_usual_study = '1 hour a week';
 }
 
-if($rowUsualStudy == 5){
+if ($rowUsualStudy == 5) {
     $student_habit_child_usual_study = 'More than an hour a week';
 }
-if($rowUsualStudy == 6){
+if ($rowUsualStudy == 6) {
     $student_habit_child_usual_study = 'Less than an hour a week';
 }
 
 $student_habit_usually_ask = null;
 $rowUsuallyAsks = $row['student_habit_usually_ask'];
 
-if($rowUsuallyAsks == 1){
+if ($rowUsuallyAsks == 1) {
     $student_habit_usually_ask = 'Teacher';
 }
 
-if($rowUsuallyAsks == 2){
+if ($rowUsuallyAsks == 2) {
     $student_habit_usually_ask = 'Classmate/s';
 }
 
-if($rowUsuallyAsks == 3){
+if ($rowUsuallyAsks == 3) {
     $student_habit_usually_ask = 'Friend';
 }
 
-if($rowUsuallyAsks == 4){
+if ($rowUsuallyAsks == 4) {
     $student_habit_usually_ask = 'Mother';
 }
 
-if($rowUsuallyAsks == 5){
+if ($rowUsuallyAsks == 5) {
     $student_habit_usually_ask = 'Brother';
 }
 
-if($rowUsuallyAsks == 6){
+if ($rowUsuallyAsks == 6) {
     $student_habit_usually_ask = 'Sister';
 }
 
-if($rowUsuallyAsks == 7){
+if ($rowUsuallyAsks == 7) {
     $student_habit_usually_ask = 'Others';
 }
 
-
-
 // The '@' character is used to indicate that follows an image data stream and not an image file name
 $tbl = <<<EOD
+<div>
+        <p style="text-align:center;font-weight:bold;">UNIVERSITY OF THE EAST</p>
+        <p style="text-align:center;">MANILA • CALOOCAN</p>
+        <p style="text-align:center;font-size: 12px;">GUIDANCE, COUNSELING
+        AND CAREER SERVICES OFFICE
+        </p>
+    <p style="text-align:center;font-size: 12px;">UPDATED STUDENT INFORMATION SHEET</p>
+</div>
 <table border="1" cellpadding="5" cellspacing="0" nobr="true">
  <tr>
   <th colspan="3" align="center">STUDENT INFORMATION</th>
