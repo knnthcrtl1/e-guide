@@ -163,11 +163,11 @@ $(document).ready(function () {
 
     });
 
-    $(document).on("submit", "#submit-edit-student-family-form", function (e) {
+    $(document).on("submit", "#edit-student-family-form", function (e) {
         e.preventDefault();
 
         var editStudentFamilyForm = $("#edit-student-family-form").serialize();
-        
+
         var relationShipNameRequired = $('#relationShipNameRequired').val();
         var fatherNameRequired = $('#fatherNameRequired').val();
         var motherNameRequired = $('#motherNameRequired').val();
