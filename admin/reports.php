@@ -40,11 +40,11 @@
     }
 
     function GetTotalCount($conn, $column, $student_type)  {
-        $sql = " SELECT count(T1." . $column . ") as total_count";
+        $sql = " SELECT count(t1." . $column . ") as total_count";
         $sql .= " FROM tbl_student_habit t1 ";
         $sql .= " JOIN tbl_students t2 ";
         $sql .= " ON t1.student_habit_student_id = t2.student_id ";
-        $sql .= " WHERE T2.student_type = '" . $student_type . "'";
+        $sql .= " WHERE t2.student_type = '" . $student_type . "'";
 
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
@@ -52,12 +52,12 @@
     }
 
     function GetIndividualCount($conn, $column, $student_type, $database_value) {
-        $sql = " SELECT count(T1." . $column . ") as individual_count";
+        $sql = " SELECT count(t1." . $column . ") as individual_count";
         $sql .= " FROM tbl_student_habit t1 ";
         $sql .= " JOIN tbl_students t2 ";
         $sql .= " ON t1.student_habit_student_id = t2.student_id ";
-        $sql .= " WHERE T2.student_type = '" . $student_type . "'";
-        $sql .= " AND T1." . $column . " = '" . $database_value . "'";
+        $sql .= " WHERE t2.student_type = '" . $student_type . "'";
+        $sql .= " AND t1." . $column . " = '" . $database_value . "'";
 
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
