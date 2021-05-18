@@ -93,7 +93,7 @@
                                 <input type="name" name="user" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp">
                             </div>
                             <div class="student__form ">
-                                <p class="student__form--label">Pasword</p>
+                                <p class="student__form--label">Password</p>
                                 <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword">
                             </div>
                             <div class="">
