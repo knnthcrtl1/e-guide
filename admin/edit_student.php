@@ -340,7 +340,7 @@
                                                         <span class="">Is your father an ofw?</span>
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-father-is-ofw">
-                                                                <option value=""></option>
+                                                                <option value="" <?php echo ($row['students_family_guardian_father_is_ofw'] == "") ? 'selected' : null ?>></option>
                                                                 <option value="0" <?php echo ($row['students_family_guardian_father_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
                                                                 <option value="1" <?php echo ($row['students_family_guardian_father_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
                                                             </select>
@@ -376,7 +376,7 @@
                                                         <span class="">Is your mother an ofw?</span>
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-mother-is-ofw">
-                                                                <option value=""></option>
+                                                                <option value="" <?php echo ($row['students_family_guardian_mother_is_ofw'] == "") ? 'selected' : null ?>></option>
                                                                 <option value="0" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 0) ? 'selected' : null ?>>Yes</option>
                                                                 <option value="1" <?php echo ($row['students_family_guardian_mother_is_ofw'] == 1) ? 'selected' : null ?>>No</option>
                                                             </select>
