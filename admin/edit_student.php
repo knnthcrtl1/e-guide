@@ -161,7 +161,7 @@
                                                 <div class="col-md-3">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Age *</label>
-                                                        <input type="number" name="student-age" class="form-control" value="<?php echo $studBday; ?>">
+                                                        <input type="number" name="student-age" class="form-control" value="<?php echo $studBday; ?>" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
