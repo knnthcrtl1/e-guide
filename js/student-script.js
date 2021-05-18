@@ -173,6 +173,11 @@ $(document).ready(function () {
         var motherNameRequired = $('#motherNameRequired').val();
         var guardianNameRequired = $('#guardianNameRequired').val();
 
+        // var guardianPhone = $("#guardianPhone").val();
+        // var guardianLandline = ("#guardianLandline").val();
+        // var motherContactNumber = ("#motherContactNumber").val();
+        // var motherWorkContact = ("#motherWorkContact").val();
+
         if (!validateName(relationShipNameRequired)) {
             alert('Please input text only for guardian relationship with');
             return false;
