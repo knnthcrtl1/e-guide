@@ -170,19 +170,19 @@ if ($rowMotherOfw == 3) {
 $rowMaritalStatus = $row['students_family_guardian_marital_status'];
 $students_family_guardian_marital_status = null;
 
-if ($rowMaritalStatus == 0) {
+if ($rowMaritalStatus == 1) {
     $students_family_guardian_marital_status = 'Married';
 }
-if ($rowMaritalStatus == 1) {
+if ($rowMaritalStatus == 2) {
     $students_family_guardian_marital_status = 'Living Together';
 }
-if ($rowMaritalStatus == 2) {
+if ($rowMaritalStatus == 3) {
     $students_family_guardian_marital_status = 'Widow/Widower';
 }
-if ($rowMaritalStatus == 3) {
+if ($rowMaritalStatus == 4) {
     $students_family_guardian_marital_status = 'Annulled/Separated';
 }
-if ($rowMaritalStatus == 4) {
+if ($rowMaritalStatus == 5) {
     $students_family_guardian_marital_status = 'Others';
 }
 

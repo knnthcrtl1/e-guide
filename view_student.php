@@ -387,11 +387,11 @@
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-guardian-marital-status">
                                                                 <option value="">Marital status of parents</option>
-                                                                <option value="0" <?php echo ($row['students_family_guardian_marital_status'] == 0) ? 'selected' : null ?>>Married</option>
-                                                                <option value="1" <?php echo ($row['students_family_guardian_marital_status'] == 1) ? 'selected' : null ?>>Living Together</option>
-                                                                <option value="2" <?php echo ($row['students_family_guardian_marital_status'] == 2) ? 'selected' : null ?>>Widow/Widower</option>
-                                                                <option value="3" <?php echo ($row['students_family_guardian_marital_status'] == 3) ? 'selected' : null ?>>Annulled/Separated</option>
-                                                                <option value="4" <?php echo ($row['students_family_guardian_marital_status'] == 4) ? 'selected' : null ?>>Others</option>
+                                                                <option value="1" <?php echo ($row['students_family_guardian_marital_status'] == 1) ? 'selected' : null ?>>Married</option>
+                                                                <option value="2" <?php echo ($row['students_family_guardian_marital_status'] == 2) ? 'selected' : null ?>>Living Together</option>
+                                                                <option value="3" <?php echo ($row['students_family_guardian_marital_status'] == 3) ? 'selected' : null ?>>Widow/Widower</option>
+                                                                <option value="4" <?php echo ($row['students_family_guardian_marital_status'] == 4) ? 'selected' : null ?>>Annulled/Separated</option>
+                                                                <option value="5" <?php echo ($row['students_family_guardian_marital_status'] == 5) ? 'selected' : null ?>>Others</option>
                                                             </select>
                                                         </div>
                                                     </div>
