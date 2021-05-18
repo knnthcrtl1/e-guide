@@ -1,105 +1,8 @@
-<?php include('header.php'); ?>
-<?php include('connection.php'); ?>
+<?php include('./header.php'); ?>
 
-<?php 
-    function BuildCardHeader($title) {
-?>
-    <style type="text/css">
-        .survey-results .survey-value {
-            text-align: right;
-        }
-    </style>
-    <div class="card">
-        <div class="card-header card-header-primary">
-            <h4 class="card-title "><?=$title?></h4>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead class=" text-primary">
-                        <tr>
-                            <th>
-                                Answer
-                            </th>
-                            <th style="text-align: right;">
-                                Elementary
-                            </th>
-                            <th style="text-align: right;">
-                                Junior High School
-                            </th>
-                            <th style="text-align: right;">
-                                Senior Highschool
-                            </th>
-                            <th style="text-align: right;">
-                                Total
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-<?php
-    }
-
-    function GetTotalCount($conn, $column, $student_type)  {
-        $sql = " SELECT count(T1." . $column . ") as total_count";
-        $sql .= " FROM tbl_student_habit t1 ";
-        $sql .= " JOIN tbl_students t2 ";
-        $sql .= " ON t1.student_habit_student_id = t2.student_id ";
-        $sql .= " WHERE T2.student_type = '" . $student_type . "'";
-
-        $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_array($result);
-        return $row['total_count'];
-    }
-
-    function GetIndividualCount($conn, $column, $student_type, $database_value) {
-        $sql = " SELECT count(T1." . $column . ") as individual_count";
-        $sql .= " FROM tbl_student_habit t1 ";
-        $sql .= " JOIN tbl_students t2 ";
-        $sql .= " ON t1.student_habit_student_id = t2.student_id ";
-        $sql .= " WHERE T2.student_type = '" . $student_type . "'";
-        $sql .= " AND T1." . $column . " = '" . $database_value . "'";
-
-        $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_array($result);
-        return $row['individual_count'];
-    }
-
-    function BuildCardAnswer($conn, $answer, $column, $database_value) {
-        $total0 = GetTotalCount($conn, $column, 0);
-        $total1 = GetTotalCount($conn, $column, 1);
-        $total2 = GetTotalCount($conn, $column, 2);
-
-        $count0 = GetIndividualCount($conn, $column, 0, $database_value);
-        $count1 = GetIndividualCount($conn, $column, 1, $database_value);
-        $count2 = GetIndividualCount($conn, $column, 2, $database_value);
-
-        $percentage0 = number_format((($count0 / $total0) * 100), 2) . "%";
-        $percentage1 = number_format((($count1 / $total1) * 100), 2) . "%";
-        $percentage2 = number_format((($count2 / $total2) * 100), 2) . "%";
-?>
-        <tr class="survey-results">
-            <td><?=$answer?></td>
-            <td class="survey-value"><?=$count0?> out of <?=$total0?> = <?=$percentage0?></td>
-            <td class="survey-value"><?=$count1?> out of <?=$total1?> = <?=$percentage1?></td>
-            <td class="survey-value"><?=$count2?> out of <?=$total2?> = <?=$percentage2?></td>
-            <td class="survey-value"><?=($count0 + $count1 + $count2)?></td>
-        </tr>
-<?php
-    }
-
-    function BuildCardFooter() {
-?>
-                    </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-<?php
-    }
-?>
-
-<body>
+<body class="" style="background-image: url(./assets/img/student-dashboard.jpg); color: #ffffff;">
     <div class="wrapper ">
+
         <div class="content">
             <div class="container">
                 <div class="row">
@@ -111,260 +14,116 @@
                 <?php include('./newMenus.php');
                 newMenus();
                 ?>
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_usually_study";
-                            // ------------------
+                <br/>
+                <div class="about__container">
+                    <p style="text-align:center">
+                        The Guidance, Counseling, and Career Office (GCCSO) envisions to provide opportunities for students' personal integration, academic excellence & professional advancement
+                        The GCCSO dedicates itself to the holistic development of the student by;</p><br />
+                    <ul style="text-align:center">
+                        <li> 1. Assisting them in strengthening their awareness of oneself and others;</li>
+                        <li> 2. Providing support that would help them explore their full potential and make use of these to achieve their life goals;</li>
+                        <li> 3. Helping them develop the ability to cope with problem situation and make intelligent choices and decisions; and</li>
+                        <li> 4. Facilitating a climate for physical, intellectual, emotional, social, moral and spiritual growth.</li>
+                    </ul>
 
-                            echo BuildCardHeader("Q1 - Is your child/ward studying alone or with your assistance?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Yes, s/he is often studying alone", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "No, s/he is often studying with assistance", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Others", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_spend_studying";
-                            // ------------------
-
-                            echo BuildCardHeader("Q2 - How often does s/he study?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Everyday", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Twice a week", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Once a week", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "When there is a quiz", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "During examination week", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "When he/she feels like studying", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_child_usual_study";
-                            // ------------------
-
-                            echo BuildCardHeader("Q3 - How many hours is your child usually studying?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "1 hour a day", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "More than an hour a day", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Less than an hour a day", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "1 hour a week", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "More than an hour a week", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "Less than an hour a week", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_usually_ask";
-                            // ------------------
-
-                            echo BuildCardHeader("Q4 - When you have question/s about your lesson, to whom do you usually ask?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Teacher", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Classmate/s", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Friend", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Mother", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "Brother", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "Sister", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_child_guardian_assist";
-                            // ------------------
-
-                            echo BuildCardHeader("Q5 - As the student’s parent/guardian, how often do you assist your child/ward to study?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Everyday", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Twice a week", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Once a week", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "When there is a quiz", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "During examination week", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "When he/she feel like studying", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_usually_study";
-                            // ------------------
-
-                            echo BuildCardHeader("Q6 - When do you usually study?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Everyday", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Twice a week", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "When there is a quiz", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "During examination week", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "When I feel like studying", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "Others", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_spend_studying";
-                            // ------------------
-
-                            echo BuildCardHeader("Q7 - How many hours do you usually spend studying?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "1 hour a day", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "More than an hour a day", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Less than an hour a day", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "1 hour a week", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "More than an hour a week", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "Less than an hour a week", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-                        
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_usually_ask";
-                            // ------------------
-
-                            echo BuildCardHeader("Q8 - When you have question/s about your lesson, to whom do you usually ask?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Teacher", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Classmate/s", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Friend", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Mother", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "Brother", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "Sister", $currentColumn, 6);
-                            echo BuildCardAnswer($conn, "Boyfriend / Girlfriend", $currentColumn, 7);
-                            echo BuildCardAnswer($conn, "Others", $currentColumn, 8);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_area_home";
-                            // ------------------
-
-                            echo BuildCardHeader("Q9 - Do you have a study area at home that is conducive for online classes?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Yes", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "No", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_internet";
-                            // ------------------
-
-                            echo BuildCardHeader("Q10 - Kindly describe the usual quality of your Internet Connection");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Poor/Usually unstable", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Good/Fairly Stable", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Excellent/Usually stable", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_student_device";
-                            // ------------------
-
-                            echo BuildCardHeader("Q11 - Kindly identify the device(s) that you can use for your online classes");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Mobile phone", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Tablet", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Laptop", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Desktop", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "Others", $currentColumn, 5);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_general_health";
-                            // ------------------
-
-                            echo BuildCardHeader("Q12 - What is the condition of your child’s general health?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Excellent", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "Good", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Fair", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Poor", $currentColumn, 4);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_physical_illness";
-                            // ------------------
-
-                            echo BuildCardHeader("Q13 - Does he/she have any serious physical illness?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Yes", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "No", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Others", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
-
-                        <?php 
-                            // ------------------
-                            $currentColumn = "student_habit_health_condition";
-                            // ------------------
-
-                            echo BuildCardHeader("Q14 - Have you been previously diagnosed with any mental health condition?");
-
-                            // ------------------
-                            echo BuildCardAnswer($conn, "Yes", $currentColumn, 1);
-                            echo BuildCardAnswer($conn, "No", $currentColumn, 2);
-                            echo BuildCardAnswer($conn, "Others", $currentColumn, 3);
-                            echo BuildCardAnswer($conn, "Did not answer", $currentColumn, "");
-                            // ------------------
-                        ?>
-                        <?=BuildCardFooter()?>
+                    <h3 style="text-align:center">GUIDANCE SERVICES</h3>
+                    <p style="text-align:center">Information, Individual Inventories, Psychological Testing, Counseling, Group Guidance, Follow-up, Referrals, Linkages, Evaluation, Research and. Community Outreach</p>
+                    <h3 style="text-align:center">CAREER DEVELOPMENT PROGRAMS</h3>
+                    <p style="text-align:center">Career Orientation, Career Planning, Career Talks, Mock Interview and Job Fairs</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3>ENRICHMENT PROGRAMS</h3>
+                            <ul>
+                                <li> SACOP - Student Academic Competence Program</li>
+                                <li>SEMAP - Self-Enhancement and Management Program</li>
+                                <li> HEART - Healthy Sexuality and Relationship Empowerment</li>
+                                <li> UECPPF - University of the East Caloocan Perks Peer Facilitators Training Program</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>SPECIAL GUIDANCE PROGRAMS</h3>
+                            <ul>
+                                <li> Adolescents from OFW Households Transformational Program</li>
+                                <li>Goal-Directed Intervention Program for Students-at-Risk</li>
+                                <li> Self-identified Lesbian, Gay, Bisexual and Transgender (LGBT) Students Support Program</li>
+                                <li> International Students Fellowship and Integration Program</li>
+                            </ul>
+                        </div>
                     </div>
+                    <h3 style="text-align:center">GUIDANCE PERSONNEL</h3><br/>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <p>Mr. Antonio C. Postrado, Jr., LPT, RGC<br />
+                                <strong>Guidance Coordinator</strong>
+                            </p>
+                            <br />
+                        </div>
+                        <div class="col-lg-4">
+                            <p>Ms. Ma. Janine C. Bautista, LPT, RPm, RGC</p>
+                            <p>Mr. Jayson S. Parena, MS, RGC <br />
+                                <strong>Guidance Counselors</strong>
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p>Mr. Arnold A. de Silva, MA, RPm
+                                <strong>Psychometrician</strong><br />
+                                Ms. Jovine Dimple L. Dela Cruz, RPm
+                                <strong>Guidance Clerk</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <ul>
+                                <li>Get in touch with the proactive and dynamic GCCSO Personnel at the</li>
+                                <li>Ground Floor, Old Academic Building and 2nd Floor, Dr. Lucio C. Tan Building</li>
+
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <ul>
+                                <li> University of the East 105 Samson Road, Caloocan City</li>
+                                <li>Monday-Friday 7:30 a.m. - 5:00 p.m.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <ul>
+                                <li> Email us: gco.cal@ue.edu.ph</li>
+                                <li>Call us: 8367-4572 loc. 175 (college) & 207 (Basic Education Department) / 8365-4124</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 style="text-align:center">UE core values</h3> <br />
+                            <p style="text-align:center">The University adheres to the core values of Excellence, Integrity, Professionalism, Teamwork, Commitment, Transparency, Accountability and Social Responsibility</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3>~EHSD MISSION~</h3> <br />
+                            <p>We strive to be world-class grade school and high schools. We are student centered, multicultural and inter-racial schools that pursue excellence in Science, Technology, Mathematics, Languages, Music, Performing and Visual Arts, and Sports. We uphold sound socio-cultural, moral and ethical values. We aim to develop individuals who will become well-rounded individuals and worthy members of the society and the global community.</p>
+
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>~EHSD GOALS~</h3> <br />
+                            <p>The Elementary and High School Department aims to become a vital instrument in the development of the students’ optimum potential, ideal values and characteristics and sense of nationalism, which are needed in the provision of the quality but affordable basic education.</p>
+                        </div>
+
+                    </div>
+
+                    <br /><br /><br />
+
+
+
                 </div>
+
+
             </div>
         </div>
-    </div>
-
-<?php include('footer.php'); ?>
+        <?php include('./footer.php'); ?>

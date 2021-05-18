@@ -53,13 +53,13 @@
                 <div class="row" style="margin-top: 20px;">
 
                     <div class="col-md-6">
-                        <a href="<?php echo $root . 'login.php'; ?>" class="link_index">
+                        <a href="<?php echo 'login.php'; ?>" class="link_index">
                             Student
                         </a>
                     </div>
 
                     <div class="col-md-6">
-                        <a href="<?php echo $root . 'admin/login.php'; ?>" class="link_index"> 
+                        <a href="<?php echo 'admin/login.php'; ?>" class="link_index"> 
                             Admin
                         </a>
                     </div>
