@@ -142,10 +142,10 @@ $students_family_guardian_father_work_contact = $row['students_family_guardian_f
 $rowFatherOfw = $row['students_family_guardian_father_is_ofw'];
 $students_family_guardian_father_is_ofw = null;
 
-if ($rowFatherOfw == 0) {
+if ($rowFatherOfw == 2) {
     $students_family_guardian_father_is_ofw = "Yes";
 }
-if ($rowFatherOfw == 1) {
+if ($rowFatherOfw == 3) {
     $students_family_guardian_father_is_ofw = "No";
 }
 
@@ -160,10 +160,10 @@ $students_family_guardian_mother_is_ofw = $row['students_family_guardian_mother_
 $rowMotherOfw = $row['students_family_guardian_mother_is_ofw'];
 $students_family_guardian_mother_is_ofw = null;
 
-if ($rowMotherOfw == 0) {
+if ($rowMotherOfw == 2) {
     $students_family_guardian_mother_is_ofw = "Yes";
 }
-if ($rowMotherOfw == 1) {
+if ($rowMotherOfw == 3) {
     $students_family_guardian_mother_is_ofw = "No";
 }
 
