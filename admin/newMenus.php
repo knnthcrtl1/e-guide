@@ -35,9 +35,9 @@ function newMenus()
     </div>
     <div class="row">
         <div class="col-md-3">
-            <a href="./about.php" class="dashboard__fillup__container--link">
+            <a href="./reports.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
-                    ABOUT US
+                    REPORTS
                 </div>
             </a>
         </div>
