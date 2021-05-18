@@ -133,7 +133,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Contact Number *</label>
-                                                        <input type="number" id="studentRequiredPhone" name="student-contact-number" class="form-control" value="<?php echo $row['student_contact'] ?>" required maxlength="15">
+                                                        <input type="number" id="studentRequiredPhone" name="student-contact-number" class="form-control" value="<?php echo $row['student_contact'] ?>" required maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -405,7 +405,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian landline</label>
-                                                        <input type="number" name="student-guardian-landline" class="form-control" value="<?php echo $row['students_family_guardian_guardian_landline'] ?>">
+                                                        <input type="text" name="student-guardian-landline" class="form-control" value="<?php echo $row['students_family_guardian_guardian_landline'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
@@ -423,7 +423,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian email address</label>
-                                                        <input type="number" name="student-guardian-email-address" class="form-control" value="<?php echo $row['students_family_guardian_guardian_email'] ?>">
+                                                        <input type="email" name="student-guardian-email-address" class="form-control" value="<?php echo $row['students_family_guardian_guardian_email'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
