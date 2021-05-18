@@ -143,7 +143,7 @@ $(document).ready(function () {
         }
 
         if (!_validateMobileNumber(studentRequiredPhone)) {
-            alert('Please provide corrent mobile number');
+            alert('Please provide correct mobile number');
             return false;
         }
 

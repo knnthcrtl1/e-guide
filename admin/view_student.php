@@ -137,7 +137,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Student No. *</label>
-                                                        <input type="number" id="studentRequiredPhone" name="student-studid" maxlength="11" class="form-control" required>
+                                                        <input type="number" name="student-studid" maxlength="11" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
