@@ -313,7 +313,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Firstname </label>
-                                                        <input type="text" name="student-father-name" id="guardianNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
+                                                        <input type="text" name="student-father-name" id="fatherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Contact # </label>
