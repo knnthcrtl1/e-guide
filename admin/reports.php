@@ -76,12 +76,12 @@
         $count0 = GetIndividualCount($conn, $column, 0, $database_value);
         $count1 = GetIndividualCount($conn, $column, 1, $database_value);
         $count2 = GetIndividualCount($conn, $column, 2, $database_value);
-        $count3 = GetIndividualCount($conn, $column, 2, $database_value);
+        $count3 = GetIndividualCount($conn, $column, 3, $database_value);
 
         $percentage0 = number_format((($count0 / $total0) * 100), 2) . "%";
         $percentage1 = number_format((($count1 / $total1) * 100), 2) . "%";
         $percentage2 = number_format((($count2 / $total2) * 100), 2) . "%";
-        $percentage3 = number_format((($count2 / $total2) * 100), 2) . "%";
+        $percentage3 = number_format((($count3 / $total3) * 100), 2) . "%";
 ?>
         <tr class="survey-results">
             <td><?=$answer?></td>
