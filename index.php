@@ -52,17 +52,19 @@
                 <?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'; ?>
                 <div class="row" style="margin-top: 20px;">
 
+                    <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <a href="<?php echo 'login.php'; ?>" class="link_index">
                             Student
                         </a>
                     </div>
+                    <div class="col-md-3"></div>
 
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <a href="<?php echo 'admin/login.php'; ?>" class="link_index"> 
                             Admin
                         </a>
-                    </div>
+                    </div> -->
 
                 </div>
 
