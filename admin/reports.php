@@ -31,6 +31,9 @@
                                 Senior Highschool
                             </th>
                             <th style="text-align: right;">
+                                College
+                            </th>
+                            <th style="text-align: right;">
                                 Total
                             </th>
                         </tr>
@@ -68,21 +71,25 @@
         $total0 = GetTotalCount($conn, $column, 0);
         $total1 = GetTotalCount($conn, $column, 1);
         $total2 = GetTotalCount($conn, $column, 2);
+        $total3 = GetTotalCount($conn, $column, 3);
 
         $count0 = GetIndividualCount($conn, $column, 0, $database_value);
         $count1 = GetIndividualCount($conn, $column, 1, $database_value);
         $count2 = GetIndividualCount($conn, $column, 2, $database_value);
+        $count3 = GetIndividualCount($conn, $column, 2, $database_value);
 
         $percentage0 = number_format((($count0 / $total0) * 100), 2) . "%";
         $percentage1 = number_format((($count1 / $total1) * 100), 2) . "%";
         $percentage2 = number_format((($count2 / $total2) * 100), 2) . "%";
+        $percentage3 = number_format((($count2 / $total2) * 100), 2) . "%";
 ?>
         <tr class="survey-results">
             <td><?=$answer?></td>
             <td class="survey-value"><?=$count0?> out of <?=$total0?> = <?=$percentage0?></td>
             <td class="survey-value"><?=$count1?> out of <?=$total1?> = <?=$percentage1?></td>
             <td class="survey-value"><?=$count2?> out of <?=$total2?> = <?=$percentage2?></td>
-            <td class="survey-value"><?=($count0 + $count1 + $count2)?></td>
+            <td class="survey-value"><?=$count3?> out of <?=$total3?> = <?=$percentage3?></td>
+            <td class="survey-value"><?=($count0 + $count1 + $count2 + $count3)?></td>
         </tr>
 <?php
     }

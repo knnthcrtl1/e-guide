@@ -254,6 +254,7 @@
                                                                 <option value="0" <?php echo $row['student_type'] == 0 ? 'selected' : null ?>>Grade School</option>
                                                                 <option value="1" <?php echo $row['student_type'] == 1 ? 'selected' : null ?>>High School </option>
                                                                 <option value="2" <?php echo $row['student_type'] == 2 ? 'selected' : null ?>>Senior High</option>
+                                                                <option value="3" <?php echo $row['student_type'] == 3 ? 'selected' : null ?>>College</option>
                                                             </select>
                                                         </div>
                                                     </div>

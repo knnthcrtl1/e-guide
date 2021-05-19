@@ -273,13 +273,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <div class="form-group bmd-form-group">
+                                                <div class="form-group bmd-form-group">
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-type" id="studentTypeRequired" required>
                                                                 <option value="">Student Type *</option>
                                                                 <option value="0">Grade School</option>
                                                                 <option value="1">High School </option>
                                                                 <option value="2">Senior High</option>
+                                                                <option value="3">College</option>
                                                             </select>
                                                         </div>
                                                     </div>
