@@ -22,6 +22,7 @@ if (isset($_POST['studentType'])) {
                     if ($studentType == 0) echo "Grade School";
                     if ($studentType == 1) echo "High School";
                     if ($studentType == 2) echo "Senior High School";
+                    if ($studentType == 3) echo "College";
                     ?>
                 </td>
                 <td><?php echo $row['student_stud_id'] ?></td>

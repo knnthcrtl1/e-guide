@@ -11,24 +11,31 @@ function newMenus()
 ?>
    
     <div class="row">
-        <div class="col-md-4 ">
+        <div class="col-md-3 ">
             <a href="./view_student.php?studentType=0" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     ELEMENTARY
                 </div>
             </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="./view_student.php?studentType=1" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     JUNIOR HIGH SCHOOL
                 </div>
             </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <a href="./view_student.php?studentType=2" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     SENIOR HIGH SCHOOL
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="./view_student.php?studentType=3" class="dashboard__fillup__container--link">
+                <div class="dashboard__fillup__container">
+                    COLLEGE
                 </div>
             </a>
         </div>
