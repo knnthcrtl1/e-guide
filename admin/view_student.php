@@ -22,12 +22,19 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title ">Simple Table</h4>
-                                <p class="card-category"> Here is a subtitle for this table</p>
+                                <h4 class="card-title ">
+                                    <?php
+                                    if ($_GET['studentType'] == 0) echo "Grade School";
+                                    if ($_GET['studentType'] == 1) echo "High School";
+                                    if ($_GET['studentType'] == 2) echo "Senior High School";
+                                    if ($_GET['studentType'] == 3) echo "College";
+                                    ?>
+                                </h4>
+                                <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive" id="studentTable">
-                                <p id="studentTypeId" id-attr='<?php  echo $_GET['studentType']; ?>'></p>
+                                    <p id="studentTypeId" id-attr='<?php echo $_GET['studentType']; ?>'></p>
                                     <table class="table" id="studentDataTable">
                                         <thead class=" text-primary">
                                             <tr>
@@ -104,7 +111,7 @@
                             <div class="card-body">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="pi">
-                                       
+
                                         <form id="add-student-form" method="POST">
                                             <input type="hidden" name="function-type" value="add-student" />
                                             <div class="row">
@@ -137,7 +144,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Student No. *</label>
-                                                        <input type="number" name="student-studid" maxlength="11" class="form-control" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" name="student-studid" maxlength="11" class="form-control" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -273,7 +280,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
-                                                <div class="form-group bmd-form-group">
+                                                    <div class="form-group bmd-form-group">
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-type" id="studentTypeRequired" required>
                                                                 <option value="">Student Type *</option>
