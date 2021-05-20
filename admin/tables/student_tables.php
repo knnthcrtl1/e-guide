@@ -12,7 +12,6 @@ if (isset($_POST['studentType'])) {
         while ($row = mysqli_fetch_assoc($result)) {
 ?>
             <tr>
-                <td><?php echo $row['student_id'] ?></td>
                 <td><?php echo $row['student_firstname'] ?></td>
                 <td><?php echo $row['student_middlname'] ?></td>
                 <td><?php echo $row['student_lastname'] ?></td>
