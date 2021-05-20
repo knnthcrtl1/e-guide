@@ -32,6 +32,7 @@
                 <div class="col-lg-12">
                     <?php
                     include('./admin/connection.php');
+                    include('./functions.php');
                     session_start();
                     if (isset($_POST["admin-login"])) {
                         $_SESSION["user"] = $_POST["user"];
@@ -53,6 +54,9 @@
                                     if ($user == $username && $pass == $password) {
                                         $_SESSION['user_level'] = $userLevel;
                                         $_SESSION["student_user_id"] = $userId;
+
+                                        studentAuditTrail($_SESSION['student_user_id'], "Student Login", $conn);
+
                                         header('Location: view_dashboard.php');
                                         exit();
                                         //    if($userLevel == 5 || $userLevel == 6) {

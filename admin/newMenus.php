@@ -4,12 +4,12 @@
 
 function newMenus()
 {
-   
+
 
     // Check if file already exists
 
 ?>
-   
+
     <div class="row">
         <div class="col-md-3 ">
             <a href="./view_student.php?studentType=0" class="dashboard__fillup__container--link">
@@ -45,6 +45,13 @@ function newMenus()
             <a href="./reports.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     REPORTS
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="./view_audit_trail.php" class="dashboard__fillup__container--link">
+                <div class="dashboard__fillup__container">
+                    AUDIT TRAIL
                 </div>
             </a>
         </div>

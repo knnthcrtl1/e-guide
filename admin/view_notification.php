@@ -23,8 +23,8 @@ include('connection.php')
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header card-header-primary">
-                <h4 class="card-title ">Simple Table</h4>
-                <p class="card-category"> Here is a subtitle for this table</p>
+                <h4 class="card-title ">Notification Table</h4>
+                <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
               </div>
               <div class="card-body">
                 <form method="post" action="./export_notification.php">
