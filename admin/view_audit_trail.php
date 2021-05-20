@@ -33,9 +33,9 @@ include('connection.php')
                         <th>
                           ID
                         </th>
-                        <th>
+                        <!-- <th>
                           Student ID
-                        </th>
+                        </th> -->
                         <th>
                           Student Name
                         </th>
