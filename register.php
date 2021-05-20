@@ -128,7 +128,7 @@
                                                         <option value="0">Grade School</option>
                                                         <option value="1">High School </option>
                                                         <option value="2">Senior High</option>
-                                                        <option value="3">Senior High</option>
+                                                        <option value="3">College</option>
                                                     </select>
                                                 </div>
                                             </div>
