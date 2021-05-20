@@ -38,9 +38,9 @@
                                     <table class="table" id="studentDataTable">
                                         <thead class=" text-primary">
                                             <tr>
-                                                <th>
+                                                <!-- <th>
                                                     ID
-                                                </th>
+                                                </th> -->
                                                 <th>
                                                     Firstname
                                                 </th>
