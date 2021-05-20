@@ -13,7 +13,6 @@ if (mysqli_num_rows($result) != 0) {
 ?>
         <tr>
             <td><?php echo $row['audit_id']; ?></td>
-            <td><?php echo$row['audit_username']; ?></td>
             <?php
 
             $sql2 = "SELECT * FROM tbl_students WHERE student_id = '{$row['audit_username']}'";
