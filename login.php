@@ -55,7 +55,7 @@
                                         $_SESSION['user_level'] = $userLevel;
                                         $_SESSION["student_user_id"] = $userId;
 
-                                        studentAuditTrail($_SESSION['student_user_id'], "Student Login", $conn);
+                                        studentAuditTrail($user, "Student Login", $conn);
 
                                         header('Location: view_dashboard.php');
                                         exit();
