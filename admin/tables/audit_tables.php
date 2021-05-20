@@ -22,6 +22,14 @@ if (mysqli_num_rows($result) != 0) {
             $studentName = $row2['student_firstname'] . ' ' . $row2['student_lastname'];
             ?>
             <td><?php echo $studentName; ?></td>
+            <td><?php
+                if ($row['student_type'] == 0) echo "Grade School";
+                if ($row['student_type'] == 1) echo "High School";
+                if ($row['student_type'] == 2) echo "Senior High School";
+                if ($row['student_type'] == 3) echo "College";
+                ?>
+            </td>
+            <td><?php echo $row['audit_username']; ?></td>
             <td><?php echo $row['audit_action']; ?></td>
             <td><?php echo $newDate; ?></td>
         </tr>
