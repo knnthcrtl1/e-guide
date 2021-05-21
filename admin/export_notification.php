@@ -17,6 +17,7 @@
                      <tr>  
                         <th>ID</th>
                         <th>Student Name</th>
+                        <th>Student ID</th>
                         <th>Title</th>
                         <th>Message</th>
                         <th>Date</th>
@@ -32,6 +33,7 @@
                      <tr>  
                           <td>'. $row["notification_id"]. '</td>  
                           <td>'. $row2["student_firstname"] . ' ' . $row2['student_lastname'] .'</td>  
+                          <td>'. $row2["student_stud_id"] . '</td>  
                           <td>'. $row["notification_title"].'</td>  
                           <td>'. $row["notification_message"].'</td>
                           <td>'. $row["notification_date"].'</td>
