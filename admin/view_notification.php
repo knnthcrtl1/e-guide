@@ -41,6 +41,9 @@ include('connection.php')
                           Student Name
                         </th>
                         <th>
+                          Student ID
+                        </th>
+                        <th>
                           Title
                         </th>
                         <th>

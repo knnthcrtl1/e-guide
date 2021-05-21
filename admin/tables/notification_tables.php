@@ -23,6 +23,7 @@ if (mysqli_num_rows($result) != 0) {
             $studentName = $row2['student_firstname'] . ' ' . $row2['student_lastname'];
             ?>
             <td><?php echo $studentName ?></td>
+            <td><?php echo $row2['student_stud_id'] ?></td>
             <td><?php echo $row['notification_title'] ?></td>
             <td><?php echo $row['notification_message'] ?></td>
             <td><?php echo $newDate ?></td>
