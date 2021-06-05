@@ -1531,7 +1531,7 @@ function studentHabits($conn, $studentType)
                 } else { ?>
                     <div class="d-flex justify-content-end">
                         <button id="submit-edit-student-habits-form" class="btn btn-primary ">
-                            Submit
+                            Submit Survey
                         </button>
                     </div>
                 <?php } ?>

@@ -25,7 +25,7 @@
 
 <body style="background-image:url(./assets/img/admin-bg.jpg)" class="bg-gradient-primary login-background">
 
-  <div class="custom_header_nav">
+  <!-- <div class="custom_header_nav">
     <div class="container">
       <div class="row custom_header_nav_row">
 
@@ -46,7 +46,7 @@
       </div>
 
     </div>
-  </div>
+  </div> -->
 
 
   <div class="container">

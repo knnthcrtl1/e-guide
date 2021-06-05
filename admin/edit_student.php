@@ -297,7 +297,7 @@
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <button id="submit-edit-student-form" class="btn btn-primary ">
-                                                    Submit
+                                                    Submit Edit Student Info
                                                 </button>
                                             </div>
                                         </form>
@@ -449,7 +449,7 @@
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <button id="submit-edit-student-family-form" class="btn btn-primary ">
-                                                    Submit
+                                                    Submit Family Info
                                                 </button>
                                             </div>
                                         </form>
