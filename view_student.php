@@ -103,7 +103,8 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Student No. *</label>
-                                                        <input type="number" name="student-studid" class="form-control" maxlength="11" value="<?php echo $row['student_stud_id'] ?>" required disabled>
+                                                        <div class="disabled-text-input"></div>
+                                                        <input type="number" name="student-studid" class="form-control" maxlength="11" value="<?php echo $row['student_stud_id'] ?>" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -133,7 +134,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Contact Number *</label>
-                                                        <input type="number" id="studentRequiredPhone" name="student-contact-number" class="form-control" value="<?php echo $row['student_contact'] ?>" required maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" id="studentRequiredPhone" name="student-contact-number" class="form-control phoneLimit" value="<?php echo $row['student_contact'] ?>" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -295,7 +296,7 @@
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <button id="submit-edit-student-form" class="btn btn-primary ">
-                                                    Submit
+                                                    Submit Student Info
                                                 </button>
                                             </div>
                                         </form>
@@ -317,7 +318,7 @@
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Contact # </label>
-                                                        <input type="number" name="student-father-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_contact'] ?>"  maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                        <input type="number" name="student-father-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_contact'] ?>" maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Email Address</label>
@@ -333,7 +334,7 @@
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Work Contact #</label>
-                                                        <input type="number" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>"  maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                        <input type="number" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>" maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <span class="">Is your father an ofw?</span>
@@ -353,7 +354,7 @@
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Contact # </label>
-                                                        <input type="number" name="student-mother-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_contact'] ?>"  maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                        <input type="number" name="student-mother-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_contact'] ?>" maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Email Address</label>
@@ -369,7 +370,7 @@
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Work Contact #</label>
-                                                        <input type="number" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>"  maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                        <input type="number" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>" maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <span class="">Is your mother an ofw?</span>
@@ -399,13 +400,13 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian name</label>
-                                                        <input type="text" name="student-guardian-name"  id="guardianNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_name'] ?>">
+                                                        <input type="text" name="student-guardian-name" id="guardianNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_name'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian landline</label>
-                                                        <input type="text" name="student-guardian-landline" class="form-control" value="<?php echo $row['students_family_guardian_guardian_landline'] ?>"  maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                        <input type="text" name="student-guardian-landline" class="form-control" value="<?php echo $row['students_family_guardian_guardian_landline'] ?>" maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
@@ -417,7 +418,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian phone</label>
-                                                        <input type="number" name="student-guardian-phone" class="form-control " value="<?php echo $row['students_family_guardian_guardian_phone'] ?>"  maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                        <input type="number" name="student-guardian-phone" class="form-control " value="<?php echo $row['students_family_guardian_guardian_phone'] ?>" maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -435,7 +436,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Relationship with guardian</label>
-                                                        <input type="text" name="student-guardian-relationship"  id="relationShipNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_guardian_relationship'] ?>">
+                                                        <input type="text" name="student-guardian-relationship" id="relationShipNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_guardian_relationship'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
@@ -447,7 +448,7 @@
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <button id="submit-edit-student-family-form" class="btn btn-primary ">
-                                                    Submit
+                                                    Submit Family Info
                                                 </button>
                                             </div>
                                         </form>

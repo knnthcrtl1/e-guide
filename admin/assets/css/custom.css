@@ -335,3 +335,10 @@ a.dashboard__fillup__container--link {
   flex: 1;
   align-items: center;
 }
+
+.disabled-text-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: not-allowed;
+}

@@ -330,8 +330,8 @@
                                             </div>
                                             <div class="d-flex justify-content-end">
                                                 <button id="submit-student-form" class="btn btn-primary ">
-                                                    Submit
-                                                </button>
+                                                    Submit Student Info
+                                                </button> 
                                             </div>
                                     </div>
                                     </form>
