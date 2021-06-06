@@ -174,7 +174,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Phone Number *</label>
-                                                        <input type="number" id="studentRequiredPhone" name="student-contact-number" maxlength="15" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+                                                        <input type="number" id="studentRequiredPhone" name="student-contact-number" maxlength="11" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
