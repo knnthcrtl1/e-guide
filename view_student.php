@@ -432,7 +432,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian phone at work</label>
-                                                        <input type="number" name="student-guardian-phone-work" class="form-control" value="<?php echo $row['students_family_guardian_guardian_work_number'] ?>">
+                                                        <input type="number" name="student-guardian-phone-work" class="form-control phoneLimit" value="<?php echo $row['students_family_guardian_guardian_work_number'] ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
