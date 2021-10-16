@@ -104,7 +104,7 @@
                                 <input type="submit" value="Login" name="admin-login" class="btn btn-primary btn-user btn-block">
                             </div>
                             <div class="register__container ">
-                                <a href="./register.php">Register</a> <br/>
+                                <a href="./register.php">Register</a> <br />
                                 <a href="./forgot_password.php">Forgot Password?</a>
                             </div>
                         </div>
@@ -134,8 +134,8 @@
 
                 <div class="col-lg-6">
                     <div class="login__spill__container">
-                        <p>
-                            The <span style="font-weight:bold;">cumulative folder</span> is a record developed to assist in the student’s educational growth and progress. The teacher and other school personnel use it as a tool for student guidance and the improvement of instruction. A well-developed <span style="font-weight:bold;">cumulative folder</span> may afford a teacher an opportunity to analyze students’ school history, test scores, and rate of growth so that a proper course of action for helping the student can be determined. The <span style="font-weight:bold;">cumulative folder</span> is only as useful as the quality of data entered. The Special Education record is an essential part of the <span style="font-weight:bold;">cumulative folder</span > and must be maintained accordingly with all security and confidentiality requirements.
+                        The <span style="font-weight:bold;">cumulative folder</span>: Pertains to student records which include personal data, family and cultural background, health history, scholastic achievements, on- and off-campus activities, follow-up records, and significant anecdotes based on interviews and observations by the counselors and teachers.
+                        These records will help the faculty members and counselors to assist the students effectively and efficiently.
                         </p>
                     </div>
                 </div>

@@ -124,6 +124,7 @@ select.custom-select.custom-select-sm.form-control.form-control-sm {
   background-size: cover;
   background-position: center center;
   padding-bottom: 50px;
+  height: 100vh;
 }
 
 
