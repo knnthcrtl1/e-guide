@@ -1,9 +1,19 @@
 $(document).ready(function () {
 
+    $(".phoneLimit").keypress(function (e) {
+        var length = this.value.length;
+        if (length >= 11) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+
+
     function validateEmail(email) {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    }   
+    }
 
     function _validateMobileNumber(num) {
         let re = /^(09|\+639|9)\d{9}$/;
@@ -100,6 +110,7 @@ $(document).ready(function () {
 
         var studentFormData = $("#add-student-form").serialize();
 
+
         // // if (!validateEmail(studentRequired3)){
         // //     alert('Please provide correct email address');
 
@@ -126,9 +137,10 @@ $(document).ready(function () {
         e.preventDefault();
 
         var studentFormData = $("#edit-student-form").serialize();
-        
+
         var studentRequired1 = $('#studentRequired1').val();
         var studentRequired2 = $('#studentRequired2').val();
+        var studentRequiredPhone = $('#studentRequiredPhone').val();
 
         if (!validateName(studentRequired1)) {
             alert('Please input text only for firstname');
@@ -137,6 +149,11 @@ $(document).ready(function () {
 
         if (!validateName(studentRequired2)) {
             alert('Please input text only for lastname');
+            return false;
+        }
+
+        if (!_validateMobileNumber(studentRequiredPhone)) {
+            alert('Please provide correct mobile number');
             return false;
         }
 
@@ -156,12 +173,41 @@ $(document).ready(function () {
 
     });
 
-    $(document).on("submit", "#submit-edit-student-family-form", function (e) {
+    $(document).on("submit", "#edit-student-family-form", function (e) {
         e.preventDefault();
 
         var editStudentFamilyForm = $("#edit-student-family-form").serialize();
 
-        // console.log(editStudentFamilyForm);
+        var relationShipNameRequired = $('#relationShipNameRequired').val();
+        var fatherNameRequired = $('#fatherNameRequired').val();
+        var motherNameRequired = $('#motherNameRequired').val();
+        var guardianNameRequired = $('#guardianNameRequired').val();
+
+        // var guardianPhone = $("#guardianPhone").val();
+        // var guardianLandline = ("#guardianLandline").val();
+        // var motherContactNumber = ("#motherContactNumber").val();
+        // var motherWorkContact = ("#motherWorkContact").val();
+
+        if (!validateName(relationShipNameRequired)) {
+            alert('Please input text only for guardian relationship with');
+            return false;
+        }
+
+        if (!validateName(fatherNameRequired)) {
+            alert('Please input text only for father name');
+            return false;
+        }
+
+        if (!validateName(motherNameRequired)) {
+            alert('Please input text only for mother name');
+            return false;
+        }
+
+        if (!validateName(guardianNameRequired)) {
+            alert('Please input text only for guardian name');
+            return false;
+        }
+
 
         jQuery.ajax({
             method: "POST",

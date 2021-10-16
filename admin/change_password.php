@@ -1,11 +1,17 @@
 <?php include('header.php'); ?>
 
-<body class="student__background__image__container">
+<body>
     <div class="wrapper ">
 
         <div class="content">
             <div class="container">
-                <?php include('./new_menus.php');
+                <div class="row">
+                    <div class="logo__user__container">
+                        <img src="./assets/img/logo.png" />
+                    </div>
+                </div>
+                <hr />
+                <?php include('./newMenus.php');
                 newMenus();
                 ?>
 
@@ -23,7 +29,7 @@
                                     <input type="hidden" name="function-type" value="change-password">
                                     <div class="form-group row">
                                         <div class="col-sm-4 mb-4 mb-sm-0">
-                                            <input type="hidden" name="password-user-id" id="equipmentRequired3" value="<?php echo $_SESSION['student_user_id']; ?>">
+                                            <input type="hidden" name="password-user-id" id="equipmentRequired3" value="<?php echo $_SESSION['user_id']; ?>">
                                             <div class="form-group bmd-form-group">
                                                 <label class="bmd-label-floating">Enter old password *</label>
                                                 <input type="password" class="form-control form-control-user" name="oldPassword" id="equipmentRequired3">

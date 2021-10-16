@@ -5,7 +5,7 @@ include('../admin/connection.php');
 if (isset($_POST['ajax'])) {
 
     if ($_POST["function-type"] === "student-register") {
-        
+
         $studentFirstname = mysqli_real_escape_string($conn, (strip_tags($_POST['fname'])));
         $studentLastname = mysqli_real_escape_string($conn, (strip_tags($_POST['lname'])));
         $studentEmail = mysqli_real_escape_string($conn, (strip_tags($_POST['email'])));
@@ -92,7 +92,7 @@ if (isset($_POST['ajax'])) {
         $studentJuniorHs = mysqli_real_escape_string($conn, (strip_tags($_POST['student-junior-hs'])));
         $studentVocational = mysqli_real_escape_string($conn, (strip_tags($_POST['student-vocational'])));
 
-        $sql = "UPDATE tbl_students SET student_firstname = '{$studentFirstname}' , student_middlname = '{$studentMiddlename}', student_lastname = '{$studentLastname}', student_nickname  = '{$studentNickname}' , student_address = '{$studentPresentAddress}' , student_gender = '{$studentGender}', student_birthday = '{$studentBirthday}', student_contact  = '{$studentContactNumber}', student_email = '{$studentEmailAddress}' , student_permanent_address = '{$studentPermanentAddress}', student_ue_email_address = '{$studentUeEmailAddress}', student_citizenship  = '{$studentCitizen}' , student_religion = '{$studentReligion}' , student_civil_status = '{$studentCivilStatus}', student_sex = '{$studentSex}', student_living_with  = '{$studentLivingWith}', student_present_living_condition = '{$studentLivingCondition}' , student_type = '{$studentType}', student_stud_id = '{$studentStudId}', student_age  = '{$studentAge}', student_place_of_birth  = '{$studentPlaceofBirth}', student_section_id  = '{$studentSection}', student_elementry_school  = '{$studentELemSchool}', student_high_school  = '{$studentJuniorHs}', student_vocational = '{$studentVocational}' WHERE student_id = '{$studentId}' ";
+        $sql = "UPDATE tbl_students SET student_firstname = '{$studentFirstname}' , student_middlname = '{$studentMiddlename}', student_lastname = '{$studentLastname}', student_nickname  = '{$studentNickname}' , student_address = '{$studentPresentAddress}' , student_gender = '{$studentGender}', student_birthday = '{$studentBirthday}', student_contact  = '{$studentContactNumber}', student_email = '{$studentEmailAddress}' , student_permanent_address = '{$studentPermanentAddress}', student_ue_email_address = '{$studentUeEmailAddress}', student_citizenship  = '{$studentCitizen}' , student_religion = '{$studentReligion}' , student_civil_status = '{$studentCivilStatus}', student_sex = '{$studentSex}', student_living_with  = '{$studentLivingWith}', student_present_living_condition = '{$studentLivingCondition}', student_stud_id = '{$studentStudId}', student_age  = '{$studentAge}', student_place_of_birth  = '{$studentPlaceofBirth}', student_section_id  = '{$studentSection}', student_elementry_school  = '{$studentELemSchool}', student_high_school  = '{$studentJuniorHs}', student_vocational = '{$studentVocational}' WHERE student_id = '{$studentId}' ";
 
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));
@@ -163,6 +163,7 @@ if (isset($_POST['ajax'])) {
         $studentPhysicalHealth = mysqli_real_escape_string($conn, (strip_tags($_POST['studentPhysicalHealth'])));
         $studentIllness = mysqli_real_escape_string($conn, (strip_tags($_POST['studentIllness'])));
         $healthCondition = mysqli_real_escape_string($conn, (strip_tags($_POST['healthCondition'])));
+        $studentGuidanceCounceling = mysqli_real_escape_string($conn, (strip_tags($_POST['studentGuidanceCounceling'])));
 
         $studyClassOthers = "";
         if ($studyClass == 6) {
@@ -191,7 +192,7 @@ if (isset($_POST['ajax'])) {
 
         $deactivate = true;
 
-        $sql = "UPDATE tbl_student_habit SET  student_habit_child_guardian_assist = '{$childGuardianAssist}',  student_habit_child_usual_study = '{$childUsualStudy}',student_habit_usually_study = '{$studyClass}', student_habit_spend_studying = '{$studentSpendStudying}', student_habit_usually_ask = '{$studentAboutLesson}', student_habit_internet = '{$studentInternetConnection}', student_habit_student_device = '{$studentDevice}', student_habit_general_health = '{$studentPhysicalHealth}', student_habit_area_home = '{$studentStudyCondition}', student_habit_internet = '{$studentInternetConnection}', student_habit_physical_illness = '{$studentIllness}', student_habit_health_condition = '{$healthCondition}' , student_habit_multiple_feelings = '{$anyExperiences}', student_habit_multiple_experience = '{$healthExp}', student_habit_multiple_concern = '{$botherYou}' , student_habit_other_first = '{$studyClassOthers}', student_habit_other_second = '{$studentAboutLessonOthers}' , student_habit_other_third = '{$studentDeviceOthers}', student_habit_other_fourth = '{$studentIllnessOthers}', student_habit_other_fifth = '{$healthConditionOthers}', student_habit_is_active = '{$deactivate}'  WHERE student_habit_student_id = '{$studentId}' ";
+        $sql = "UPDATE tbl_student_habit SET  student_habit_child_guardian_assist = '{$childGuardianAssist}',  student_habit_child_usual_study = '{$childUsualStudy}',student_habit_usually_study = '{$studyClass}', student_habit_spend_studying = '{$studentSpendStudying}', student_habit_usually_ask = '{$studentAboutLesson}', student_habit_internet = '{$studentInternetConnection}', student_habit_student_device = '{$studentDevice}', student_habit_general_health = '{$studentPhysicalHealth}', student_habit_area_home = '{$studentStudyCondition}', student_habit_internet = '{$studentInternetConnection}', student_habit_physical_illness = '{$studentIllness}', student_habit_health_condition = '{$healthCondition}' , student_habit_multiple_feelings = '{$anyExperiences}', student_habit_multiple_experience = '{$healthExp}', student_habit_multiple_concern = '{$botherYou}' , student_habit_other_first = '{$studyClassOthers}', student_habit_other_second = '{$studentAboutLessonOthers}' , student_habit_other_third = '{$studentDeviceOthers}', student_habit_other_fourth = '{$studentIllnessOthers}', student_habit_other_fifth = '{$healthConditionOthers}', student_habit_is_active = '{$deactivate}', student_habit_guidance_counseling = '{$studentGuidanceCounceling}'   WHERE student_habit_student_id = '{$studentId}' ";
 
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));

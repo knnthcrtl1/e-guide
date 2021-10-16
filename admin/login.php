@@ -23,9 +23,9 @@
 
 <?php $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'; ?>
 
-<body class="bg-gradient-primary login-background">
+<body style="background-image:url(./assets/img/admin-bg.jpg)" class="bg-gradient-primary login-background">
 
-  <div class="custom_header_nav">
+  <!-- <div class="custom_header_nav">
     <div class="container">
       <div class="row custom_header_nav_row">
 
@@ -46,7 +46,7 @@
       </div>
 
     </div>
-  </div>
+  </div> -->
 
 
   <div class="container">
@@ -66,7 +66,7 @@
           </div> -->
         </div>
 
-        <h3 style="text-align:center;color:#fff">ADMIN/CO ADMIN</h3>
+        <h3 style="text-align:center;color:#fff">ADMIN</h3>
         <?php
         include('./connection.php');
         session_start();
@@ -101,7 +101,7 @@
                 }
               } else {
                 session_destroy();
-                echo "Invalid Username or Password!";
+                echo "<p style='color:#ffffff;'>Invalid Username or Password!</p>";
               }
             } else {
               session_destroy();

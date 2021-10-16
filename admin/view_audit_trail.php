@@ -1,11 +1,21 @@
-<?php include('./header.php'); ?>
-<?php include('./admin/connection.php'); ?>
+<?php include('header.php'); ?>
+<?php
+include('connection.php')
+?>
 
-<body class="student__background__image__container">
+
+<body>
   <div class="wrapper ">
+
     <div class="content">
       <div class="container">
-        <?php include('./new_menus.php');
+        <div class="row">
+          <div class="logo__user__container">
+            <img src="./assets/img/logo.png" />
+          </div>
+        </div>
+        <hr />
+        <?php include('./newMenus.php');
         newMenus();
         ?>
 
@@ -13,7 +23,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header card-header-primary">
-                <h4 class="card-title ">Notification Table</h4>
+                <h4 class="card-title ">Audit Trail Table</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive" id="notificationTable">
@@ -24,10 +34,16 @@
                           ID
                         </th>
                         <th>
-                          Title
+                          Student Name
                         </th>
                         <th>
-                          Message
+                          Student Type
+                        </th>
+                        <th>
+                          Student ID
+                        </th>
+                        <th>
+                          Action
                         </th>
                         <th>
                           Date
@@ -44,9 +60,7 @@
           </div>
 
         </div>
-        <!-- your content here -->
       </div>
     </div>
-  </div>
-  <?php include('footer.php'); ?>
-  <script src="./js/notification-script.js"></script>
+    <?php include('footer.php'); ?>
+    <script src="./custom-js/auditTrail-script.js"></script>

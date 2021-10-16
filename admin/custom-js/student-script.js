@@ -5,14 +5,20 @@ $(document).ready(function () {
         let re = /^[a-zA-Z]+$/;
         return re.test(String(text).toLowerCase());
     }
-    
+
+    function _validateMobileNumber(num) {
+        let re = /^(09|\+639|9)\d{9}$/;
+        return re.test(String(num).toLowerCase());
+    };
+
     $(document).on("submit", "#add-student-form", function (e) {
         e.preventDefault();
 
         var studentFormData = $("#add-student-form").serialize();
 
         var studentRequired1 = $('#studentRequired1').val();
-        var studentRequired2 = $('#studentRequired2').val();
+        var studentRequired2 = $('#studentRequired2').val();    
+        var studentRequiredPhone = $('#studentRequiredPhone').val();
 
         if (!validateName(studentRequired1)) {
             alert('Please input text only for firstname');
@@ -21,6 +27,11 @@ $(document).ready(function () {
 
         if (!validateName(studentRequired2)) {
             alert('Please input text only for lastname');
+            return false;
+        }
+
+        if (!_validateMobileNumber(studentRequiredPhone)) {
+            alert('Please provide corrent mobile number');
             return false;
         }
 
@@ -95,10 +106,13 @@ $(document).ready(function () {
     studyRadioOthers('input[name="healthCondition"]', '#othersRadioButton5', '.othersRadioButton5');
 
     const fetchStudentTable = () => {
+
+        let studentType = $('#studentTypeId').attr('id-attr');
+        console.log(studentType);
         $.ajax({
             method: "POST",
             url: "./tables/student_tables.php",
-            data: {},
+            data: `studentType=${studentType}`,
             success: function (data) {
                 $("#studentTable table tbody").html(data);
                 $('#studentDataTable').DataTable();
@@ -141,6 +155,8 @@ $(document).ready(function () {
         var studentRequired1 = $('#studentRequired1').val();
         var studentRequired2 = $('#studentRequired2').val();
 
+        var studentRequiredPhone = $('#studentRequiredPhone').val();
+
         if (!validateName(studentRequired1)) {
             alert('Please input text only for firstname');
             return false;
@@ -150,7 +166,12 @@ $(document).ready(function () {
             alert('Please input text only for lastname');
             return false;
         }
-        
+
+        if (!_validateMobileNumber(studentRequiredPhone)) {
+            alert('Please provide corrent mobile number');
+            return false;
+        }
+
         jQuery.ajax({
             method: "POST",
             url: "./functions/function-student.php",
@@ -172,7 +193,30 @@ $(document).ready(function () {
 
         var editStudentFamilyForm = $("#edit-student-family-form").serialize();
 
-        // console.log(editStudentFamilyForm);
+        var relationShipNameRequired = $('#relationShipNameRequired').val();
+        var fatherNameRequired = $('#fatherNameRequired').val();
+        var motherNameRequired = $('#motherNameRequired').val();
+        var guardianNameRequired = $('#guardianNameRequired').val();
+
+        if (!validateName(relationShipNameRequired)) {
+            alert('Please input text only for guardian relationship with');
+            return false;
+        }
+
+        if (!validateName(fatherNameRequired)) {
+            alert('Please input text only for father name');
+            return false;
+        }
+
+        if (!validateName(motherNameRequired)) {
+            alert('Please input text only for mother name');
+            return false;
+        }
+
+        if (!validateName(guardianNameRequired)) {
+            alert('Please input text only for guardian name');
+            return false;
+        }
 
         jQuery.ajax({
             method: "POST",

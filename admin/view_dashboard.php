@@ -1,57 +1,20 @@
-<?php include('header.php'); ?>
-<?php
+<?php include('./header.php'); ?>
 
+<body class="" style="background-image: url(./assets/img/student-dashboard.jpg); color: #ffffff;">
+<div class="wrapper " style="background-color: rgba(0,0,0,0.8)">
 
-
-?>
-
-<body class="dashboard__content">
-  <div class="wrapper ">
-    <?php
-    include('sidebar.php');
-    navigationList('dashboard');
-    ?>
-    <div class="main-panel">
-      <!-- Navbar -->
-      <?php
-      
-
-      include('navbar.php');
-      $headerTitle = 'Dashboard';
-      navbarContainer($headerTitle);
-
-      // checkAuthPage(authPages($_SESSION['user_id'], "", $conn), "Dashboard");
-
-      
-      ?>
-      <!-- End Navbar -->
-      <div class="content ">
-        <div class="container-fluid">
-          <!-- your content here -->
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mission_container">
-                <h3>THE UE MISSION STATEMENT</h3>
-                <p>
-                  Imploring the aid of Divine Providence, the University of the East dedicates itself to the service of youth, country and God, and declares adherence to academic freedom, progressive instruction, creative scholarship, goodwill among nations and constructive educational leadership.
-                </p>
-                <p>
-                  Inspired and sustained by a deep sense of dedication and a compelling yearning for relevance, the University of the East hereby declares as its goal and addresses itself to the development of a just, progressive and humane society.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="vision_container">
-                <h3>THE UE VISION STATEMENT</h3>
-                <p>
-                  As a private non-sectarian institution of higher learning, the University of the East commits itself to producing, through relevant and affordable quality education, morally upright and competent leaders in various professions, imbued with a strong sense of service to their fellowmen and their country.
-                </p>
-              </div>
-            </div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="logo__user__container">
+            <img src="./assets/img/logo.png" />
           </div>
+      </div>
+        <hr />
+        <?php include('./newMenus.php');
+        newMenus();
+        ?>
 
-        </div>
       </div>
     </div>
-    <?php include('footer.php'); ?>
+    <?php include('./footer.php'); ?>
