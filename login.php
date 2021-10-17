@@ -120,7 +120,7 @@
 
 
 
-    <div class="container d-flex flex-row" style="height: 100vh;">
+    <div class="container d-flex flex-column" style="height: 100vh;">
 
 
         <!-- Outer Row -->

@@ -75,6 +75,25 @@ ainput.form-control.form-control-sm {
   display: flex;
   text-align: center;
   text-shadow: 3px 3px 2px #ffffff;
+  font-size: 62px;
+  line-height: 70px;
+}
+
+.cumulative__container ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.cumulative__container ul li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  display: inline-block;
+}
+
+.cumulative__container ul li  img {
+    width: 100%;
+    max-width: 120px;
 }
 
 div#studentDataTable_length label {
