@@ -4,7 +4,7 @@
   <div class="wrapper " >
 
     <div class="content">
-      <div class="container">
+      <div class="container" style='max-width: 720px;'>
       
         <?php include('./new_menus.php');
         newMenus();
