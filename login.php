@@ -145,7 +145,7 @@
         </div>
 
         <div class='cumulative__container'>
-            <p>University of the east <br />Online Cumulative Folder</p>
+            <p>UNIVERSITY OF THE EAST <br />Online Cumulative Folder</p>
 
             <div class="row">
                 <ul>

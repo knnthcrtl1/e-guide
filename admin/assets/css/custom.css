@@ -79,6 +79,7 @@ ainput.form-control.form-control-sm {
   font-size: 62px;
   line-height: 70px;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .cumulative__container ul {
