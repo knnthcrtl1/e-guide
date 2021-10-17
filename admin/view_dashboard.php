@@ -4,7 +4,7 @@
   <div class="wrapper ">
 
     <div class="content">
-      <div class="container" style='max-width: 720px;'>
+      <div class="container">
         <div class="row">
           <div class="logo__user__container">
             <img src="./assets/img/logo.png" />
