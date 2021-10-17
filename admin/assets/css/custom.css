@@ -63,6 +63,19 @@ ainput.form-control.form-control-sm {
   padding-left: 10px;
 }
 
+.cumulative__container{
+  display: flex;
+  flex: 1;
+  text-align: center;
+  align-items:center;
+  justify-content: center;
+}
+
+.cumulative__container p{
+  display: flex;
+  text-align: center;
+  text-shadow: 3px 3px 2px #ffffff;
+}
 
 div#studentDataTable_length label {
   flex-direction: row;

@@ -120,7 +120,7 @@
 
 
 
-    <div class="container" style="height: 100vh;">
+    <div class="container d-flex flex-row" style="height: 100vh;">
 
 
         <!-- Outer Row -->
@@ -142,6 +142,17 @@
 
             </div>
 
+        </div>
+
+        <div class='cumulative__container'>
+            <p>University of the east <br />Online Cumulative Folder</p>
+
+            <div class="row">
+                <ul>
+                    <li><img src='./admin/assets/img/logo.png' /></li>
+                    <li><img src='./admin/assets/img/gcsgo.png' /></li>
+                </ul>
+            </div>
         </div>
 
         <!-- Bootstrap core JavaScript-->
