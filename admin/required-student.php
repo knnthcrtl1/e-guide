@@ -235,9 +235,10 @@
                                                             <div class="form-group">
                                                                 <select id="inputState" class="form-control " name="student-living-condition">
                                                                     <option value="">Present Living Condition</option>
-                                                                    <option value="0">Lower Class</option>
-                                                                    <option value="1">Middle Class </option>
-                                                                    <option value="3">Upper Class</option>
+                                                                    <?php 
+                                                                    include('../living_condtion.php'); 
+                                                                    livingCondition();
+                                                                ?>
                                                                 </select>
                                                             </div>
                                                         </div>

@@ -264,9 +264,10 @@
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-living-condition">
                                                                 <option value="">Present Living Condition</option>
-                                                                <option value="0" <?php echo $row['student_present_living_condition'] == 0 ? 'selected' : null ?>>Lower Class</option>
-                                                                <option value="1" <?php echo $row['student_present_living_condition'] == 1 ? 'selected' : null ?>>Middle Class </option>
-                                                                <option value="2" <?php echo $row['student_present_living_condition'] == 2 ? 'selected' : null ?>>Upper Class</option>
+                                                                <?php 
+                                                                    include('../living_condtion.php'); 
+                                                                    livingCondition($row['student_present_living_condition']);
+                                                                ?>
                                                             </select>
                                                         </div>
                                                     </div>

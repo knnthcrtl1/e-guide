@@ -297,9 +297,10 @@
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-living-condition">
                                                                 <option value="">Present Living Condition</option>
-                                                                <option value="0">Lower Class</option>
-                                                                <option value="1">Middle Class </option>
-                                                                <option value="2">Upper Class</option>
+                                                                <?php 
+                                                                    include('../living_condtion.php'); 
+                                                                    livingCondition();
+                                                                ?>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -331,7 +332,7 @@
                                             <div class="d-flex justify-content-end">
                                                 <button id="submit-student-form" class="btn btn-primary ">
                                                     Submit Student Info
-                                                </button> 
+                                                </button>
                                             </div>
                                     </div>
                                     </form>

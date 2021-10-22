@@ -99,14 +99,27 @@ if ($rowLivingWith == 6) {
 $studentLivingCondition = $row['student_present_living_condition'];
 $student_present_living_condition = null;
 
+
+if ($studentLivingCondition == 0) {
+    $student_present_living_condition = "Poor (Less than PHP 10,481)";
+}
 if ($studentLivingCondition == 1) {
-    $student_present_living_condition = "Lower Class";
+    $student_present_living_condition = "Low-income class (Between PHP 10,481 and PHP 20,962)";
 }
 if ($studentLivingCondition == 2) {
-    $student_present_living_condition = "Middle Class";
+    $student_present_living_condition = "Lower middle-income class (Between PHP 20,962 and PHP 41,924)";
 }
 if ($studentLivingCondition == 3) {
-    $student_present_living_condition = "Upper Class";
+    $student_present_living_condition = "Middle middle-income class (Between PHP 41,924 and PHP 73,367)";
+}
+if ($studentLivingCondition == 4) {
+    $student_present_living_condition = "Upper middle-income class (Between PHP 73,367 and PHP 125,772)";
+}
+if ($studentLivingCondition == 5) {
+    $student_present_living_condition = "Upper-income class (Between PHP 125,772 and PHP 209,620)";
+}
+if ($studentLivingCondition == 6) {
+    $student_present_living_condition = "Rich (PHP 209,620 and above)";
 }
 
 

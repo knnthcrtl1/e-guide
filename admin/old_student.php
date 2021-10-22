@@ -121,7 +121,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Lastname *</label>
-                                                            <input name="student-lastname" class="form-control"  id="studentRequired2" required>
+                                                            <input name="student-lastname" class="form-control" id="studentRequired2" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -293,9 +293,11 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-living-condition">
                                                                     <option value="">Present Living Condition</option>
-                                                                    <option value="0">Lower Class</option>
-                                                                    <option value="1">Middle Class </option>
-                                                                    <option value="2">Upper Class</option>
+                                                                    <?php
+
+                                                                    include('../living_condtion.php');
+                                                                    livingCondition();
+                                                                    ?>
                                                                 </select>
                                                             </div>
                                                         </div>
