@@ -174,7 +174,7 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-gender">
                                                                     <option value="">Gender Identity</option>
-                                                                    <option value="0">Straight/Heterosexual</option>
+                                                                    <option value="0">Affectional orientation</option>
                                                                     <option value="1">Transgender </option>
                                                                     <option value="2">Prefer not to say</option>
                                                                     <option value="3">Lesbian</option>
@@ -219,9 +219,13 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-living-condition">
                                                                     <option value="">Present Living Condition</option>
-                                                                    <option value="0">Lower Class</option>
-                                                                    <option value="1">Middle Class </option>
-                                                                    <option value="2">Upper Class</option>
+                                                                    <option value="0">Poor (Less than PHP 10,481)</option>
+                                                                    <option value="1">Low-income class (Between PHP 10,481 and PHP 20,962) </option>
+                                                                    <option value="2">Lower middle-income class (Between PHP 20,962 and PHP 41,924)</option>
+                                                                    <option value="3">Middle middle-income class (Between PHP 41,924 and PHP 73,367)</option>
+                                                                    <option value="4">Upper middle-income class (Between PHP 73,367 and PHP 125,772) </option>
+                                                                    <option value="5">Upper-income class (Between PHP 125,772 and PHP 209,620)</option>
+                                                                    <option value="6">Rich (PHP 209,620 and above)</option>
                                                                 </select>
                                                             </div>
                                                         </div>

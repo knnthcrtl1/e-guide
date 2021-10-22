@@ -121,7 +121,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
                                                             <label class="bmd-label-floating">Lastname *</label>
-                                                            <input name="student-lastname" class="form-control"  id="studentRequired2" required>
+                                                            <input name="student-lastname" class="form-control" id="studentRequired2" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -238,7 +238,7 @@
                                                                     <option value="">Sex</option>
                                                                     <option value="1">Male</option>
                                                                     <option value="2">Female</option>
-                                                                    <option value="3">Prefer not to say</option>
+                                                                    <!-- <option value="3">Prefer not to say</option> -->
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -248,9 +248,9 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-gender">
                                                                     <option value="">Gender Identity</option>
-                                                                    <option value="0">Straight/Heterosexual</option>
+                                                                    <option value="0">Affectional orientation</option>
                                                                     <option value="1">Transgender </option>
-                                                                    <option value="2">Prefer not to say</option>
+                                                                    <!-- <option value="2">Prefer not to say</option> -->
                                                                     <option value="3">Lesbian</option>
                                                                     <option value="4">Gay</option>
                                                                     <option value="5">Bisexual</option>
@@ -293,9 +293,11 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-living-condition">
                                                                     <option value="">Present Living Condition</option>
-                                                                    <option value="0">Lower Class</option>
-                                                                    <option value="1">Middle Class </option>
-                                                                    <option value="2">Upper Class</option>
+                                                                    <?php
+
+                                                                    include('../living_condtion.php');
+                                                                    livingCondition();
+                                                                    ?>
                                                                 </select>
                                                             </div>
                                                         </div>

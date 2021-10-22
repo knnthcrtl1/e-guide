@@ -8,6 +8,7 @@ if (isset($_POST['ajax'])) {
 
         $studentFirstname = mysqli_real_escape_string($conn, (strip_tags($_POST['fname'])));
         $studentLastname = mysqli_real_escape_string($conn, (strip_tags($_POST['lname'])));
+        $studentMname = mysqli_real_escape_string($conn, (strip_tags($_POST['mname'])));
         $studentEmail = mysqli_real_escape_string($conn, (strip_tags($_POST['email'])));
         $studentPassword = mysqli_real_escape_string($conn, (strip_tags($_POST['password'])));
         $confirmPassword = mysqli_real_escape_string($conn, (strip_tags($_POST['confirmPassword'])));
@@ -25,10 +26,10 @@ if (isset($_POST['ajax'])) {
             return false;
         }
 
-        $studentTableFields = "student_firstname,student_email,student_lastname,student_stud_id,student_type";
+        $studentTableFields = "student_firstname,student_middlname,student_email,student_lastname,student_stud_id,student_type";
 
         $sql = "INSERT INTO tbl_students ( {$studentTableFields} ) VALUES 
-                ('{$studentFirstname}','{$studentEmail}','{$studentLastname}','{$studentStudId}','{$studentType}')";
+                ('{$studentFirstname}','{$studentMname}','{$studentEmail}','{$studentLastname}','{$studentStudId}','{$studentType}')";
 
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));
@@ -204,6 +205,7 @@ if (isset($_POST['ajax'])) {
     if ($_POST["function-type"] === "edit-student-family") {
 
         $studentId = mysqli_real_escape_string($conn, (strip_tags($_POST['student-id'])));
+        $fatherIsDeceased = mysqli_real_escape_string($conn, (strip_tags($_POST['student-father-is-deceased'])));
         $fatherName = mysqli_real_escape_string($conn, (strip_tags($_POST['student-father-name'])));
         $fatherContact = mysqli_real_escape_string($conn, (strip_tags($_POST['student-father-contact'])));
         $fatherEmail = mysqli_real_escape_string($conn, (strip_tags($_POST['student-father-email'])));
@@ -212,6 +214,7 @@ if (isset($_POST['ajax'])) {
         $fatherWorkContact = mysqli_real_escape_string($conn, (strip_tags($_POST['student-father-work-contact'])));
         $fatherIsOfw = mysqli_real_escape_string($conn, (strip_tags($_POST['student-father-is-ofw'])));
 
+        $motherIsDeceased = mysqli_real_escape_string($conn, (strip_tags($_POST['student-mother-is-deceased'])));
         $motherName = mysqli_real_escape_string($conn, (strip_tags($_POST['student-mother-name'])));
         $motherContact = mysqli_real_escape_string($conn, (strip_tags($_POST['student-mother-contact'])));
         $motherEmail = mysqli_real_escape_string($conn, (strip_tags($_POST['student-mother-email'])));
@@ -231,7 +234,7 @@ if (isset($_POST['ajax'])) {
         $studentGuardianWorkAddress = mysqli_real_escape_string($conn, (strip_tags($_POST['student-guardian-work-address'])));
 
 
-        $sql = "UPDATE tbl_students_family_guardian SET students_family_guardian_father_name = '{$fatherName}' , students_family_guardian_father_contact = '{$fatherContact}', students_family_guardian_father_email = '{$fatherEmail}', students_family_guardian_father_occupation  = '{$fatherOccupation}' , students_family_guardian_father_work_address = '{$fatherWorkAddress}',  students_family_guardian_father_work_contact = '{$fatherWorkContact}' , students_family_guardian_father_is_ofw = '{$fatherIsOfw}', students_family_guardian_mother_name = '{$motherName}', students_family_guardian_mother_contact  = '{$motherContact}' , students_family_guardian_mother_email = '{$motherEmail}', students_family_guardian_mother_occupation = '{$motherOccupation}',students_family_guardian_mother_work_address = '{$motherWorkAddress}' , students_family_guardian_mother_work_contact = '{$motherWorkContact}', students_family_guardian_mother_is_ofw = '{$motherIsOfw}', students_family_guardian_marital_status = '{$guardianMaritalStatus}', students_family_guardian_name = '{$guardianName}', students_family_guardian_guardian_address = '{$studentGuardianAddress}', students_family_guardian_guardian_landline = '{$studentGuardianLandline}', students_family_guardian_guardian_phone = '{$studentGuardianPhone}', students_family_guardian_guardian_email = '{$studentGuardianEmailAddress}', students_family_guardian_guardian_work_address = '{$studentGuardianWorkAddress}', students_family_guardian_guardian_work_number = '{$studentGuardianPhoneWork}', students_family_guardian_guardian_relationship = '{$studentGuardianRelationship}' WHERE students_family_guardian_student_id = '{$studentId}' ";
+        $sql = "UPDATE tbl_students_family_guardian SET students_family_guardian_father_is_decease = '{$fatherIsDeceased}', students_family_guardian_father_name = '{$fatherName}' , students_family_guardian_father_contact = '{$fatherContact}', students_family_guardian_father_email = '{$fatherEmail}', students_family_guardian_father_occupation  = '{$fatherOccupation}' , students_family_guardian_father_work_address = '{$fatherWorkAddress}',  students_family_guardian_father_work_contact = '{$fatherWorkContact}' , students_family_guardian_father_is_ofw = '{$fatherIsOfw}', students_family_guardian_mother_is_decease = '{$motherIsDeceased}', students_family_guardian_mother_name = '{$motherName}', students_family_guardian_mother_contact  = '{$motherContact}' , students_family_guardian_mother_email = '{$motherEmail}', students_family_guardian_mother_occupation = '{$motherOccupation}',students_family_guardian_mother_work_address = '{$motherWorkAddress}' , students_family_guardian_mother_work_contact = '{$motherWorkContact}', students_family_guardian_mother_is_ofw = '{$motherIsOfw}', students_family_guardian_marital_status = '{$guardianMaritalStatus}', students_family_guardian_name = '{$guardianName}', students_family_guardian_guardian_address = '{$studentGuardianAddress}', students_family_guardian_guardian_landline = '{$studentGuardianLandline}', students_family_guardian_guardian_phone = '{$studentGuardianPhone}', students_family_guardian_guardian_email = '{$studentGuardianEmailAddress}', students_family_guardian_guardian_work_address = '{$studentGuardianWorkAddress}', students_family_guardian_guardian_work_number = '{$studentGuardianPhoneWork}', students_family_guardian_guardian_relationship = '{$studentGuardianRelationship}' WHERE students_family_guardian_student_id = '{$studentId}' ";
 
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));

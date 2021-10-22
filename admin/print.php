@@ -30,14 +30,14 @@ $rowGender = $row['student_gender'];
 $student_gender = null;
 
 if ($rowGender == 0) {
-    $student_gender = "Straight/Heterosexual";
+    $student_gender = "Affectional orientation";
 }
 if ($rowGender == 1) {
     $student_gender = "Transgender";
 }
-if ($rowGender == 2) {
-    $student_gender = "Prefer not to say";
-}
+// if ($rowGender == 2) {
+//     $student_gender = "Prefer not to say";
+// }
 if ($rowGender == 3) {
     $student_gender = "Lesbian";
 }
@@ -71,9 +71,9 @@ if ($rowSex == 1) {
 if ($rowSex == 2) {
     $student_sex = "Female";
 }
-if ($rowSex == 3) {
-    $student_sex = "Prefer not to say";
-}
+// if ($rowSex == 3) {
+//     $student_sex = "Prefer not to say";
+// }
 
 $rowLivingWith = $row['student_living_with'];
 $student_living_with = null;
@@ -99,14 +99,26 @@ if ($rowLivingWith == 6) {
 $studentLivingCondition = $row['student_present_living_condition'];
 $student_present_living_condition = null;
 
+if ($studentLivingCondition == 0) {
+    $student_present_living_condition = "Poor (Less than PHP 10,481)";
+}
 if ($studentLivingCondition == 1) {
-    $student_present_living_condition = "Lower Class";
+    $student_present_living_condition = "Low-income class (Between PHP 10,481 and PHP 20,962)";
 }
 if ($studentLivingCondition == 2) {
-    $student_present_living_condition = "Middle Class";
+    $student_present_living_condition = "Lower middle-income class (Between PHP 20,962 and PHP 41,924)";
 }
 if ($studentLivingCondition == 3) {
-    $student_present_living_condition = "Upper Class";
+    $student_present_living_condition = "Middle middle-income class (Between PHP 41,924 and PHP 73,367)";
+}
+if ($studentLivingCondition == 4) {
+    $student_present_living_condition = "Upper middle-income class (Between PHP 73,367 and PHP 125,772)";
+}
+if ($studentLivingCondition == 5) {
+    $student_present_living_condition = "Upper-income class (Between PHP 125,772 and PHP 209,620)";
+}
+if ($studentLivingCondition == 6) {
+    $student_present_living_condition = "Rich (PHP 209,620 and above)";
 }
 
 
@@ -132,12 +144,23 @@ $sql = "SELECT * FROM  tbl_students_family_guardian WHERE students_family_guardi
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
+$students_family_guardian_father_is_deceased = $row['students_family_guardian_father_is_decease'];
+
 $students_family_guardian_father_name = $row['students_family_guardian_father_name'];
 $students_family_guardian_father_contact = $row['students_family_guardian_father_contact'];
 $students_family_guardian_father_email = $row['students_family_guardian_father_email'];
 $students_family_guardian_father_occupation = $row['students_family_guardian_father_occupation'];
 $students_family_guardian_father_work_address = $row['students_family_guardian_father_work_address'];
 $students_family_guardian_father_work_contact = $row['students_family_guardian_father_work_contact'];
+
+$students_family_guardian_father_is_deceased_value = null;
+
+if ($students_family_guardian_father_is_deceased == 1) {
+    $students_family_guardian_father_is_deceased_value = "Yes";
+}
+if ($students_family_guardian_father_is_deceased == 2) {
+    $students_family_guardian_father_is_deceased_value = "No";
+}
 
 $rowFatherOfw = $row['students_family_guardian_father_is_ofw'];
 $students_family_guardian_father_is_ofw = null;
@@ -149,6 +172,7 @@ if ($rowFatherOfw == 3) {
     $students_family_guardian_father_is_ofw = "No";
 }
 
+$students_family_guardian_mother_deceased = $row['students_family_guardian_mother_is_decease'];
 $students_family_guardian_mother_name = $row['students_family_guardian_mother_name'];
 $students_family_guardian_mother_contact = $row['students_family_guardian_mother_contact'];
 $students_family_guardian_mother_email = $row['students_family_guardian_mother_email'];
@@ -156,6 +180,15 @@ $students_family_guardian_mother_occupation = $row['students_family_guardian_mot
 $students_family_guardian_mother_work_address = $row['students_family_guardian_mother_work_address'];
 $students_family_guardian_mother_work_contact = $row['students_family_guardian_mother_work_contact'];
 $students_family_guardian_mother_is_ofw = $row['students_family_guardian_mother_is_ofw'];
+
+$students_family_guardian_mother_is_deceased_value = null;
+
+if ($students_family_guardian_mother_deceased == 1) {
+    $students_family_guardian_mother_is_deceased_value = "Yes";
+}
+if ($students_family_guardian_mother_deceased == 2) {
+    $students_family_guardian_mother_is_deceased_value = "No";
+}
 
 $rowMotherOfw = $row['students_family_guardian_mother_is_ofw'];
 $students_family_guardian_mother_is_ofw = null;
@@ -559,6 +592,10 @@ $tbl = <<<EOD
     <td align="center">Mother</td>
  </tr>
  <tr>
+ <td>deceased?: $students_family_guardian_father_is_deceased_value</td>
+ <td>deceased?: $students_family_guardian_mother_is_deceased_value</td>
+</tr>
+ <tr>
  <td>Name: $students_family_guardian_father_name</td>
  <td>Name: $students_family_guardian_mother_name</td>
 </tr>
@@ -661,7 +698,7 @@ $tbl = <<<EOD
  </td>
 </tr>
 <tr>
-<td>For the past six (6) months, have you experienced any of the following? (Kindly put a
+<td>For the past six (12) months, have you experienced any of the following? (Kindly put a
 ✓ mark on all that applies) <br/>
 <strong>$student_habit_multiple_feelings</strong>
 </td>
