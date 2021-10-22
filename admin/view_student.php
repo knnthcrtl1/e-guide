@@ -117,13 +117,13 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
-                                                        <label class="bmd-label-floating">Firstname *</label>
+                                                        <label for="floatingInput">Firstname *</label>
                                                         <input type="text" name="student-firstname" id="studentRequired1" class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
-                                                        <label class="bmd-label-floating">Lastname *</label>
+                                                        <label for="floatingInput">Lastname *</label>
                                                         <input name="student-lastname" class="form-control" id="studentRequired2" required>
                                                     </div>
                                                 </div>
@@ -297,9 +297,9 @@
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-living-condition">
                                                                 <option value="">Present Living Condition</option>
-                                                                <?php 
-                                                                    include('../living_condtion.php'); 
-                                                                    livingCondition();
+                                                                <?php
+                                                                include('../living_condtion.php');
+                                                                livingCondition();
                                                                 ?>
                                                             </select>
                                                         </div>
