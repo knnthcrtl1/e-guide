@@ -71,7 +71,7 @@
                             <div class="col-md-12 student__login__container">
                                 <div class="" style="padding: 10px; padding-right:20px">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT SIGN UP</h1>
+                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT SIGN IN</h1>
                                     </div>
                                     <form class="user" method="POST" id="add-student-register-form">
                                         <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname" required>
@@ -82,6 +82,10 @@
                                                 <div class="form-group bmd-form-group student__form">
                                                     <span class="student__form--label">Firstname *</span>
                                                     <input type="text" name="fname" class="form-control form-control-user" id="studentRequired1" aria-describedby="emailHelp" required>
+                                                </div>
+                                                <div class="form-group bmd-form-group student__form">
+                                                    <span class="student__form--label">Middlename </span>
+                                                    <input type="text" name="mname" class="form-control form-control-user" id="studentRequired9" aria-describedby="emailHelp">
                                                 </div>
                                                 <div class="form-group bmd-form-group student__form">
                                                     <span class="student__form--label">Lastname *</span>
@@ -186,6 +190,8 @@
             var studentRequired7 = $('#studentRequired7').val();
 
             var studentRequired4 = $('#studentRequired4').val();
+
+            var studentRequired9 = $('#studentRequired9').val();
 
 
             if (!validateName(studentRequired1)) {
