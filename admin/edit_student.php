@@ -264,9 +264,9 @@
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-living-condition">
                                                                 <option value="">Present Living Condition</option>
-                                                                <?php 
-                                                                    include('../living_condtion.php'); 
-                                                                    livingCondition($row['student_present_living_condition']);
+                                                                <?php
+                                                                include('../living_condtion.php');
+                                                                livingCondition($row['student_present_living_condition']);
                                                                 ?>
                                                             </select>
                                                         </div>
@@ -315,12 +315,24 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
+                                                        <span class="">Is your father an deceased?</span>
+                                                        <div class="form-group">
+                                                            <select class="form-control " name="student-father-is-deceased">
+                                                                <option value=""></option>
+                                                                <?php
+                                                                include('./deceased_dropdown.php');
+                                                                isParentDeceased($row['students_family_guardian_father_is_decease']);
+                                                                ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Firstname </label>
                                                         <input type="text" name="student-father-name" id="fatherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Contact # </label>
-                                                        <input type="number" id="fatherContactNumber" name="student-father-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" id="fatherContactNumber" name="student-father-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Email Address</label>
@@ -336,7 +348,7 @@
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Father Work Contact #</label>
-                                                        <input type="number"  id="fatherWorkContact" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" id="fatherWorkContact" name="student-father-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_father_work_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <span class="">Is your father an ofw?</span>
@@ -351,12 +363,24 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
+                                                        <span class="">Is your mother an deceased?</span>
+                                                        <div class="form-group">
+                                                            <select class="form-control " name="student-mother-is-deceased">
+                                                                <option value=""></option>
+                                                                <?php
+                                                                include('./deceased_dropdown.php');
+                                                                isParentDeceased($row['students_family_guardian_mother_is_decease']);
+                                                                ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Firstname </label>
                                                         <input type="text" name="student-mother-name" id="motherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_mother_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Contact # </label>
-                                                        <input type="number" id="motherContactNumber" name="student-mother-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" id="motherContactNumber" name="student-mother-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Email Address</label>
@@ -372,7 +396,7 @@
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Mother Work Contact #</label>
-                                                        <input type="number" id="motherWorkContact" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" id="motherWorkContact" name="student-mother-work-contact" class="form-control" value="<?php echo $row['students_family_guardian_mother_work_contact'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
                                                         <span class="">Is your mother an ofw?</span>
@@ -408,7 +432,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian landline</label>
-                                                        <input type="text" id="guardianLandline" name="student-guardian-landline" class="form-control" value="<?php echo $row['students_family_guardian_guardian_landline'] ?>"  maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                                        <input type="text" id="guardianLandline" name="student-guardian-landline" class="form-control" value="<?php echo $row['students_family_guardian_guardian_landline'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
@@ -420,7 +444,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian phone</label>
-                                                        <input type="number" id="guardianPhone" name="student-guardian-phone" class="form-control " value="<?php echo $row['students_family_guardian_guardian_phone'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" id="guardianPhone" name="student-guardian-phone" class="form-control " value="<?php echo $row['students_family_guardian_guardian_phone'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -432,7 +456,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
                                                         <label class="bmd-label-floating">Guardian phone at work</label>
-                                                        <input type="number" name="student-guardian-phone-work" class="form-control" value="<?php echo $row['students_family_guardian_guardian_work_number'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                        <input type="number" name="student-guardian-phone-work" class="form-control" value="<?php echo $row['students_family_guardian_guardian_work_number'] ?>" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">

@@ -144,12 +144,23 @@ $sql = "SELECT * FROM  tbl_students_family_guardian WHERE students_family_guardi
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
+$students_family_guardian_father_is_deceased = $row['students_family_guardian_father_is_decease'];
+
 $students_family_guardian_father_name = $row['students_family_guardian_father_name'];
 $students_family_guardian_father_contact = $row['students_family_guardian_father_contact'];
 $students_family_guardian_father_email = $row['students_family_guardian_father_email'];
 $students_family_guardian_father_occupation = $row['students_family_guardian_father_occupation'];
 $students_family_guardian_father_work_address = $row['students_family_guardian_father_work_address'];
 $students_family_guardian_father_work_contact = $row['students_family_guardian_father_work_contact'];
+
+$students_family_guardian_father_is_deceased_value = null;
+
+if ($students_family_guardian_father_is_deceased == 1) {
+    $students_family_guardian_father_is_deceased_value = "Yes";
+}
+if ($students_family_guardian_father_is_deceased == 2) {
+    $students_family_guardian_father_is_deceased_value = "No";
+}
 
 $rowFatherOfw = $row['students_family_guardian_father_is_ofw'];
 $students_family_guardian_father_is_ofw = null;
@@ -161,6 +172,7 @@ if ($rowFatherOfw == 3) {
     $students_family_guardian_father_is_ofw = "No";
 }
 
+$students_family_guardian_mother_deceased = $row['students_family_guardian_mother_is_decease'];
 $students_family_guardian_mother_name = $row['students_family_guardian_mother_name'];
 $students_family_guardian_mother_contact = $row['students_family_guardian_mother_contact'];
 $students_family_guardian_mother_email = $row['students_family_guardian_mother_email'];
@@ -168,6 +180,15 @@ $students_family_guardian_mother_occupation = $row['students_family_guardian_mot
 $students_family_guardian_mother_work_address = $row['students_family_guardian_mother_work_address'];
 $students_family_guardian_mother_work_contact = $row['students_family_guardian_mother_work_contact'];
 $students_family_guardian_mother_is_ofw = $row['students_family_guardian_mother_is_ofw'];
+
+$students_family_guardian_mother_is_deceased_value = null;
+
+if ($students_family_guardian_mother_deceased == 1) {
+    $students_family_guardian_mother_is_deceased_value = "Yes";
+}
+if ($students_family_guardian_mother_deceased == 2) {
+    $students_family_guardian_mother_is_deceased_value = "No";
+}
 
 $rowMotherOfw = $row['students_family_guardian_mother_is_ofw'];
 $students_family_guardian_mother_is_ofw = null;
@@ -570,6 +591,10 @@ $tbl = <<<EOD
     <td align="center">Father</td>
     <td align="center">Mother</td>
  </tr>
+ <tr>
+ <td>deceased?: $students_family_guardian_father_is_deceased_value</td>
+ <td>deceased?: $students_family_guardian_mother_is_deceased_value</td>
+</tr>
  <tr>
  <td>Name: $students_family_guardian_father_name</td>
  <td>Name: $students_family_guardian_mother_name</td>
