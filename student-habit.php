@@ -876,7 +876,7 @@ function studentHabits($conn, $studentType)
                     <div class="row">
                         <div class="col-md-12">
                             <div class="survey-title">
-                                <p>For the past six (6) months, have you experienced any of the following? (Kindly put a
+                                <p>For the past six (12) months, have you experienced any of the following? (Kindly put a
                                     ✓ mark on all that applies)</P>
                             </div>
 
@@ -1498,7 +1498,7 @@ function studentHabits($conn, $studentType)
                 <div class="row">
                     <div class="col-md-12">
                         <div class="survey-title">
-                            <p>Do you want request for guidance counceling?</P>
+                            <p>Do you want request for guidance counseling?</P>
                         </div>
                         <div class="row">
                             <div class="col-md-4">

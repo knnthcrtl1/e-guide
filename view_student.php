@@ -203,7 +203,7 @@
                                                                 <option value="">Sex</option>
                                                                 <option value="1" <?php echo $row['student_sex'] == 1 ? 'selected' : null ?>>Male</option>
                                                                 <option value="2" <?php echo $row['student_sex'] == 2 ? 'selected' : null ?>>Female</option>
-                                                                <option value="3" <?php echo $row['student_sex'] == 3 ? 'selected' : null ?>>Prefer not to say</option>
+                                                                <!-- <option value="3" <?php echo $row['student_sex'] == 3 ? 'selected' : null ?>>Prefer not to say</option> -->
                                                             </select>
                                                         </div>
                                                     </div>
@@ -214,9 +214,9 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-gender">
                                                                     <option value="">Gender Identity</option>
-                                                                    <option value="0" <?php echo $row['student_gender'] == 0 ? 'selected' : null ?>>Straight/Heterosexual</option>
+                                                                    <option value="0" <?php echo $row['student_gender'] == 0 ? 'selected' : null ?>>Affectional orientation</option>
                                                                     <option value="1" <?php echo $row['student_gender'] == 1 ? 'selected' : null ?>>Transgender </option>
-                                                                    <option value="2" <?php echo $row['student_gender'] == 2 ? 'selected' : null ?>>Prefer not to say</option>
+                                                                    <!-- <option value="2" <?php echo $row['student_gender'] == 2 ? 'selected' : null ?>>Prefer not to say</option> -->
                                                                     <option value="3" <?php echo $row['student_gender'] == 3 ? 'selected' : null ?>>Lesbian</option>
                                                                     <option value="4" <?php echo $row['student_gender'] == 4 ? 'selected' : null ?>>Gay</option>
                                                                     <option value="5" <?php echo $row['student_gender'] == 5 ? 'selected' : null ?>>Bisexual</option>

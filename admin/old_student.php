@@ -238,7 +238,7 @@
                                                                     <option value="">Sex</option>
                                                                     <option value="1">Male</option>
                                                                     <option value="2">Female</option>
-                                                                    <option value="3">Prefer not to say</option>
+                                                                    <!-- <option value="3">Prefer not to say</option> -->
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -248,9 +248,9 @@
                                                             <div class="form-group">
                                                                 <select class="form-control " name="student-gender">
                                                                     <option value="">Gender Identity</option>
-                                                                    <option value="0">Straight/Heterosexual</option>
+                                                                    <option value="0">Affectional orientation</option>
                                                                     <option value="1">Transgender </option>
-                                                                    <option value="2">Prefer not to say</option>
+                                                                    <!-- <option value="2">Prefer not to say</option> -->
                                                                     <option value="3">Lesbian</option>
                                                                     <option value="4">Gay</option>
                                                                     <option value="5">Bisexual</option>

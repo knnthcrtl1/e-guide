@@ -8,6 +8,7 @@ if (isset($_POST['ajax'])) {
 
         $studentFirstname = mysqli_real_escape_string($conn, (strip_tags($_POST['fname'])));
         $studentLastname = mysqli_real_escape_string($conn, (strip_tags($_POST['lname'])));
+        $studentMname = mysqli_real_escape_string($conn, (strip_tags($_POST['mname'])));
         $studentEmail = mysqli_real_escape_string($conn, (strip_tags($_POST['email'])));
         $studentPassword = mysqli_real_escape_string($conn, (strip_tags($_POST['password'])));
         $confirmPassword = mysqli_real_escape_string($conn, (strip_tags($_POST['confirmPassword'])));
@@ -25,10 +26,10 @@ if (isset($_POST['ajax'])) {
             return false;
         }
 
-        $studentTableFields = "student_firstname,student_email,student_lastname,student_stud_id,student_type";
+        $studentTableFields = "student_firstname,student_middlname,student_email,student_lastname,student_stud_id,student_type";
 
         $sql = "INSERT INTO tbl_students ( {$studentTableFields} ) VALUES 
-                ('{$studentFirstname}','{$studentEmail}','{$studentLastname}','{$studentStudId}','{$studentType}')";
+                ('{$studentFirstname}','{$studentMname}','{$studentEmail}','{$studentLastname}','{$studentStudId}','{$studentType}')";
 
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));

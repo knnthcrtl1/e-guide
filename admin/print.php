@@ -30,14 +30,14 @@ $rowGender = $row['student_gender'];
 $student_gender = null;
 
 if ($rowGender == 0) {
-    $student_gender = "Straight/Heterosexual";
+    $student_gender = "Affectional orientation";
 }
 if ($rowGender == 1) {
     $student_gender = "Transgender";
 }
-if ($rowGender == 2) {
-    $student_gender = "Prefer not to say";
-}
+// if ($rowGender == 2) {
+//     $student_gender = "Prefer not to say";
+// }
 if ($rowGender == 3) {
     $student_gender = "Lesbian";
 }
@@ -71,9 +71,9 @@ if ($rowSex == 1) {
 if ($rowSex == 2) {
     $student_sex = "Female";
 }
-if ($rowSex == 3) {
-    $student_sex = "Prefer not to say";
-}
+// if ($rowSex == 3) {
+//     $student_sex = "Prefer not to say";
+// }
 
 $rowLivingWith = $row['student_living_with'];
 $student_living_with = null;
@@ -661,7 +661,7 @@ $tbl = <<<EOD
  </td>
 </tr>
 <tr>
-<td>For the past six (6) months, have you experienced any of the following? (Kindly put a
+<td>For the past six (12) months, have you experienced any of the following? (Kindly put a
 ✓ mark on all that applies) <br/>
 <strong>$student_habit_multiple_feelings</strong>
 </td>

@@ -34,7 +34,7 @@ function newMenus()
         <div class="col-md-4">
             <a href="./about.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
-                    ABOUT
+                    About GCCSO
                 </div>
             </a>
         </div>
