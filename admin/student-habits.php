@@ -2,7 +2,6 @@
 
 function studentHabits($conn, $studentType)
 {
-    print_r($studentType);
 
 ?>
 
@@ -1530,9 +1529,13 @@ function studentHabits($conn, $studentType)
                 </div>
             </div>
         </div>
+
+        <div style='margin-top: 20px;'>
         <?php
-      
+            include('./college_question.php');
+            collegeQuestion();
         ?>
+        </div>
 
         <div class="d-flex justify-content-end">
             <button id="submit-edit-student-habits-form" class="btn btn-primary ">
