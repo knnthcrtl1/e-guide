@@ -54,7 +54,7 @@ if (isset($_POST['ajax'])) {
         $sql = "INSERT INTO tbl_students ( {$studentTableFields} ) VALUES 
                 ('{$studentFirstname}','{$studentMiddlename}','{$studentLastname}','{$studentNickname}','{$studentPresentAddress}','{$studentGender}','{$studentBirthday}','{$studentContactNumber}','{$studentEmailAddress}','{$studentPermanentAddress}','{$studentUeEmailAddress}','{$studentCitizen}','{$studentReligion}','{$studentCivilStatus}','{$studentSex}','{$studentLivingWith}','{$studentLivingCondition}','{$studentType}','{$studentStudId}','{$studentAge}','{$studentPlaceofBirth}','{$studentSection}','{$studentELemSchool}','{$studentJuniorHs}','{$studentVocational}')";
 
-        
+
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));
         }
@@ -78,6 +78,13 @@ if (isset($_POST['ajax'])) {
         }
 
         $sql = "INSERT INTO tbl_student_habit (student_habit_student_id) VALUES ('{$studentId}')";
+
+
+        if (!mysqli_query($conn, $sql)) {
+            // echo("Error description: " . mysqli_error($conn));
+            echo 1;
+            return false;
+        }
 
         $sql = "INSERT INTO tbl_college_answers (tbl_college_answer_student_id) VALUES ('{$studentId}')";
 
@@ -123,7 +130,7 @@ if (isset($_POST['ajax'])) {
         $sql = "UPDATE tbl_students SET student_firstname = '{$studentFirstname}' , student_middlname = '{$studentMiddlename}', student_lastname = '{$studentLastname}', student_nickname  = '{$studentNickname}' , student_address = '{$studentPresentAddress}' , student_gender = '{$studentGender}', student_birthday = '{$studentBirthday}', student_contact  = '{$studentContactNumber}', student_email = '{$studentEmailAddress}' , student_permanent_address = '{$studentPermanentAddress}', student_ue_email_address = '{$studentUeEmailAddress}', student_citizenship  = '{$studentCitizen}' , student_religion = '{$studentReligion}' , student_civil_status = '{$studentCivilStatus}', student_sex = '{$studentSex}', student_living_with  = '{$studentLivingWith}', student_present_living_condition = '{$studentLivingCondition}' , student_type = '{$studentType}', student_stud_id = '{$studentStudId}', student_age  = '{$studentAge}', student_place_of_birth  = '{$studentPlaceofBirth}', student_section_id  = '{$studentSection}', student_elementry_school  = '{$studentELemSchool}', student_high_school  = '{$studentJuniorHs}', student_vocational = '{$studentVocational}' WHERE student_id = '{$studentId}' ";
 
         if (!mysqli_query($conn, $sql)) {
-        echo ("Error description: " . mysqli_error($conn));
+            echo ("Error description: " . mysqli_error($conn));
         }
 
         return false;
@@ -192,26 +199,6 @@ if (isset($_POST['ajax'])) {
         $healthCondition = mysqli_real_escape_string($conn, (strip_tags($_POST['healthCondition'])));
         $studentGuidanceCounceling = mysqli_real_escape_string($conn, (strip_tags($_POST['studentGuidanceCounceling'])));
 
-        $studentQuestion1 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-1'])));
-        $studentQuestion2 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-2'])));
-        $studentQuestion3 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-3'])));
-        $studentQuestion4 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-4'])));
-        $studentQuestion5 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-5'])));
-        $studentQuestion6 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-6'])));
-        $studentQuestion7 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-7'])));
-        $studentQuestion8 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-8'])));
-        $studentQuestion9 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-9'])));
-        $studentQuestion10 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-10'])));
-        $studentQuestion11 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-11'])));
-        $studentQuestion12 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-12'])));
-        $studentQuestion13 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-13'])));
-        $studentQuestion14 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-14'])));
-        $studentQuestion15 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-15'])));
-        $studentQuestion16 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-16'])));
-        $studentQuestion17 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-17'])));
-        $studentQuestion18 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-18'])));
-        $studentQuestion19 = mysqli_real_escape_string($conn, (strip_tags($_POST['student-question-19'])));
-
         $studyClassOthers = "";
         if ($studyClass == 6) {
             $studyClassOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studyClassOthers'])));
@@ -239,7 +226,34 @@ if (isset($_POST['ajax'])) {
 
 
         $sql = "UPDATE tbl_student_habit SET  student_habit_child_guardian_assist = '{$childGuardianAssist}',  student_habit_child_usual_study = '{$childUsualStudy}',student_habit_usually_study = '{$studyClass}', student_habit_spend_studying = '{$studentSpendStudying}', student_habit_usually_ask = '{$studentAboutLesson}', student_habit_internet = '{$studentInternetConnection}', student_habit_student_device = '{$studentDevice}', student_habit_general_health = '{$studentPhysicalHealth}', student_habit_area_home = '{$studentStudyCondition}', student_habit_internet = '{$studentInternetConnection}', student_habit_physical_illness = '{$studentIllness}', student_habit_health_condition = '{$healthCondition}' , student_habit_multiple_feelings = '{$anyExperiences}', student_habit_multiple_experience = '{$healthExp}', student_habit_multiple_concern = '{$botherYou}' , student_habit_other_first = '{$studyClassOthers}', student_habit_other_second = '{$studentAboutLessonOthers}' , student_habit_other_third = '{$studentDeviceOthers}', student_habit_other_fourth = '{$studentIllnessOthers}', student_habit_other_fifth = '{$healthConditionOthers}' , student_habit_guidance_counseling = '{$studentGuidanceCounceling}'   WHERE student_habit_student_id = '{$studentId}' ";
-        
+
+        if (!mysqli_query($conn, $sql)) {
+            echo ("Error description: " . mysqli_error($conn));
+        }
+
+        $studentQuestion1 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-1'])));
+        $studentQuestion2 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-2'])));
+        $studentQuestion3 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-3'])));
+        $studentQuestion4 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-4'])));
+        $studentQuestion5 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-5'])));
+        $studentQuestion6 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-6'])));
+        $studentQuestion7 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-7'])));
+        $studentQuestion8 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-8'])));
+        $studentQuestion9 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-9'])));
+        $studentQuestion10 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-10'])));
+        $studentQuestion11 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-11'])));
+        $studentQuestion12 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-12'])));
+        $studentQuestion13 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-13'])));
+        $studentQuestion14 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-14'])));
+        $studentQuestion15 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-15'])));
+        $studentQuestion16 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-16'])));
+        $studentQuestion17 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-17'])));
+        $studentQuestion18 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-18'])));
+        $studentQuestion19 = mysqli_real_escape_string($conn, (strip_tags($_POST['college-question-19'])));
+
+
+        $sql = "UPDATE tbl_college_answers SET  tbl_college_answer1 = '{$studentQuestion1}', tbl_college_answer2 = '{$studentQuestion2}', tbl_college_answer3 = '{$studentQuestion3}', tbl_college_answer4 = '{$studentQuestion4}', tbl_college_answer5 = '{$studentQuestion5}', tbl_college_answer6 = '{$studentQuestion6}', tbl_college_answer7 = '{$studentQuestion7}', tbl_college_answer8 = '{$studentQuestion8}', tbl_college_answer9 = '{$studentQuestion9}', tbl_college_answer10 = '{$studentQuestion10}', tbl_college_answer11 = '{$studentQuestion11}' , tbl_college_answer12 = '{$studentQuestion12}' , tbl_college_answer13 = '{$studentQuestion13}', tbl_college_answer14 = '{$studentQuestion14}', tbl_college_answer15 = '{$studentQuestion15}', tbl_college_answer16 = '{$studentQuestion16}' , tbl_college_answer17 = '{$studentQuestion17}' , tbl_college_answer18 = '{$studentQuestion18}' , tbl_college_answer19 = '{$studentQuestion19}'     WHERE tbl_college_answer_student_id = '{$studentId}'";
+
         if (!mysqli_query($conn, $sql)) {
             echo ("Error description: " . mysqli_error($conn));
         }
@@ -294,11 +308,11 @@ if (isset($_POST['ajax'])) {
 
         $setActive = null;
 
-        if(!$isActive || $isActive == 0) {
+        if (!$isActive || $isActive == 0) {
             $setActive = true;
         }
-        
-        if($isActive) {
+
+        if ($isActive) {
             $setActive = false;
         }
 
@@ -309,6 +323,5 @@ if (isset($_POST['ajax'])) {
         }
 
         echo $isActive;
-
     }
 }

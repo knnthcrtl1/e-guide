@@ -1,7 +1,5 @@
 <?php include('header.php'); ?>
 <?php include('connection.php'); ?>
-<?php include('./deceased_dropdown.php'); ?>
-
 
 <body>
     <div class="wrapper ">
@@ -322,7 +320,8 @@
                                                             <select class="form-control " name="student-father-is-deceased">
                                                                 <option value=""></option>
                                                                 <?php
-                                                                // isParentDeceased($row['students_family_guardian_father_is_decease']);
+                                                                include('./deceased_dropdown.php');
+                                                                isParentDeceased($row['students_family_guardian_father_is_decease']);
                                                                 ?>
                                                             </select>
                                                         </div>
@@ -369,7 +368,7 @@
                                                             <select class="form-control " name="student-mother-is-deceased">
                                                                 <option value=""></option>
                                                                 <?php
-                                                                // isParentDeceased($row['students_family_guardian_mother_is_decease']);
+                                                                isParentDeceased($row['students_family_guardian_mother_is_decease']);
                                                                 ?>
                                                             </select>
                                                         </div>

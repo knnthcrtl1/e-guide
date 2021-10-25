@@ -172,6 +172,7 @@ $(document).ready(function () {
             return false;
         }
 
+
         jQuery.ajax({
             method: "POST",
             url: "./functions/function-student.php",
@@ -233,6 +234,8 @@ $(document).ready(function () {
         e.preventDefault();
 
         var editStudentFamilyForm = $("#edit-student-habits-form").serialize();
+
+        console.log(editStudentFamilyForm);
 
         jQuery.ajax({
             method: "POST",
