@@ -2,12 +2,15 @@
 
 function studentHabits($conn, $studentType)
 {
+    print_r($studentType);
+
 ?>
 
     <?php
     $sql = "SELECT * FROM tbl_student_habit WHERE student_habit_student_id = '{$_GET['id']}'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
+
     ?>
     <div>
         <div class="d-flex justify-content-end">
@@ -1527,6 +1530,10 @@ function studentHabits($conn, $studentType)
                 </div>
             </div>
         </div>
+        <?php
+      
+        ?>
+
         <div class="d-flex justify-content-end">
             <button id="submit-edit-student-habits-form" class="btn btn-primary ">
                 Submit Survey
