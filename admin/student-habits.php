@@ -1533,7 +1533,11 @@ function studentHabits($conn, $studentType)
         <div style='margin-top: 20px;'>
         <?php
             include('./college_question.php');
-            collegeQuestion();
+
+            $sql = "SELECT * FROM tbl_college_answers WHERE tbl_college_answer_student_id = '{$_GET['id']}'";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_array($result);
+            collegeQuestion($row);
         ?>
         </div>
 
