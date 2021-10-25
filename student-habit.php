@@ -1,4 +1,5 @@
 <?php
+include('./college_question.php');
 
 function studentHabits($conn, $studentType)
 {
@@ -1526,6 +1527,9 @@ function studentHabits($conn, $studentType)
                         </div>
                     </div>
                 </div>
+                <?php
+                    // collegeQuestion();
+                ?>
                 <?php if ($isActive) {
                     echo "";
                 } else { ?>

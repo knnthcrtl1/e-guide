@@ -20,6 +20,11 @@
             echo("Error description: " . mysqli_error($conn));
         }
 
+        $sql = "DELETE FROM tbl_college_answers WHERE tbl_college_answer_student_id = '{$_POST['id']}'";
+        if (!mysqli_query($conn, $sql)) {
+            echo("Error description: " . mysqli_error($conn));
+        }
+
         $sql = "DELETE FROM tbl_users WHERE user_user_id = '{$_POST['id']}'";
         if (!mysqli_query($conn, $sql)) {
             echo("Error description: " . mysqli_error($conn));
