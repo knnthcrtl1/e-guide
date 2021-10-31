@@ -17,7 +17,7 @@ $(document).ready(function () {
         var studentFormData = $("#add-student-form").serialize();
 
         var studentRequired1 = $('#studentRequired1').val();
-        var studentRequired2 = $('#studentRequired2').val();    
+        var studentRequired2 = $('#studentRequired2').val();
         var studentRequiredPhone = $('#studentRequiredPhone').val();
 
         if (!validateName(studentRequired1)) {
@@ -228,6 +228,23 @@ $(document).ready(function () {
             }
         });
 
+    });
+
+    $(document).on("click", "#submit-edit-student-health-form", function (e) {
+        e.preventDefault();
+
+        var editStudentFamilyForm = $("#edit-student-health-form").serialize();
+
+        console.log(editStudentFamilyForm);
+
+        jQuery.ajax({
+            method: "POST",
+            url: "./functions/function-student.php",
+            data: editStudentFamilyForm + "&ajax=true",
+            success: function (data) {
+                alert("Edited Successfully!");
+            }
+        });
     });
 
     $(document).on("click", "#submit-edit-student-habits-form", function (e) {

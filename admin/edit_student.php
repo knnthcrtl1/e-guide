@@ -71,6 +71,12 @@
                                                     <div class="ripple-container"></div>
                                                 </a>
                                             </li>
+                                            <li class="nav-item ">
+                                                <a class="nav-link" href="#studentHealth" data-toggle="tab">
+                                                    Student Health Form
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -484,6 +490,13 @@
 
                                         <?php
                                         studentHabits($conn, $studType);
+                                        ?>
+                                    </div>
+                                    <div class="tab-pane" id="studentHealth">
+                                        <?php include('./student-health-form.php'); ?>
+
+                                        <?php
+                                        studentHealth($conn, $studType);
                                         ?>
                                     </div>
                                 </div>

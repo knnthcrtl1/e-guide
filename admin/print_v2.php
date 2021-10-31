@@ -706,7 +706,7 @@ $tbl = <<<EOD
  </td>
 </tr>
 <tr>
-<td>For the past six (12) months, have you experienced any of the following? (Kindly put a
+<td>For the past twelve (12) months, have you experienced any of the following? (Kindly put a
 ✓ mark on all that applies) <br/>
 <strong>$student_habit_multiple_feelings</strong>
 </td>
