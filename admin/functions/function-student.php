@@ -226,7 +226,7 @@ if (isset($_POST['ajax'])) {
         $studentGuidanceCounceling = mysqli_real_escape_string($conn, (strip_tags($_POST['studentGuidanceCounceling'])));
 
         $studentIllnessOthers = "";
-        if ($studentIllness == 3) {
+        if ($studentIllness == 3 || $studentIllness == 1) {
             $studentIllnessOthers = mysqli_real_escape_string($conn, (strip_tags($_POST['studentIllnessOthers'])));
         }
 
