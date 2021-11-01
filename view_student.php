@@ -492,6 +492,10 @@
                                         <?php studentHabits($conn, $studType); ?>
                                     </div>
                                     <div class="tab-pane" id="healthData">
+                                        <?php include('./student-health-form.php'); ?>
+                                        <?php
+                                        studentHealth($conn, $studType);
+                                        ?>
                                     </div>
                                 </div>
                             </div>
