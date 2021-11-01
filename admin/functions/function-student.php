@@ -203,8 +203,6 @@ if (isset($_POST['ajax'])) {
             }
         }
 
-        // echo $botherYou;
-
         $healthExp = "";
         $z = 1;
         if (isset($_POST['healthTwelve'])) {

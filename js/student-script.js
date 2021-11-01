@@ -220,6 +220,24 @@ $(document).ready(function () {
 
     });
 
+    $(document).on("click", "#submit-edit-student-health-form", function (e) {
+        e.preventDefault();
+
+        var editStudentFamilyForm = $("#edit-student-health-form").serialize();
+
+        console.log(editStudentFamilyForm);
+
+        jQuery.ajax({
+            method: "POST",
+            url: "./functions/student-function.php",
+            data: editStudentFamilyForm + "&ajax=true",
+            success: function (data) {
+                alert("Edited Successfully!");
+                location.reload();
+            }
+        });
+    });
+    
     $(document).on("click", "#submit-edit-student-habits-form", function (e) {
         e.preventDefault();
 
