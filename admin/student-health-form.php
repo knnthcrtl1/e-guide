@@ -23,71 +23,146 @@ function studentHealth($conn, $studentType)
         <input type="hidden" name="student-id" value="<?php echo $_GET['id'] ?>">
         <input type="hidden" name="function-type" value="edit-student-health" />
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="survey-title">
-                    <p>What is the condition of your child’s general health? </P>
+        <?php
+        if ($studentType == 1) {
+        ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="survey-title">
+                        <p>Have you been previously diagnosed with any mental health condition?</P>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="healthCondition" value="1" <?php echo ($row['student_habit_health_condition'] == 1) ? 'checked' : null ?>>
+                                    Yes
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="healthCondition" value="2" <?php echo ($row['student_habit_health_condition'] == 2) ? 'checked' : null ?>>
+                                    No
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input othersRadioButton5" type="radio" name="healthCondition" value="3" targetId='othersRadioButton5' <?php echo ($row['student_habit_health_condition'] == 3) ? 'checked' : null ?>>
+                                    Others
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-group bmd-form-group" id="othersRadioButton5">
+                                <label class="bmd-label-floating">Others </label>
+                                <input type="text" name="healthConditionOthers" class="form-control" <?php echo ($row['student_habit_health_condition'] == 3) ? null : 'disabled="false' ?> value="<?php echo ($row['student_habit_other_fifth']) ?>">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-check form-check-radio">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="1" <?php echo ($row['student_habit_general_health'] == 1) ? 'checked' : null ?>>
-                                Excellent
-                                <span class="circle">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
-                        </div>
-                        <div class="form-check form-check-radio">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="2" <?php echo ($row['student_habit_general_health'] == 2) ? 'checked' : null ?>>
-                                Good
-                                <span class="circle">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-check form-check-radio">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="3" <?php echo ($row['student_habit_general_health'] == 3) ? 'checked' : null ?>>
-                                Fair
-                                <span class="circle">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-check form-check-radio">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="4" <?php echo ($row['student_habit_general_health'] == 4) ? 'checked' : null ?>>
-                                Poor
-                                <span class="circle">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        <?php
+        }
+        ?>
+
+        <div class="row">
+
+            <?php if ($studentType == 0) { ?>
+                <div class="col-md-12">
+                    <div class="survey-title">
+                        <p>What is the condition of your child’s general health? </P>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="1" <?php echo ($row['student_habit_general_health'] == 1) ? 'checked' : null ?>>
+                                    <img src='./assets/img/s1.png' alt='first-choice' />
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="2" <?php echo ($row['student_habit_general_health'] == 2) ? 'checked' : null ?>>
+                                    <img src='./assets/img/s2.png' alt='first-choice' />
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="3" <?php echo ($row['student_habit_general_health'] == 3) ? 'checked' : null ?>>
+                                    <img src='./assets/img/s3.png' alt='first-choice' />
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="4" <?php echo ($row['student_habit_general_health'] == 4) ? 'checked' : null ?>>
+                                    <img src='./assets/img/s5.png' alt='first-choice' />
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-check form-check-radio">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="studentPhysicalHealth" value="5" <?php echo ($row['student_habit_general_health'] == 5) ? 'checked' : null ?>>
+                                    <img src='./assets/img/s4.png' alt='first-choice' />
+                                    <span class="circle">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <?php }; ?>
             <div class="col-md-12">
                 <div class="survey-title">
-                    <p>Does he/she have any serious physical illness? </P>
+                    <?php if ($studentType == 0) {
+                        echo "<p>Does he/she have any serious illness? </p>";
+                    } else {
+                        echo "<p>Does he/she have any serious physical illness? </p>";
+                    }
+                    ?>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-check form-check-radio">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="studentIllness" value="1" <?php echo ($row['student_habit_physical_illness'] == 1) ? 'checked' : null ?>>
+                                <input class="form-check-input othersRadioButtonYes1" type="radio" name="studentIllness" value="1" <?php echo ($row['student_habit_physical_illness'] == 1) ? 'checked' : null ?>>
                                 Yes
                                 <span class="circle">
                                     <span class="check"></span>
                                 </span>
                             </label>
+                        </div>
+                        <div class="form-group bmd-form-group" id="othersRadioButtonYes1">
+                            <label class="bmd-label-floating">if yes, please specify </label>
+                            <input type="text" name="studentIllnessOthers" class="form-control" value="<?php echo ($row['student_habit_other_fourth']) ?>">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -122,7 +197,13 @@ function studentHealth($conn, $studentType)
 
             <div class="col-md-12">
                 <div class="survey-title">
-                    <p>Have you been previously diagnosed with any mental health condition?</P>
+
+                    <?php if ($studentType == 0) {
+                        echo "<p> Has your child been diagnosed with any development, learning, or mental health conditions (such as but not limited to ADHD, Autism, Dyslexia, Depression, Anxiety, Panic Attack, etc. </p>";
+                    } else {
+                        echo "<p>Have you been previously diagnosed with any mental health condition? </p>";
+                    }
+                    ?>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -715,7 +796,15 @@ function studentHealth($conn, $studentType)
                                 <input class="form-check-input" type="checkbox" name="botherYou[]" value="4" <?php if (in_array(4, $botherYouArr)) {
                                                                                                                     echo "checked";
                                                                                                                 } ?>>
-                                Future Goals/Career Plans (for Senior High School)
+                                <?php
+                                if ($studentType == 0) {
+                                    echo "Future Goals";
+                                } else {
+                                    echo "Future Goals/Career Plans (for Senior High School)";
+                                }
+
+                                ?>
+
                                 <span class="form-check-sign">
                                     <span class="check"></span>
                                 </span>
@@ -732,31 +821,42 @@ function studentHealth($conn, $studentType)
                                 </span>
                             </label>
                         </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="botherYou[]" value="6" <?php if (in_array(6, $botherYouArr)) {
-                                                                                                                    echo "checked";
-                                                                                                                } ?>>
-                                Housing
-                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
-                        </div>
+                        <?php if ($studentType !== 3) {
+                            echo "";
+                        } else {
+                        ?>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="6" <?php if (in_array(6, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
+                                    Housing
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
 
+                        <?php } ?>
                     </div>
                     <div class="col-md-4">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="botherYou[]" value="7" <?php if (in_array(7, $botherYouArr)) {
-                                                                                                                    echo "checked";
-                                                                                                                } ?>>
-                                Financial
-                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
-                        </div>
+                        <?php if ($studentType !== 3) {
+                            echo "";
+                        } else {
+
+                        ?>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="botherYou[]" value="7" <?php if (in_array(7, $botherYouArr)) {
+                                                                                                                        echo "checked";
+                                                                                                                    } ?>>
+                                    Financial
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        <?php } ?>
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="form-check-input othersRadioButton6" name="botherYou[]" type="checkbox" value="8" targetId='othersRadioButton6' <?php if (in_array(8, $botherYouArr)) {

@@ -103,6 +103,7 @@ $(document).ready(function () {
     studyRadioOthers('input[name="studentAboutLesson"]', '#othersRadioButton2', '.othersRadioButton2');
     studyRadioOthers('input[name="studentDevice"]', '#othersRadioButton3', '.othersRadioButton3');
     studyRadioOthers('input[name="studentIllness"]', '#othersRadioButton4', '.othersRadioButton4');
+    studyRadioOthers('input[name="studentIllness"]', '#othersRadioButtonYes1', '.othersRadioButtonYes1');
     studyRadioOthers('input[name="healthCondition"]', '#othersRadioButton5', '.othersRadioButton5');
 
     const fetchStudentTable = () => {
