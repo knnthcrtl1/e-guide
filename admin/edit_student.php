@@ -333,7 +333,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group bmd-form-group">
-                                                        <label class="bmd-label-floating">Father Firstname </label>
+                                                        <label class="bmd-label-floating">Father Name </label>
                                                         <input type="text" name="student-father-name" id="fatherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_father_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">
@@ -380,7 +380,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group bmd-form-group">
-                                                        <label class="bmd-label-floating">Mother Firstname </label>
+                                                        <label class="bmd-label-floating">Mother Name </label>
                                                         <input type="text" name="student-mother-name" id="motherNameRequired" class="form-control" value="<?php echo $row['students_family_guardian_mother_name'] ?>">
                                                     </div>
                                                     <div class="form-group bmd-form-group">

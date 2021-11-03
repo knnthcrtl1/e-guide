@@ -100,15 +100,7 @@
                                                     <span class="student__form--label">Email *</span>
                                                     <input type="email" name="email" class="form-control form-control-user" id="studentRequired3" required aria-describedby="emailHelp">
                                                 </div>
-                                                <div class="form-group bmd-form-group" style="margin-left: 15px">
-                                                    <label class="form-check-label privacy__policy__title">
-                                                        <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required oninvalid="this.setCustomValidity('Please accept privacy policy to proceed')" onchange="this.setCustomValidity('')">
-                                                        <span style="color: #fff">I have read and accepted the Privacy Policy.</span>
-                                                        <span class="form-check-sign">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
+
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group bmd-form-group student__form">
@@ -137,7 +129,15 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="form-group bmd-form-group" style="margin-left: 15px">
+                                            <label class="form-check-label privacy__policy__title">
+                                                <input class="form-check-input" type="checkbox" value="1" style="margin-top: 1px" required oninvalid="this.setCustomValidity('Please accept privacy policy to proceed')" onchange="this.setCustomValidity('')">
+                                                <span style="color: #fff">I have read and accepted the <a href="#" style='color: #EE4540; text-decoration: underline;' data-toggle="modal" data-target=".bd-example-modal-lg">Privacy Policy.</a></span>
+                                                <span class="form-check-sign">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
 
                                         <div class="row justify-content-center">
                                             <button id="submit-student-register-form" class="btn btn-primary btn-user ">
@@ -158,6 +158,38 @@
         </div>
 
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Privacy Policy</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>I am fully aware that University of the East (UE) or its designated representative is duty bound and obligated under the Data Privacy Act of 2012 to protect all my personal and sensitive information that it collects, processes, and retains upon my enrolment and during my stay in the University. <br /><br />
+
+                        Student personal information includes any information about my identity, academics, medical conditions, or any documents containing my identity. This includes but not limited to my name, address, names of my parents or guardians, date of birth, grades, attendance, disciplinary records, and other information necessary for basic administration and instruction.
+                        <br /><br />
+                        I understand that my personal information cannot be disclosed without my consent. I understand that the information that was collected and processed relates to my enrolment and to be used by UE to pursue its legitimate interests as an educational institution. Likewise, I am fully aware that UE may share such information to affiliated or partner organizations as part of its contractual obligations, or with government agencies pursuant to law or legal processes. In this regard, I hereby allow UE to collect, process, use and share my personal data in the pursuit of its legitimate interests as an educational institution.
+                        <br /><br />
+                        In addition, I am likewise giving my consent/permission in favor of my parents/guardian/representative or whoever is responsible in providing care for me to access, verify, examine and or inspect my academic and scholastic records, school fees/accounts in the University, the result of my physical medical examination (PME) and all matters that relate to my status as a student of the University.
+                        <br /><br />
+                        Finally, should I commit any misconduct or should there be a complaint filed against me, before the Student Affairs Office (SAO) or Student Disciplinary Board (SDB ) by reason of violation of the provisions of the Student Manual or any laws or ordinances, I hereby authorize and give my full consent in favor of the University to inform my parents, guardian, representative or whoever person is in charge of providing care or custody for me.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
     <!-- Bootstrap core JavaScript-->
     <?php include('footer.php'); ?>
