@@ -2,7 +2,9 @@
 include('./connection.php');
 // Load autoloader (using Composer)
 require __DIR__ . '../../vendor/autoload.php';
-$pdf = new TCPDF();                 // create TCPDF object with default constructor args
+
+$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+// create TCPDF object with default constructor args
 // add a page
 $pdf->AddPage();
 $pdf->SetFont('helvetica', '', 10);
@@ -51,7 +53,14 @@ if ($rowGender == 6) {
     $student_gender = "Others";
 }
 
+
+
 $student_birthday = $row['student_birthday'];
+
+$from = new DateTime($student_birthday);
+$to   = new DateTime('today');
+
+
 $student_contact = $row['student_contact'];
 $student_email = $row['student_email'];
 $student_section_id = $row['student_section_id'];
@@ -134,7 +143,7 @@ if ($rowStudentType == 2) {
     $student_type = "Senior High";
 }
 
-$student_age = $row['student_age'];
+$student_age = $from->diff($to)->y;
 $student_place_of_birth = $row['student_place_of_birth'];
 $student_elementry_school = $row['student_elementry_school'];
 $student_high_school = $row['student_high_school'];
@@ -367,6 +376,48 @@ if ($rowStudentDevice == 5) {
     $student_habit_student_device = 'Others' . $row['student_habit_other_third'];
 }
 
+// $student_habit_general_health = null;
+// $rowStudentHabitGeneralHealth = $row['student_habit_general_health'];
+// if ($rowStudentHabitGeneralHealth == 1) {
+//     $student_habit_general_health = "<img src='./assets/img/s1.png' />";
+// }
+// if ($rowStudentHabitGeneralHealth == 2) {
+//     $student_habit_general_health = "<img src='./assets/img/s1.png' />";
+// }
+// if ($rowStudentHabitGeneralHealth == 3) {
+//     $student_habit_general_health = "<img src='./assets/img/s1.png' />";
+// }
+// if ($rowStudentHabitGeneralHealth == 4) {
+//     $student_habit_general_health = "<img src='./assets/img/s1.png' />";
+// }
+// if ($rowStudentHabitGeneralHealth == 5) {
+//     $student_habit_general_health = "<img src='./assets/img/s1.png' />";
+// }
+
+$student_habit_physical_illness = null;
+$rowStudentPhysicalIllness = $row['student_habit_physical_illness'];
+if ($rowStudentPhysicalIllness == 1) {
+    $student_habit_physical_illness = "Yes" . $row['student_habit_other_fourth'];
+}
+if ($rowStudentPhysicalIllness == 2) {
+    $student_habit_physical_illness = "No";
+}
+if ($rowStudentPhysicalIllness == 3) {
+    $student_habit_physical_illness = "Other" . $row['student_habit_other_fourth'];
+}
+
+$student_habit_health_condition = null;
+$rowStudentHealthCondition = $row['student_habit_health_condition'];
+if ($rowStudentPhysicalIllness == 1) {
+    $student_habit_health_condition = "Yes";
+}
+if ($rowStudentHealthCondition == 2) {
+    $student_habit_health_condition = "No";
+}
+if ($rowStudentHealthCondition == 3) {
+    $student_habit_health_condition = "Other" . $row['student_habit_other_fifth'];
+}
+
 $student_habit_multiple_feelings = null;
 $sixExpArr = explode(",", $row['student_habit_multiple_feelings']);
 if (in_array(1, $sixExpArr)) {
@@ -517,6 +568,10 @@ if ($childGuardianAssist == 5) {
 if ($childGuardianAssist == 6) {
     $student_habit_child_guardian_assist2 = 'When he/she feel like studying';
 }
+
+$test = $pdf->Image('./assets/img/s1.png', 15, 140, 75, 113, 'JPG', 'http://www.tcpdf.org', '', true, 150, '', false, false, 1, false, false, false);
+
+
 
 $tbl = <<<EOD
 <div>
@@ -696,6 +751,17 @@ $tbl = <<<EOD
  <td>Kindly identify the device(s) that you can use for your online classes: <br/>
     <strong>$student_habit_student_device</strong>
  </td>
+</tr>
+<tr>
+<td>Does he/she have any serious illness?<br/>
+<strong>$student_habit_physical_illness</strong>
+</td>
+</tr>
+<tr>
+<td>Has your child been diagnosed with any development, learning, or mental health conditions (such as but not limited to ADHD, Autism, Dyslexia, Depression, Anxiety, Panic Attack, etc.
+<br/>
+<strong>$student_habit_health_condition</strong>
+</td>
 </tr>
 <tr>
 <td>For the past twelve (12) months, have you experienced any of the following? (Kindly put a

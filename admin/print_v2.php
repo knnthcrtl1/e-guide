@@ -52,6 +52,10 @@ if ($rowGender == 6) {
 }
 
 $student_birthday = $row['student_birthday'];
+
+$from = new DateTime($student_birthday);
+$to   = new DateTime('today');
+
 $student_contact = $row['student_contact'];
 $student_email = $row['student_email'];
 $student_section_id = $row['student_section_id'];
@@ -135,7 +139,7 @@ if ($rowStudentType == 2) {
     $student_type = "Senior High";
 }
 
-$student_age = $row['student_age'];
+$student_age = $from->diff($to)->y;
 $student_place_of_birth = $row['student_place_of_birth'];
 $student_elementry_school = $row['student_elementry_school'];
 $student_high_school = $row['student_high_school'];
@@ -536,6 +540,32 @@ if ($childGuardianAssist == 6) {
     $student_habit_child_guardian_assist2 = 'When he/she feel like studying';
 }
 
+
+$sqlCollege = "SELECT * FROM tbl_college_answers WHERE tbl_college_answer_student_id = '{$_GET['id']}'";
+$resultCollege = mysqli_query($conn, $sqlCollege);
+$rowCollege = mysqli_fetch_array($resultCollege);
+
+$col1 = $rowCollege['tbl_college_answer1'];
+$col2 = $rowCollege['tbl_college_answer2'];
+$col3 = $rowCollege['tbl_college_answer3'];
+$col4 = $rowCollege['tbl_college_answer4'];
+$col5 = $rowCollege['tbl_college_answer5'];
+$col6 = $rowCollege['tbl_college_answer6'];
+$col7 = $rowCollege['tbl_college_answer7'];
+$col8 = $rowCollege['tbl_college_answer8'];
+$col9 = $rowCollege['tbl_college_answer9'];
+$col10 = $rowCollege['tbl_college_answer10'];
+$col11 = $rowCollege['tbl_college_answer12'];
+$col12 = $rowCollege['tbl_college_answer13'];
+$col13 = $rowCollege['tbl_college_answer13'];
+$col14 = $rowCollege['tbl_college_answer14'];
+$col15 = $rowCollege['tbl_college_answer15'];
+$col16 = $rowCollege['tbl_college_answer16'];
+$col17 = $rowCollege['tbl_college_answer17'];
+$col18 = $rowCollege['tbl_college_answer18'];
+$col19 = $rowCollege['tbl_college_answer19'];
+
+
 $tbl = <<<EOD
 <div>
         <p style="text-align:center;font-weight:bold;">UNIVERSITY OF THE EAST</p>
@@ -730,6 +760,108 @@ $tbl = <<<EOD
 </td>
 </tr>
 
+<table border="1" cellpadding="5" cellspacing="0" nobr="true" >
+ <tr>
+  <th colspan="1" align="center">Health (College)</th>
+ </tr>
+<tr>
+ <td>I feel<br/>
+ <strong>$col1</strong>
+ </td>
+</tr>
+<tr>
+ <td>My family is<br/>
+ <strong>$col2</strong>
+ </td>
+</tr>
+<tr>
+ <td>My father is<br/>
+ <strong>$col3</strong>
+ </td>
+</tr>
+<tr>
+ <td>My mother is<br/>
+ <strong>$col4</strong>
+ </td>
+</tr>
+<tr>
+ <td>My siblings are<br/>
+ <strong>$col5</strong>
+ </td>
+</tr>
+<tr>
+ <td>My childhood was<br/>
+ <strong>$col6</strong>
+ </td>
+</tr>
+<tr>
+ <td>my past school experiences were<br/>
+ <strong>$col7</strong>
+ </td>
+</tr>
+<tr>
+ <td>My love life is<br/>
+ <strong>$col8</strong>
+ </td>
+</tr>
+<tr>
+ <td>My Spiritual life is<br/>
+ <strong>$col9</strong>
+ </td>
+</tr>
+<tr>
+ <td>I fear<br/>
+ <strong>$col10</strong>
+ </td>
+</tr>
+<tr>
+ <td>My priorities are<br/>
+ <strong>$col11</strong>
+ </td>
+</tr>
+<tr>
+ <td>My greatness strength is<br/>
+ <strong>$col12</strong>
+ </td>
+</tr>
+<tr>
+ <td>My greatness weakness is<br/>
+ <strong>$col13</strong>
+ </td>
+</tr>
+<tr>
+ <td>When i have proble,s I<br/>
+ <strong>$col14</strong>
+ </td>
+</tr>
+<tr>
+ <td>My life is<br/>
+ <strong>$col15</strong>
+ </td>
+</tr>
+<tr>
+ <td>The best option to solve the problem is<br/>
+ <strong>$col16</strong>
+ </td>
+</tr>
+<tr>
+ <td>I see the future as<br/>
+ <strong>$col17</strong>
+ </td>
+</tr>
+<tr>
+ <td>My friends are<br/>
+ <strong>$col18</strong>
+ </td>
+</tr>
+<tr>
+ <td>I am taking this course because<br/>
+ <strong>$col19</strong>
+ </td>
+</tr>
+
+
+</table>
 
  </table>
 
