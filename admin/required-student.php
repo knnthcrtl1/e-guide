@@ -91,7 +91,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group bmd-form-group">
-                                                            <label class="bmd-label-floating">Strand and Section *</label>
+                                                            <label class="bmd-label-floating">Grade and Section *</label>
                                                             <input name="student-strand-section" class="form-control" required>
                                                         </div>
                                                     </div>

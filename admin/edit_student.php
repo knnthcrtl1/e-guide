@@ -122,7 +122,7 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group bmd-form-group">
-                                                        <label class="bmd-label-floating">Strand and Section *</label>
+                                                        <label class="bmd-label-floating">Grade and Section *</label>
                                                         <input name="student-strand-section" class="form-control" value="<?php echo $row['student_section_id'] ?>" required>
                                                     </div>
                                                 </div>
@@ -321,7 +321,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group bmd-form-group">
-                                                        <span class="">Is your father an deceased?</span>
+                                                        <span class="">Is your father deceased?</span>
                                                         <div class="form-group">
                                                             <select class="form-control " name="student-father-is-deceased">
                                                                 <option value=""></option>
