@@ -30,7 +30,6 @@
 
             <div class="index__container">
 
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum esse aperiam quae quas voluptates quidem aliquam nisi assumenda, tenetur, beatae eveniet iusto rerum officiis at similique voluptatem! Voluptate, ea est!
                 <div>   
                     <h2 class="text-center">WELCOME WARRIORS</h2>
                 </div>
