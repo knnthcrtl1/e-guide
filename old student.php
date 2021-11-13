@@ -5,6 +5,8 @@
                                     <h4 class="card-title">Add Student</h4>
                                     <p class="card-category">Complete student profile</p>
                                 </div>
+
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione dolores numquam molestiae doloribus totam, necessitatibus incidunt illum quidem, debitis velit praesentium voluptatum nobis quos. Odio quos repellendus placeat ullam.
                                 <!-- <div class=" custom-bg-danger card-header card-header-tabs card-header-primary ">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
