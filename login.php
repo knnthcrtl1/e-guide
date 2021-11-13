@@ -144,6 +144,8 @@
 
         </div>
 
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos. Exercitationem eligendi, excepturi laborum quibusdam obcaecati, ipsa ad similique, architecto cumque atque quia pariatur magnam sequi perferendis reiciendis dolor ab!
+
         <div class='cumulative__container'>
             <p>UNIVERSITY OF THE EAST <br />Online Cumulative Folder</p>
 
