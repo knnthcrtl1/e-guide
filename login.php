@@ -144,7 +144,7 @@
 
         </div>
 
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quos. Exercitationem eligendi, excepturi laborum quibusdam obcaecati, ipsa ad similique, architecto cumque atque quia pariatur magnam sequi perferendis reiciendis dolor ab!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum laborum dolore distinctio inventore. Amet, nulla quo. Hic at facere magni molestias, accusantium quam saepe ducimus minus. Accusamus veniam illum cumque.
 
         <div class='cumulative__container'>
             <p>UNIVERSITY OF THE EAST <br />Online Cumulative Folder</p>
