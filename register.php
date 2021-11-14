@@ -71,7 +71,7 @@
                             <div class="col-md-12 student__login__container">
                                 <div class="" style="padding: 10px; padding-right:20px">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT SIGN IN</h1>
+                                        <h1 class="h4 text-gray-900 mb-4" style="margin-top: 20px">STUDENT SIGN UP</h1>
                                     </div>
                                     <form class="user" method="POST" id="add-student-register-form">
                                         <input type="hidden" name="function-type" value="student-register" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Firstname" required>
