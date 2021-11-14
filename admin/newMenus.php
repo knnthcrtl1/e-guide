@@ -12,6 +12,13 @@ function newMenus()
 
     <div class="row">
         <div class="col-md-3 ">
+            <a href="./view_dashboard.php" class="dashboard__fillup__container--link">
+                <div class="dashboard__fillup__container">
+                    HOME
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 ">
             <a href="./view_student.php?studentType=0" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     ELEMENTARY
@@ -39,8 +46,6 @@ function newMenus()
                 </div>
             </a>
         </div>
-    </div>
-    <div class="row">
         <div class="col-md-3">
             <a href="./reports.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">

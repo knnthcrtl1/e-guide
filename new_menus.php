@@ -25,6 +25,13 @@ function newMenus()
     </div>
     <div class="row">
         <div class="col-md-4 ">
+            <a href="./view_dashboard.php" class="dashboard__fillup__container--link">
+                <div class="dashboard__fillup__container">
+                    HOME
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 ">
             <a href="./view_student.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     FILL-UP FORM
@@ -45,24 +52,20 @@ function newMenus()
                 </div>
             </a>
         </div>
-    </div>
-    <div class="row">
-
-        <div class="col-md-6">
+        <div class="col-md-4">
             <a href="./change_password.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     CHANGE PASSWORD
                 </div>
             </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <a href="./logout.php" class="dashboard__fillup__container--link">
                 <div class="dashboard__fillup__container">
                     LOGOUT
                 </div>
             </a>
         </div>
-
     </div>
 <?php
 }
