@@ -53,6 +53,9 @@ include('connection.php')
                           Date
                         </th>
                         <th>
+                          Sent by
+                        </th>
+                        <th>
                           Action
                         </th>
                       </tr>
@@ -77,6 +80,7 @@ include('connection.php')
                   <div class="tab-pane active" id="pi">
                     <form id="add-student-notification-form" method="POST">
                       <input type="hidden" name="function-type" value="add-student-notification" />
+                      <input type="hidden" name="user-id" value="<?php echo $_SESSION['user']; ?>">
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group bmd-form-group">

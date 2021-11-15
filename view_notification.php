@@ -30,6 +30,9 @@
                           Message
                         </th>
                         <th>
+                          Sent By
+                        </th>
+                        <th>
                           Date
                         </th>
                       </tr>

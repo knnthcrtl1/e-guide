@@ -2,7 +2,18 @@
 
 include('../connection.php');
 
-$sql = "SELECT * FROM  tbl_notifications";
+session_start();
+$user = $_SESSION["user"];
+
+$sql = '';
+
+if($user === 'admin') {
+    $sql = "SELECT * FROM  tbl_notifications";
+} else {
+    $sql = "SELECT * FROM  tbl_notifications WHERE notification_user_id = '$user' ";
+}
+
+
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) != 0) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -27,6 +38,7 @@ if (mysqli_num_rows($result) != 0) {
             <td><?php echo $row['notification_title'] ?></td>
             <td><?php echo $row['notification_message'] ?></td>
             <td><?php echo $newDate ?></td>
+            <td><?php echo $row['notification_user_id'] ?></td>
             <td class="td-actions text-right" style="display:flex;flex-direction:row">
                 <span id="delete-notification" class="btn btn-danger btn-round" notification-id="<?php echo $row['notification_id']; ?>"> <i class="material-icons">close</i> Delete &nbsp;</span>
             </td>
