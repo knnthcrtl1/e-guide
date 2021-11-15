@@ -11,9 +11,8 @@ $(document).ready(function () {
             url: "./functions/function-notification.php",
             data: studentFormData + "&ajax=true",
             success: function (data) {
-                console.log(data);
-                // alert("Added Successfully!");
-                // fetchNotificationTable();
+                alert("Added Successfully!");
+                fetchNotificationTable();
             }
         });
 
