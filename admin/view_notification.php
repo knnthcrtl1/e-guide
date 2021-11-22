@@ -52,9 +52,9 @@ include('connection.php')
                         <th>
                           Date
                         </th>
-                        <th>
+                        <!-- <th>
                           Sent by
-                        </th>
+                        </th> -->
                         <th>
                           Action
                         </th>

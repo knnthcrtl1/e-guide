@@ -15,7 +15,7 @@ if (mysqli_num_rows($result) != 0) {
             <td><?php echo $row['notification_id'] ?></td>
             <td><?php echo $row['notification_title'] ?></td>
             <td><?php echo $row['notification_message'] ?></td>
-            <td><?php echo $row['notification_user_id'] ?></td>
+            <!-- <td><?php echo $row['notification_user_id'] ?></td> -->
             <td><?php echo $newDate; ?></td>
         </tr>
 <?php

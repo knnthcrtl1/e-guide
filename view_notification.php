@@ -29,9 +29,9 @@
                         <th>
                           Message
                         </th>
-                        <th>
+                        <!-- <th>
                           Sent By
-                        </th>
+                        </th> -->
                         <th>
                           Date
                         </th>
